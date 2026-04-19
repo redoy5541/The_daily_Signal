@@ -110,9 +110,16 @@ export default function Home() {
         .animate-marquee { display: flex; width: max-content; animation: marquee 30s linear infinite; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .glass-panel { background: ${theme === 'dark' ? 'rgba(255,255,255,0.03)' : 'rgba(0,0,0,0.03)'}; backdrop-filter: blur(40px); border: 1px solid ${theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'}; }
+        
+        @keyframes kenburns {
+          0% { transform: scale(1) translate(0, 0); }
+          50% { transform: scale(1.15) translate(-1%, -1%); }
+          100% { transform: scale(1) translate(0, 0); }
+        }
+        .animate-kenburns { animation: kenburns 25s ease-in-out infinite; }
       `}</style>
 
-      {/* TICKER - same as before */}
+      {/* TICKER */}
       <div className={`${theme === 'dark' ? 'bg-black border-white/10' : 'bg-white border-zinc-200'} py-3 overflow-hidden border-b flex sticky top-0 z-[60] w-full`}>
         <div className="animate-marquee whitespace-nowrap flex">
           {stockMarket.concat(stockMarket).map((stock, i) => (
@@ -125,7 +132,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* NAV - same as before */}
+      {/* NAV */}
       <nav className={`${theme === 'dark' ? 'bg-black/80' : 'bg-white/80'} backdrop-blur-xl sticky top-[39px] z-50 w-full`}>
         <div className="w-full px-[5%] py-8 flex items-center justify-between">
           <button onClick={() => { setViewMode('today'); setActiveCategory('All'); setSelectedArticle(null); }} className="flex items-center gap-5 group text-left">
@@ -180,7 +187,6 @@ export default function Home() {
 
       <main className="w-full px-[5%] py-12">
         {selectedArticle ? (
-          // Article Detail - same UI
           <article className="w-full max-w-[1400px] mx-auto animate-in fade-in slide-in-from-bottom-8 duration-1000">
             <button onClick={() => setSelectedArticle(null)} className="mb-12 group flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-zinc-500 hover:text-red-600 transition-all">
               <span className="group-hover:-translate-x-2 transition-transform">←</span> Return to Briefings
@@ -198,7 +204,6 @@ export default function Home() {
             </div>
           </article>
         ) : viewMode === 'archive' ? (
-          // Archive View - same as previous
           <section className="animate-in fade-in slide-in-from-bottom-12 duration-1000 w-full">
             <div className="flex flex-wrap items-center justify-between gap-10 mb-24">
               <div className="flex items-center gap-10">
@@ -242,13 +247,12 @@ export default function Home() {
             </div>
           </section>
         ) : activeCategory === 'All' ? (
-          // Main UI - kept exactly as your previous version
           <div className="animate-in fade-in duration-1000">
             <header 
               onClick={() => setSelectedArticle(todaysNews[0])}
               className="relative group mb-40 overflow-hidden rounded-[60px] bg-zinc-900 shadow-2xl cursor-pointer w-full min-h-[600px] lg:h-[85vh]"
             >
-              <img src="https://picsum.photos/id/1015/1920/1080" alt="" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105" />
+              <img src="https://picsum.photos/id/1015/1920/1080" alt="" className="absolute inset-0 w-full h-full object-cover animate-kenburns" />
               <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/90"></div>
               <div className="relative h-full flex items-end p-8 lg:p-20">
                 <div className="glass-panel p-8 lg:p-16 rounded-[48px] max-w-5xl shadow-2xl transition-all group-hover:translate-y-[-10px]">
@@ -262,7 +266,6 @@ export default function Home() {
               </div>
             </header>
 
-            {/* Today's Best - kept */}
             {todaysBest.length > 0 && (
               <div className="mb-40 w-full">
                 <h2 className="text-xs font-black uppercase tracking-[0.5em] mb-12 text-zinc-500">Today's Best Intelligence</h2>
@@ -278,7 +281,6 @@ export default function Home() {
               </div>
             )}
 
-            {/* Urgent Flashpoints - kept exactly */}
             <div className="mb-40 w-full">
               <h2 className="text-xs font-black uppercase tracking-[0.5em] mb-12 text-zinc-500">Urgent Flashpoints</h2>
               <div className="grid lg:grid-cols-12 gap-10">
@@ -303,7 +305,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Category Sections - kept exactly, now includes History and Sports with new articles */}
             <div className="flex flex-col gap-40 w-full">
               {categories.map((category) => {
                 const categoryNews = todaysNews.filter(n => n.category === category).slice(0, 4);
@@ -333,7 +334,6 @@ export default function Home() {
             </div>
           </div>
         ) : (
-          // Category filtered view - kept exactly
           <section className="animate-in fade-in slide-in-from-bottom-12 duration-1000 w-full">
             <div className="flex flex-wrap items-center justify-between gap-10 mb-24">
               <div className="flex items-center gap-10">
