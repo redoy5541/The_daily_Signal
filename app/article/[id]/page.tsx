@@ -1,12 +1,13 @@
+// app/article/[id]/page.tsx
 'use client';
 import React from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import { todayNews } from '../../data/news';
+import { allNews } from '../../../data/news';
 
 export default function ArticlePage() {
   const params = useParams();
-  const article = todayNews.find((a) => a.id === params.id);
+  const article = allNews.find((a) => a.id === params.id);
 
   if (!article) {
     return (
@@ -19,7 +20,7 @@ export default function ArticlePage() {
     );
   }
 
-  const relatedArticles = todayNews.filter((a) => a.id !== article.id).slice(0, 3);
+  const relatedArticles = allNews.filter((a) => a.id !== article.id).slice(0, 3);
 
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white font-sans transition-colors duration-500 pb-32">
@@ -39,7 +40,7 @@ export default function ArticlePage() {
         <div className="relative rounded-3xl overflow-hidden mb-12 shadow-2xl">
           <img src={article.image} alt={article.title} className="w-full h-[520px] object-cover" />
           <div className="absolute top-8 left-8 bg-white/90 dark:bg-black/80 text-xs font-black px-5 py-2 rounded-3xl backdrop-blur-md flex items-center gap-2">
-            <span className="text-red-600">VERIFIED HUB REPORT</span>
+            <span className="text-red-600">VERIFIED HUB REPORT • {article.date}</span>
           </div>
         </div>
 
