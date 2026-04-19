@@ -7,23 +7,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: `${baseUrl}/`, // Added the trailing slash here
-      lastModified: new Date().toISOString(),
+      url: `${baseUrl}/`, // Notice the added slash /
+      lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1,
     },
     {
       url: `${baseUrl}/world`,
-      lastModified: new Date().toISOString(),
+      lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 0.8,
     },
-    {
-      url: `${baseUrl}/politics`,
-      lastModified: new Date().toISOString(),
-      changeFrequency: 'daily',
-      priority: 0.8,
-    },
-    // Add your other categories here...
+    // ... rest of your categories
   ]
 }
