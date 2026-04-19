@@ -2,12 +2,15 @@
 import React from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
-// FIXED: Going up two levels from [id] -> article -> app, then into data
-import { todayNews } from '../../data/news';
+// FIXED: Go up two levels (../../) to reach 'app', then into 'data'
+// FIXED: Variable name changed from todayNews to allNews to match news.tsx export
+import { allNews } from '../../data/news';
 
 export default function ArticlePage() {
   const params = useParams();
-  const article = todayNews.find((a) => a.id === params.id);
+  
+  // Search through allNews using the ID from the URL
+  const article = allNews.find((a) => a.id === params.id);
 
   if (!article) {
     return (
@@ -20,7 +23,7 @@ export default function ArticlePage() {
     );
   }
 
-  const relatedArticles = todayNews.filter((a) => a.id !== article.id).slice(0, 3);
+  const relatedArticles = allNews.filter((a) => a.id !== article.id).slice(0, 3);
 
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white font-sans transition-colors duration-500 pb-32">
