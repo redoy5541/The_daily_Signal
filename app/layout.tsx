@@ -16,8 +16,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'The Daily Signal News',
-  description: 'Independent Journalism',
+  title: 'Signal News Hub | Global Intelligence',
+  description: 'Verified reports and independent journalism.',
+  metadataBase: new URL('https://signalnewshub.com'),
 };
 
 export default function RootLayout({ 
@@ -27,9 +28,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      {/* Removed the "dark" class from body so the theme 
-        changes based on the user's system preferences. 
-      */}
       <body className={`${inter.variable} ${playfair.variable} antialiased transition-colors duration-500`}>
         {children}
       </body>

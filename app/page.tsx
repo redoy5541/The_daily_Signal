@@ -1,90 +1,191 @@
 'use client';
-import React, { useState } from 'react';
-import Link from 'next/link';
+import React, { useState, useEffect, useLayoutEffect, useMemo } from 'react';
 import { todayNews, stockMarket } from './data/news';
 
-const categories = ['All', 'World', 'Politics', 'Business', 'Tech', 'History', 'Sports', 'Entertainment'];
+const categories = ['World', 'Politics', 'Business', 'Tech', 'History', 'Sports', 'Entertainment'];
 
 export default function Home() {
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [activeCategory, setActiveCategory] = useState('All');
+  const [selectedArticle, setSelectedArticle] = useState<any>(null);
   const [votes, setVotes] = useState<Record<string, 'up' | 'down' | null>>({});
+  
+  // Track counts locally for now (In a real app, these would come from your DB)
+  const [counters, setCounters] = useState<Record<string, { up: number, down: number }>>({});
+  
+  const [isMounted, setIsMounted] = useState(false);
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+
+  useLayoutEffect(() => {
+    const savedTheme = localStorage.getItem('signal_theme') as 'dark' | 'light';
+    const systemQuery = window.matchMedia('(prefers-color-scheme: light)');
+
+    const initTheme = (t: 'dark' | 'light') => {
+      setTheme(t);
+      document.documentElement.classList.toggle('dark', t === 'dark');
+      document.body.style.backgroundColor = t === 'dark' ? '#000000' : '#fafafa';
+    };
+
+    if (savedTheme) {
+      initTheme(savedTheme);
+    } else {
+      initTheme(systemQuery.matches ? 'light' : 'dark');
+    }
+  }, []);
+
+  useEffect(() => {
+    setIsMounted(true);
+    
+    // Load User's Personal Votes
+    const savedVotes = localStorage.getItem('signal_votes');
+    if (savedVotes) {
+      try { setVotes(JSON.parse(savedVotes)); } catch (e) { console.error(e); }
+    }
+
+    // Initialize counts with some "social proof" numbers
+    const initialCounters: Record<string, { up: number, down: number }> = {};
+    todayNews.forEach(news => {
+      initialCounters[news.id] = { 
+        up: Math.floor(Math.random() * 500) + 100, 
+        down: Math.floor(Math.random() * 50) + 5 
+      };
+    });
+    setCounters(initialCounters);
+
+    const systemQuery = window.matchMedia('(prefers-color-scheme: light)');
+    const handleSystemChange = (e: MediaQueryListEvent | MediaQueryList) => {
+      if (!localStorage.getItem('signal_theme')) {
+        const newTheme = e.matches ? 'light' : 'dark';
+        setTheme(newTheme);
+        document.documentElement.classList.toggle('dark', newTheme === 'dark');
+        document.body.style.backgroundColor = newTheme === 'dark' ? '#000000' : '#fafafa';
+      }
+    };
+
+    if (systemQuery.addEventListener) {
+      systemQuery.addEventListener('change', handleSystemChange);
+    } else {
+      systemQuery.addListener(handleSystemChange);
+    }
+
+    return () => {
+      if (systemQuery.removeEventListener) {
+        systemQuery.removeEventListener('change', handleSystemChange);
+      } else {
+        systemQuery.removeListener(handleSystemChange);
+      }
+    };
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    localStorage.setItem('signal_theme', newTheme);
+    document.documentElement.classList.toggle('dark', newTheme === 'dark');
+    document.body.style.backgroundColor = newTheme === 'dark' ? '#000000' : '#fafafa';
+  };
+
+  const filteredNews = useMemo(() => {
+    return todayNews.filter(n => activeCategory === 'All' || n.category === activeCategory);
+  }, [activeCategory]);
 
   const handleVote = (id: string, type: 'up' | 'down') => {
     setVotes(prev => {
       const current = prev[id];
-      if (current === type) {
-        // Double click on same button → deselect
-        return { ...prev, [id]: null };
-      } else {
-        // Select new vote (like or dislike)
-        return { ...prev, [id]: type };
-      }
+      const newVote = current === type ? null : type;
+      
+      // Update Counter State
+      setCounters(prevCount => {
+        const counts = { ...prevCount[id] };
+        if (current === type) { // Undoing a vote
+           counts[type]--;
+        } else { // New vote
+           counts[type]++;
+           if (current) counts[current]--; // Remove previous opposite vote
+        }
+        return { ...prevCount, [id]: counts };
+      });
+
+      const updatedVotes = { ...prev, [id]: newVote };
+      localStorage.setItem('signal_votes', JSON.stringify(updatedVotes));
+      return updatedVotes;
     });
   };
 
-  const filteredNews = todayNews.filter(news => 
-    selectedCategory === 'All' || news.category === selectedCategory
+  if (!isMounted) return <div className="min-h-screen bg-black" />;
+
+  const Logo = () => (
+    <div className="relative group cursor-pointer">
+      <div className="absolute -inset-1 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400 rounded-2xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+      <div className="relative w-12 h-12 bg-black rounded-2xl flex items-center justify-center border border-white/10 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-red-500 via-purple-600 to-blue-500 opacity-80"></div>
+        <span className="relative font-black text-2xl italic text-white tracking-tighter">S</span>
+      </div>
+    </div>
   );
 
   return (
-    <div className="min-h-screen bg-white dark:bg-zinc-950 font-sans transition-colors duration-500 overflow-x-hidden">
+    <div className={`min-h-screen transition-colors duration-500 font-sans selection:bg-red-600 overflow-x-hidden ${theme === 'dark' ? 'bg-black text-white' : 'bg-zinc-50 text-zinc-900'}`}>
       <style jsx global>{`
         @keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
-        
         .animate-marquee { display: flex; width: max-content; animation: marquee 30s linear infinite; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
-        
-        .liquid-card {
-          transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .liquid-card:hover {
-          transform: translateY(-8px) scale(1.04);
-          box-shadow: 0 30px 60px -15px rgb(0 0 0 / 0.2);
+        .glass-panel { 
+            background: ${theme === 'dark' ? 'rgba(255, 255, 255, 0.03)' : 'rgba(0, 0, 0, 0.03)'}; 
+            backdrop-filter: blur(40px); 
+            border: 1px solid ${theme === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}; 
         }
       `}</style>
 
-      {/* SIDE CONTROLS */}
-      <div className="fixed left-6 top-1/2 -translate-y-1/2 z-[100] flex flex-col gap-4 hidden lg:flex">
-        <button onClick={() => window.history.back()} className="w-12 h-12 bg-black/90 hover:bg-red-600 text-white rounded-3xl flex items-center justify-center font-black text-2xl shadow-2xl border border-white/10 backdrop-blur-xl transition-all">←</button>
-        <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} className="w-12 h-12 bg-black/90 hover:bg-red-600 text-white rounded-3xl flex items-center justify-center font-black text-2xl shadow-2xl border border-white/10 backdrop-blur-xl transition-all">↑</button>
-      </div>
-
       {/* TICKER */}
-      <div className="bg-black text-white py-3 overflow-hidden border-b border-white/10 flex sticky top-0 z-[60]">
+      <div className={`${theme === 'dark' ? 'bg-black border-white/10' : 'bg-white border-zinc-200'} py-3 overflow-hidden border-b flex sticky top-0 z-[60] w-full`}>
         <div className="animate-marquee whitespace-nowrap flex">
           {stockMarket.concat(stockMarket).map((stock, i) => (
             <div key={i} className="flex items-center gap-4 mx-12 text-xs font-black uppercase tracking-[0.15em]">
               <span className="opacity-60">{stock.symbol}</span>
               <span className="font-mono text-base">{stock.price}</span>
-              <span className={stock.trend === 'up' ? 'text-emerald-400' : 'text-red-500'}>{stock.change}</span>
+              <span className={stock.trend === 'up' ? 'text-emerald-500' : 'text-red-500'}>{stock.change}</span>
             </div>
           ))}
         </div>
       </div>
 
       {/* NAV */}
-      <nav className="border-b border-zinc-100 dark:border-zinc-900 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-2xl sticky top-[39px] z-50">
-        <div className="max-w-7xl mx-auto px-8 py-6 flex items-center justify-between">
-          <Link href="/" className="group flex items-center gap-3">
-            <div className="w-10 h-10 border-4 border-black dark:border-white rounded-3xl flex items-center justify-center font-black text-3xl group-hover:bg-red-600 group-hover:text-white transition-all">S</div>
-            <h1 className="text-3xl font-black tracking-[-2px] text-black dark:text-white uppercase">THE DAILY SIGNAL</h1>
-          </Link>
-          <div className="text-right">
-            <p className="text-xs font-black uppercase text-red-600 tracking-widest">Mehedi Redoy</p>
-            <p className="text-[10px] font-semibold text-zinc-500 dark:text-zinc-400">Lead Editor • Verified</p>
+      <nav className={`${theme === 'dark' ? 'bg-black/80' : 'bg-white/80'} backdrop-blur-xl sticky top-[39px] z-50 w-full`}>
+        <div className="w-full px-[5%] py-8 flex items-center justify-between">
+          <button onClick={() => { setActiveCategory('All'); setSelectedArticle(null); }} className="flex items-center gap-5 group text-left">
+            <Logo />
+            <h1 className={`text-2xl lg:text-3xl font-black tracking-[-2px] uppercase transition-all duration-300 ${theme === 'dark' ? 'group-hover:text-zinc-400' : 'group-hover:text-red-600'}`}>
+              SIGNAL NEWS HUB
+            </h1>
+          </button>
+          
+          <div className="flex items-center gap-8">
+            <button 
+              onClick={toggleTheme} 
+              className={`relative w-14 h-7 rounded-full cursor-pointer p-1 transition-all border-2 flex items-center ${theme === 'dark' ? 'bg-white border-white shadow-lg' : 'bg-black border-black shadow-lg'}`}
+              aria-label="Toggle Theme"
+            >
+                <div className={`w-5 h-5 rounded-full transition-all duration-500 shadow-lg ${theme === 'dark' ? 'translate-x-7 bg-black' : 'translate-x-0 bg-white'}`}></div>
+            </button>
+            <div className="text-right hidden sm:block">
+              <p className="text-xs font-black uppercase text-red-600 tracking-widest">Mehedi Redoy</p>
+              <p className="text-[10px] font-semibold text-zinc-500 uppercase tracking-tighter">Lead Editor • Verified</p>
+            </div>
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-8 pb-6 flex gap-2 overflow-x-auto no-scrollbar border-t border-zinc-100 dark:border-zinc-900">
+        <div className="w-full px-[5%] pb-6 flex gap-3 overflow-x-auto no-scrollbar">
+          <button 
+            onClick={() => { setActiveCategory('All'); setSelectedArticle(null); }}
+            className={`px-8 py-2.5 text-[10px] font-black uppercase tracking-widest rounded-full transition-all ${activeCategory === 'All' && !selectedArticle ? (theme === 'dark' ? 'bg-white text-black' : 'bg-black text-white') : (theme === 'dark' ? 'bg-zinc-900 text-zinc-500 hover:text-white' : 'bg-zinc-200 text-zinc-500 hover:text-black')}`}
+          >
+            Intelligence
+          </button>
           {categories.map(cat => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-7 py-2.5 text-xs font-black uppercase tracking-[0.5px] rounded-3xl transition-all whitespace-nowrap ${
-                selectedCategory === cat 
-                  ? 'bg-red-600 text-white shadow-inner' 
-                  : 'bg-white dark:bg-zinc-900 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-500 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800'
-              }`}
+            <button 
+              key={cat} 
+              onClick={() => { setActiveCategory(cat); setSelectedArticle(null); }}
+              className={`px-8 py-2.5 text-[10px] font-black uppercase tracking-widest rounded-full transition-all whitespace-nowrap ${activeCategory === cat && !selectedArticle ? 'bg-red-600 text-white shadow-lg shadow-red-600/20' : (theme === 'dark' ? 'bg-zinc-900 text-zinc-500 hover:text-white' : 'bg-zinc-200 text-zinc-500 hover:text-black')}`}
             >
               {cat}
             </button>
@@ -92,119 +193,155 @@ export default function Home() {
         </div>
       </nav>
 
-      <main className="max-w-7xl mx-auto px-8 py-12">
-        {/* HERO - Big Cinematic */}
-        {selectedCategory === 'All' && todayNews[0] && (
-          <header className="relative group mb-20 overflow-hidden rounded-[42px] border border-zinc-200 dark:border-zinc-800 shadow-2xl bg-zinc-950">
-            <div className="grid lg:grid-cols-2 min-h-[560px]">
-              <div className="p-12 lg:p-20 flex flex-col justify-center text-white relative z-10 bg-gradient-to-r from-black/70 to-transparent">
-                <h2 className="text-5xl lg:text-7xl font-black tracking-[-2px] leading-none mb-8 text-white">{todayNews[0].title}</h2>
-                <p className="text-xl text-white/80 max-w-md mb-10">{todayNews[0].excerpt}</p>
-                <Link href={`/article/${todayNews[0].id}`} className="inline-flex items-center gap-3 px-10 py-5 bg-white text-black font-black rounded-3xl uppercase text-sm tracking-widest hover:bg-red-600 hover:text-white transition-all">READ FULL BRIEFING →</Link>
-              </div>
-              <img src={todayNews[0].image} alt="" className="absolute lg:relative inset-0 w-full h-full object-cover lg:col-span-1 group-hover:scale-110 transition-transform duration-1000" />
+      <main className="w-full px-[5%] py-12">
+        {selectedArticle ? (
+          <article className="w-full max-w-[1400px] mx-auto animate-in fade-in slide-in-from-bottom-8 duration-1000">
+            <button onClick={() => setSelectedArticle(null)} className="mb-12 group flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-zinc-500 hover:text-red-600 transition-all">
+              <span className="group-hover:-translate-x-2 transition-transform">←</span> Return to Briefings
+            </button>
+            <div className="relative rounded-[56px] overflow-hidden shadow-2xl mb-16 aspect-video max-h-[70vh]">
+              <img src={selectedArticle.image} className="w-full h-full object-cover" alt="" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
             </div>
-          </header>
+            <div className="max-w-4xl mx-auto">
+              <span className="text-red-600 font-black uppercase text-xs tracking-[0.4em] block mb-6">{selectedArticle.category} // INTEL</span>
+              <h1 className={`text-5xl lg:text-8xl font-black uppercase tracking-tighter mb-12 leading-[0.85] ${theme === 'dark' ? 'text-white' : 'text-black'}`}>{selectedArticle.title}</h1>
+              <div className={`h-px w-full mb-12 ${theme === 'dark' ? 'bg-zinc-800' : 'bg-zinc-200'}`}></div>
+              <p className={`${theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'} text-2xl leading-relaxed font-medium mb-8 italic`}>"{selectedArticle.excerpt}"</p>
+              <p className={`${theme === 'dark' ? 'text-zinc-500' : 'text-zinc-700'} text-lg leading-relaxed mb-12`}>Developed intelligence confirms that current logistical disruptions are impacting trade flow.</p>
+            </div>
+          </article>
+        ) : activeCategory === 'All' ? (
+          <div className="animate-in fade-in duration-1000">
+            <header 
+              onClick={() => setSelectedArticle(todayNews[0])}
+              className="relative group mb-40 overflow-hidden rounded-[60px] bg-zinc-900 shadow-2xl cursor-pointer w-full min-h-[600px] lg:h-[85vh]"
+            >
+              <img src="https://picsum.photos/id/1015/1920/1080" alt="" className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/90"></div>
+              <div className="relative h-full flex items-end p-8 lg:p-20">
+                <div className="glass-panel p-8 lg:p-16 rounded-[48px] max-w-5xl shadow-2xl transition-all group-hover:translate-y-[-10px]">
+                  <span className="inline-block bg-red-600 text-white text-[10px] font-black px-5 py-2 rounded-full mb-8 uppercase tracking-[0.3em]">Breaking Intelligence</span>
+                  <h2 className="text-4xl lg:text-8xl font-black tracking-[-5px] leading-[0.8] mb-10 uppercase text-white">Naval Blockade:<br/>The Siege of Hormuz</h2>
+                  <div className="flex flex-wrap items-center gap-10">
+                    <p className="text-lg lg:text-xl text-white/50 font-bold tracking-tight uppercase">Confirmed: 20% global oil flow halted</p>
+                    <div className="flex-1 h-px bg-white/10 hidden md:block"></div>
+                    <span className="text-[10px] font-black uppercase tracking-[0.3em] text-red-500 group-hover:text-white transition-colors">Launch Briefing +</span>
+                  </div>
+                </div>
+              </div>
+            </header>
+
+            <div className="mb-40 w-full">
+              <h2 className="text-xs font-black uppercase tracking-[0.5em] mb-12 text-zinc-500">Urgent Flashpoints</h2>
+              <div className="grid lg:grid-cols-12 gap-10">
+                <div onClick={() => setSelectedArticle(todayNews[1])} className="lg:col-span-8 bg-zinc-900 rounded-[48px] overflow-hidden shadow-2xl relative group min-h-[400px] cursor-pointer">
+                   <img src="https://picsum.photos/id/1016/1200/800" className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-[1s]" alt=""/>
+                   <div className="absolute inset-0 p-12 flex flex-col justify-end bg-gradient-to-t from-black via-transparent">
+                      <span className="text-white/40 text-[9px] font-black mb-4 uppercase tracking-[0.4em]">Tech Intelligence // 02</span>
+                      <h3 className="text-4xl lg:text-6xl font-black uppercase leading-[0.9] text-white group-hover:text-red-500 transition-colors">Quantum Intelligence Transition</h3>
+                   </div>
+                </div>
+                <div className="lg:col-span-4 flex flex-col gap-10">
+                  {todayNews.slice(2, 4).map(news => (
+                    <div key={news.id} onClick={() => setSelectedArticle(news)} className={`${theme === 'dark' ? 'bg-zinc-900/20 border-white/5' : 'bg-white border-zinc-200'} p-8 rounded-[40px] shadow-xl flex gap-8 items-center cursor-pointer group hover:scale-[1.02] transition-all border flex-1`}>
+                      <div className="flex-1">
+                        <span className="text-[9px] font-black text-red-600 uppercase mb-3 block tracking-[0.3em]">{news.category}</span>
+                        <h4 className={`text-xl font-black leading-tight uppercase transition-colors ${theme === 'dark' ? 'group-hover:text-white' : 'group-hover:text-red-600'}`}>{news.title}</h4>
+                      </div>
+                      <div className="w-24 h-24 lg:w-32 lg:h-32 rounded-3xl overflow-hidden shadow-2xl"><img src={news.image} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt=""/></div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-40 w-full">
+              {categories.map((category) => {
+                const categoryNews = todayNews.filter(n => n.category === category).slice(0, 4);
+                if (categoryNews.length === 0) return null;
+                return (
+                  <section key={category} className="w-full">
+                     <div className="flex items-center justify-between mb-12 px-4">
+                       <h2 className="text-xs font-black uppercase tracking-[0.5em] text-zinc-500">{category} Sector Analytics</h2>
+                       <button onClick={() => setActiveCategory(category)} className="text-[10px] font-black uppercase text-red-600 hover:text-red-500 transition-all underline underline-offset-[12px] decoration-zinc-800">Enter Detailed View</button>
+                     </div>
+                     <div onClick={() => setActiveCategory(category)} className={`${theme === 'dark' ? 'bg-zinc-950 border-white/5 shadow-black' : 'bg-white border-zinc-200'} rounded-[70px] p-10 lg:p-16 shadow-2xl cursor-pointer transition-all duration-700 hover:scale-[1.01] border group/object`}>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                        {categoryNews.map((news) => (
+                          <div key={news.id} className="flex flex-col group/item">
+                            <div className="block mb-8 overflow-hidden rounded-[36px] aspect-square bg-zinc-800 shadow-2xl relative">
+                              <img src={news.image} alt="" className="w-full h-full object-cover opacity-50 group-hover/item:opacity-100 group-hover/item:scale-110 transition-all duration-1000 grayscale group-hover/item:grayscale-0" />
+                            </div>
+                            <h3 className={`text-xl lg:text-2xl font-black leading-none mb-3 uppercase transition-colors ${theme === 'dark' ? 'text-zinc-600 group-hover/item:text-white' : 'text-zinc-400 group-hover/item:text-black'}`}>{news.title}</h3>
+                            <p className="text-red-600 text-[10px] font-black uppercase tracking-[0.2em]">Read Report +</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </section>
+                );
+              })}
+            </div>
+          </div>
+        ) : (
+          <section className="animate-in fade-in slide-in-from-bottom-12 duration-1000 w-full">
+            <div className="flex flex-wrap items-center justify-between gap-10 mb-24">
+              <div className="flex items-center gap-10">
+                <h2 className={`text-6xl lg:text-9xl font-black uppercase tracking-[-6px] ${theme === 'dark' ? 'text-white' : 'text-black'}`}>{activeCategory}</h2>
+                <div className="h-px w-48 bg-gradient-to-r from-red-600 to-transparent hidden md:block"></div>
+              </div>
+              <button onClick={() => setActiveCategory('All')} className={`px-10 py-4 rounded-full text-xs font-black uppercase tracking-[0.3em] transition-all border shadow-2xl ${theme === 'dark' ? 'bg-zinc-900 border-white/5 hover:bg-white hover:text-black' : 'bg-white border-zinc-200 hover:bg-black hover:text-white'}`}>← Back to Core</button>
+            </div>
+            <div className={`${theme === 'dark' ? 'bg-zinc-900/10 border-white/5' : 'bg-white border-zinc-200'} rounded-[80px] p-8 lg:p-20 shadow-2xl border w-full`}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-12 lg:gap-16">
+                {filteredNews.map((news) => {
+                  const userVote = votes[news.id];
+                  const count = counters[news.id] || { up: 0, down: 0 };
+                  return (
+                    <div key={news.id} onClick={() => setSelectedArticle(news)} className="flex flex-col group cursor-pointer">
+                      <div className="block mb-10 overflow-hidden rounded-[40px] aspect-[16/10] bg-zinc-800 shadow-2xl">
+                        <img src={news.image} alt="" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1s]" />
+                      </div>
+                      <span className="text-[10px] font-black text-red-600 uppercase tracking-[0.3em] mb-4">{news.category}</span>
+                      <h3 className={`text-2xl lg:text-3xl font-black leading-[0.9] mb-6 uppercase group-hover:text-red-500 transition-colors ${theme === 'dark' ? 'text-white' : 'text-black'}`}>{news.title}</h3>
+                      
+                      <div className="flex gap-4 mt-auto" onClick={(e) => e.stopPropagation()}>
+                        {/* LIKE BUTTON */}
+                        <button 
+                          onClick={() => handleVote(news.id, 'up')} 
+                          className={`flex-1 flex items-center justify-center gap-3 py-4 rounded-[20px] text-[10px] font-black tracking-widest transition-all border ${userVote === 'up' ? 'bg-emerald-600 border-emerald-600 text-white' : (theme === 'dark' ? 'bg-transparent border-white/10 text-zinc-500 hover:text-white' : 'bg-transparent border-zinc-200 text-zinc-400 hover:text-black')}`}
+                        >
+                          LIKE <span className={`text-xs px-2 py-0.5 rounded-md ${userVote === 'up' ? 'bg-white/20' : 'bg-zinc-800'}`}>{count.up}</span>
+                        </button>
+                        
+                        {/* DISLIKE BUTTON */}
+                        <button 
+                          onClick={() => handleVote(news.id, 'down')} 
+                          className={`flex-1 flex items-center justify-center gap-3 py-4 rounded-[20px] text-[10px] font-black tracking-widest transition-all border ${userVote === 'down' ? 'bg-red-600 border-red-600 text-white' : (theme === 'dark' ? 'bg-transparent border-white/10 text-zinc-500 hover:text-white' : 'bg-transparent border-zinc-200 text-zinc-400 hover:text-black')}`}
+                        >
+                          DISLIKE <span className={`text-xs px-2 py-0.5 rounded-md ${userVote === 'down' ? 'bg-white/20' : 'bg-zinc-800'}`}>{count.down}</span>
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
         )}
-
-        {/* TOP STORIES - Mixed Big & Smaller Cards */}
-        <div className="mb-20">
-          <h2 className="text-2xl font-black tracking-[-1px] uppercase mb-10 text-black dark:text-white">Top Stories</h2>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            {/* Extra Large Card */}
-            {filteredNews[0] && (
-              <div className="lg:col-span-8 liquid-card group">
-                <Link href={`/article/${filteredNews[0].id}`}>
-                  <div className="relative rounded-3xl overflow-hidden aspect-[16/9] border border-zinc-200 dark:border-zinc-800 shadow-2xl">
-                    <img src={filteredNews[0].image} alt="" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-                    <div className="absolute bottom-8 left-8 right-8 text-white">
-                      <span className="px-5 py-2 bg-white/90 text-black text-xs font-black rounded-3xl">{filteredNews[0].category}</span>
-                      <h3 className="text-4xl font-black mt-6 leading-none tracking-tighter">{filteredNews[0].title}</h3>
-                      <p className="text-sm mt-4 opacity-80 line-clamp-2">{filteredNews[0].excerpt}</p>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            )}
-
-            {/* Two Medium Cards */}
-            <div className="lg:col-span-4 flex flex-col gap-8">
-              {filteredNews.slice(1, 3).map((news) => (
-                <div key={news.id} className="liquid-card group flex gap-6">
-                  <Link href={`/article/${news.id}`} className="flex-1">
-                    <span className="text-xs font-black text-red-600">{news.category}</span>
-                    <h3 className="text-2xl font-semibold leading-tight mt-3 line-clamp-3 text-black dark:text-white group-hover:text-red-600 transition-colors">{news.title}</h3>
-                    <p className="text-xs text-zinc-400 dark:text-zinc-500 mt-6">{news.time}</p>
-                  </Link>
-                  <div className="w-44 h-44 flex-shrink-0 rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-800">
-                    <img src={news.image} alt="" className="w-full h-full object-cover" />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Latest News - Smaller Cards Grid */}
-        <div>
-          <h2 className="text-2xl font-black tracking-[-1px] uppercase mb-10 text-black dark:text-white">Latest News</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {filteredNews.slice(3, 15).map((news) => {
-              const userVote = votes[news.id];
-              return (
-                <div key={news.id} className="liquid-card group">
-                  <Link href={`/article/${news.id}`}>
-                    <div className="aspect-video rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-800 mb-5">
-                      <img src={news.image} alt="" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                    </div>
-                  </Link>
-                  <span className="text-xs font-black text-red-600 uppercase">{news.category}</span>
-                  <h3 className="text-xl font-semibold tracking-tight mt-3 leading-tight line-clamp-3 text-black dark:text-white group-hover:text-red-600 transition-colors">{news.title}</h3>
-                  
-                  {/* Single Select Like / Dislike */}
-                  <div className="flex gap-3 mt-6">
-                    <button 
-                      onClick={(e) => { e.preventDefault(); handleVote(news.id, 'up'); }}
-                      className={`flex-1 flex items-center justify-center gap-2 text-sm font-semibold px-6 py-4 rounded-3xl border transition-all ${
-                        userVote === 'up' 
-                          ? 'bg-emerald-600 text-white border-emerald-600' 
-                          : 'bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700 hover:border-emerald-300 hover:text-emerald-600'
-                      }`}
-                    >
-                      👍 {userVote === 'up' ? 'Liked' : ''}
-                    </button>
-                    
-                    <button 
-                      onClick={(e) => { e.preventDefault(); handleVote(news.id, 'down'); }}
-                      className={`flex-1 flex items-center justify-center gap-2 text-sm font-semibold px-6 py-4 rounded-3xl border transition-all ${
-                        userVote === 'down' 
-                          ? 'bg-red-600 text-white border-red-600' 
-                          : 'bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700 hover:border-red-300 hover:text-red-600'
-                      }`}
-                    >
-                      👎 {userVote === 'down' ? 'Disliked' : ''}
-                    </button>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
       </main>
 
-      {/* FOOTER */}
-      <footer className="mt-32 bg-zinc-50 dark:bg-zinc-900/70 border-t border-zinc-200 dark:border-zinc-800 py-20 px-8">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
-          <div>
-            <h4 className="text-4xl font-black tracking-[-1px] text-black dark:text-white mb-6">THE DAILY SIGNAL.</h4>
-            <p className="text-lg max-w-md text-zinc-600 dark:text-zinc-400 leading-relaxed">Founded by Mehedi Redoy. Unfiltered intelligence at the intersection of conflict, finance, technology, and human progress.</p>
+      <footer className={`${theme === 'dark' ? 'bg-black border-white/5' : 'bg-zinc-100 border-zinc-200'} py-40 px-[5%] border-t mt-60 w-full`}>
+        <div className="w-full flex flex-col lg:flex-row justify-between items-start gap-20">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-4 mb-10"><Logo /><h4 className={`text-3xl lg:text-4xl font-black tracking-[-3px] uppercase ${theme === 'dark' ? 'text-white' : 'text-black'}`}>SIGNAL NEWS HUB.</h4></div>
+            <p className="text-zinc-500 text-lg leading-relaxed font-medium">The global standard for unfiltered intelligence, providing deep-sector analysis at the frontier of human civilization.</p>
           </div>
-          <div className="flex flex-col items-end justify-between text-xs font-black uppercase tracking-widest text-zinc-400">
-            <div>
-              <p className="mb-1 text-red-600">Lead Editor: Mehedi Redoy</p>
-              <p>© 2026 THE SIGNAL NETWORK • ALL RIGHTS RESERVED</p>
+          <div className="text-right">
+            <div className="mb-20 space-y-4">
+              <p className="text-red-600 font-black text-xs uppercase tracking-[0.4em]">EXECUTIVE EDITOR: MEHEDI REDOY</p>
+              <p className="text-zinc-800 font-bold text-[10px] uppercase tracking-tighter mt-10">© 2026 SIGNAL NEWS HUB • ALL RIGHTS RESERVED</p>
             </div>
           </div>
         </div>
