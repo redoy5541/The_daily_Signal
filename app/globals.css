@@ -1,4 +1,7 @@
-@import "tailwindcss";
+@import "tailwindcss" {
+  /* This is the mandatory v4 syntax for plugins */
+  plugin: "@tailwindcss/typography";
+}
 
 @theme {
   --font-serif: var(--font-playfair);

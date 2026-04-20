@@ -1,15 +1,12 @@
+// app/article/[id]/page.tsx
 'use client';
 import React from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
-// FIXED: Go up two levels (../../) to reach 'app', then into 'data'
-// FIXED: Variable name changed from todayNews to allNews to match news.tsx export
 import { allNews } from '../../data/news';
 
 export default function ArticlePage() {
   const params = useParams();
-  
-  // Search through allNews using the ID from the URL
   const article = allNews.find((a) => a.id === params.id);
 
   if (!article) {
@@ -25,9 +22,10 @@ export default function ArticlePage() {
 
   const relatedArticles = allNews.filter((a) => a.id !== article.id).slice(0, 3);
 
+  const formattedContent = article.content.replace(/\n/g, '<br /><br />');
+
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white font-sans transition-colors duration-500 pb-32">
-      {/* HEADER NAV */}
       <nav className="p-8 sticky top-0 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-2xl z-50 border-b border-zinc-100 dark:border-zinc-900">
         <div className="max-w-5xl mx-auto flex justify-between items-center">
           <Link href="/" className="font-black text-[10px] uppercase tracking-[0.4em] hover:text-red-600 transition-colors flex items-center gap-3">
@@ -41,32 +39,28 @@ export default function ArticlePage() {
       </nav>
 
       <main className="max-w-4xl mx-auto px-6 mt-12">
-        {/* HERO IMAGE */}
         <div className="relative rounded-3xl overflow-hidden mb-12 shadow-2xl border border-zinc-100 dark:border-zinc-800">
-          <img src={article.image} alt={article.title} className="w-full h-[520px] object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
+          <img src={article.image} alt={article.title} className="w-full h-[520px] object-cover" />
           <div className="absolute top-8 left-8 bg-white/90 dark:bg-black/80 text-[10px] font-black px-5 py-2 rounded-3xl backdrop-blur-md">
-            <span className="text-red-600 tracking-widest uppercase italic">Verified Hub Report</span>
+            VERIFIED HUB REPORT • {article.date}
           </div>
         </div>
 
-        {/* CONTENT HEADER */}
         <header className="mb-16">
           <h1 className="text-5xl md:text-7xl font-black leading-[1.05] tracking-[-2px] mb-8 uppercase italic">{article.title}</h1>
           <div className="flex items-center gap-8 text-[11px] font-black tracking-[0.2em] text-zinc-500 border-y border-zinc-100 dark:border-zinc-800 py-8 uppercase">
-            <span className="text-black dark:text-white">Author: {article.author}</span>
+            <span className="text-black dark:text-white">By {article.author}</span>
             <span className="text-red-600">•</span>
-            <span>Ref: {article.date}</span>
+            <span>{article.date}</span>
             <span className="text-red-600">•</span>
-            <span>Status: {article.time}</span>
+            <span>{article.time}</span>
           </div>
         </header>
 
-        {/* ARTICLE BODY */}
-        <article className="prose prose-lg dark:prose-invert max-w-none text-zinc-800 dark:text-zinc-200 font-serif text-[22px] leading-relaxed italic">
-          {article.content}
+        <article className="prose prose-lg dark:prose-invert max-w-none text-zinc-800 dark:text-zinc-200 font-serif text-[21px] leading-relaxed">
+          <div dangerouslySetInnerHTML={{ __html: formattedContent }} />
         </article>
 
-        {/* RELATED FEED */}
         <div className="mt-28 border-t border-zinc-100 dark:border-zinc-800 pt-16">
           <h3 className="uppercase font-black text-xs tracking-[4px] text-red-600 mb-12">More Intelligence</h3>
           <div className="grid md:grid-cols-3 gap-12">
@@ -82,7 +76,6 @@ export default function ArticlePage() {
           </div>
         </div>
 
-        {/* FOOTER ACTION */}
         <footer className="mt-32">
           <div className="bg-zinc-50 dark:bg-zinc-900/50 p-14 rounded-[42px] border border-zinc-100 dark:border-zinc-800 relative">
             <h4 className="text-[10px] font-black uppercase tracking-[3px] text-red-600 mb-6">Terminal Disclaimer</h4>
