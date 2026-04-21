@@ -1,7 +1,8 @@
 // app/page.tsx
 'use client';
-import React, { useState, useEffect, useLayoutEffect, useMemo } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useMemo, useRef } from 'react';
 import { allNews, stockMarket } from './data/news';
+import Link from 'next/link';
 
 const categories = ['World', 'Politics', 'Business', 'Tech', 'History', 'Sports', 'Entertainment'];
 
@@ -13,7 +14,8 @@ export default function Home() {
   const [isMounted, setIsMounted] = useState(false);
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
   const [viewMode, setViewMode] = useState<'today' | 'archive'>('today');
-  const [selectedArchiveDate, setSelectedArchiveDate] = useState<string | null>(null);
+  const [showAllCategories, setShowAllCategories] = useState(false);
+  const heroRef = useRef<HTMLDivElement>(null);
 
   const todayDateStr = useMemo(() => {
     return new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
@@ -34,7 +36,6 @@ export default function Home() {
     return todaysNews.filter(n => n.featured).slice(0, 3);
   }, [todaysNews]);
 
-  // FIXED DARK/LIGHT MODE
   useLayoutEffect(() => {
     const savedTheme = localStorage.getItem('signal_theme') as 'dark' | 'light' | null;
     const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
@@ -95,71 +96,145 @@ export default function Home() {
 
   const Logo = () => (
     <div className="relative group cursor-pointer">
-      <div className="absolute -inset-1 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-      <div className="relative w-12 h-12 bg-black rounded-2xl flex items-center justify-center border border-white/10 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-red-500 via-purple-600 to-blue-500 opacity-90"></div>
-        <span className="relative font-black text-3xl italic text-white tracking-[-3px] drop-shadow-md">S</span>
+      <div className="absolute -inset-2 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400 rounded-2xl blur-xl opacity-0 group-hover:opacity-40 transition duration-700"></div>
+      <div className="relative w-10 h-10 bg-gradient-to-br from-zinc-900 to-black rounded-xl flex items-center justify-center border border-white/10 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-red-500/50 via-purple-600/50 to-blue-500/50 opacity-80"></div>
+        <span className="relative font-black text-2xl italic text-white tracking-[-3px] drop-shadow-md">S</span>
       </div>
     </div>
   );
 
+  const getCategoryImage = (category: string) => {
+    const images: Record<string, string> = {
+      'World': 'https://images.pexels.com/photos/210182/pexels-photo-210182.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'Politics': 'https://images.pexels.com/photos/4348404/pexels-photo-4348404.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'Business': 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'Tech': 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'History': 'https://images.pexels.com/photos/5665104/pexels-photo-5665104.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'Sports': 'https://images.pexels.com/photos/2403049/pexels-photo-2403049.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'Entertainment': 'https://images.pexels.com/photos/1191860/pexels-photo-1191860.jpeg?auto=compress&cs=tinysrgb&w=600',
+    };
+    return images[category] || images['World'];
+  };
+
   return (
-    <div className={`min-h-screen transition-colors duration-500 font-sans selection:bg-red-600 overflow-x-hidden ${theme === 'dark' ? 'bg-black text-white' : 'bg-zinc-50 text-zinc-900'}`}>
+    <div className={`min-h-screen w-full transition-colors duration-500 font-sans selection:bg-red-600/30 overflow-x-hidden ${theme === 'dark' ? 'bg-black text-white' : 'bg-zinc-50 text-zinc-900'}`}>
       <style jsx global>{`
         @keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
-        .animate-marquee { display: flex; width: max-content; animation: marquee 30s linear infinite; }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .glass-panel { background: ${theme === 'dark' ? 'rgba(255,255,255,0.03)' : 'rgba(0,0,0,0.03)'}; backdrop-filter: blur(40px); border: 1px solid ${theme === 'dark' ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'}; }
-        
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+        @keyframes glow { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.6; } }
+        @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+        @keyframes slowZoom { 0% { transform: scale(1); } 100% { transform: scale(1.08); } }
         @keyframes kenburns {
           0% { transform: scale(1) translate(0, 0); }
           50% { transform: scale(1.15) translate(-1%, -1%); }
           100% { transform: scale(1) translate(0, 0); }
         }
+        
+        .animate-marquee { display: flex; width: max-content; animation: marquee 30s linear infinite; }
+        .animate-float { animation: float 5s ease-in-out infinite; }
+        .animate-glow { animation: glow 3s ease-in-out infinite; }
+        .animate-slow-zoom { animation: slowZoom 25s ease-in-out infinite alternate; }
         .animate-kenburns { animation: kenburns 25s ease-in-out infinite; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        
+        .glass-card {
+          background: ${theme === 'dark' ? 'rgba(255, 255, 255, 0.03)' : 'rgba(255, 255, 255, 0.7)'};
+          backdrop-filter: blur(20px);
+          border: 1px solid ${theme === 'dark' ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)'};
+          transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        
+        .glass-card:hover {
+          background: ${theme === 'dark' ? 'rgba(255, 255, 255, 0.08)' : 'rgba(255, 255, 255, 0.9)'};
+          transform: translateY(-4px);
+          border-color: ${theme === 'dark' ? 'rgba(255, 255, 255, 0.15)' : 'rgba(0, 0, 0, 0.1)'};
+        }
+        
+        .category-card {
+          transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        
+        .category-card:hover {
+          transform: translateY(-8px);
+        }
+        
+        .category-card:hover .category-image {
+          transform: scale(1.1);
+        }
+        
+        .category-image {
+          transition: transform 0.6s ease-out;
+        }
+        
+        .liquid-glass-hero {
+          background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+          backdrop-filter: blur(20px);
+          border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .shimmer-text {
+          background: linear-gradient(90deg, #ff0000, #ff6600, #ffcc00, #ff6600, #ff0000);
+          background-size: 200% auto;
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          animation: shimmer 3s linear infinite;
+        }
       `}</style>
 
-      {/* TICKER */}
-      <div className={`${theme === 'dark' ? 'bg-black border-white/10' : 'bg-white border-zinc-200'} py-3 overflow-hidden border-b flex sticky top-0 z-[60] w-full`}>
+      {/* Animated Background - Full Screen */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-red-900/20 via-purple-900/10 to-blue-900/20"></div>
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-red-600/15 rounded-full blur-[150px] animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-purple-600/15 rounded-full blur-[150px] animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[120px] animate-pulse delay-700"></div>
+      </div>
+
+      {/* TICKER - Full Width */}
+      <div className={`${theme === 'dark' ? 'bg-black/80 border-white/10' : 'bg-white/80 border-zinc-200'} py-2 overflow-hidden border-b backdrop-blur-xl sticky top-0 z-[60] w-full`}>
         <div className="animate-marquee whitespace-nowrap flex">
           {stockMarket.concat(stockMarket).map((stock, i) => (
-            <div key={i} className="flex items-center gap-4 mx-12 text-xs font-black uppercase tracking-[0.15em]">
-              <span className="opacity-60">{stock.symbol}</span>
-              <span className="font-mono text-base">{stock.price}</span>
-              <span className={stock.trend === 'up' ? 'text-emerald-500' : 'text-red-500'}>{stock.change}</span>
+            <div key={i} className="flex items-center gap-3 mx-8 text-[10px] font-black uppercase tracking-[0.15em] group cursor-default">
+              <span className="opacity-60 group-hover:opacity-100 transition-opacity">{stock.symbol}</span>
+              <span className="font-mono text-sm group-hover:scale-105 transition-transform">{stock.price}</span>
+              <span className={`${stock.trend === 'up' ? 'text-emerald-500' : 'text-red-500'} group-hover:scale-110 transition-transform`}>{stock.change}</span>
             </div>
           ))}
         </div>
       </div>
 
-      {/* NAV */}
-      <nav className={`${theme === 'dark' ? 'bg-black/80' : 'bg-white/80'} backdrop-blur-xl sticky top-[39px] z-50 w-full`}>
-        <div className="w-full px-[5%] py-8 flex items-center justify-between">
-          <button onClick={() => { setViewMode('today'); setActiveCategory('All'); setSelectedArticle(null); }} className="flex items-center gap-5 group text-left">
+      {/* NAV - Full Width */}
+      <nav className={`backdrop-blur-xl sticky top-[37px] z-50 w-full transition-all duration-300 ${theme === 'dark' ? 'bg-black/50 border-white/5' : 'bg-white/50 border-zinc-200/50'} border-b`}>
+        <div className="w-full px-[5%] py-4 flex items-center justify-between">
+          <button onClick={() => { setViewMode('today'); setActiveCategory('All'); setSelectedArticle(null); }} className="flex items-center gap-3 group transition-all duration-300 hover:scale-105">
             <Logo />
-            <h1 className={`text-2xl lg:text-3xl font-black tracking-[-2px] uppercase transition-all duration-300 ${theme === 'dark' ? 'group-hover:text-zinc-400' : 'group-hover:text-red-600'}`}>
+            <h1 className={`text-xl lg:text-2xl font-black tracking-[-2px] uppercase transition-all duration-300 ${theme === 'dark' ? 'text-white' : 'text-black'} group-hover:tracking-[-1px]`}>
               SIGNAL NEWS HUB
             </h1>
           </button>
           
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-6">
             <button 
               onClick={toggleTheme} 
-              className={`relative w-14 h-7 rounded-full cursor-pointer p-1 transition-all border-2 flex items-center ${theme === 'dark' ? 'bg-white border-white shadow-lg' : 'bg-black border-black shadow-lg'}`}
+              className={`relative w-12 h-6 rounded-full cursor-pointer p-0.5 transition-all duration-500 flex items-center shadow-lg ${theme === 'dark' ? 'bg-gradient-to-r from-yellow-400 to-orange-500' : 'bg-gradient-to-r from-gray-700 to-gray-900'}`}
             >
-              <div className={`w-5 h-5 rounded-full transition-all duration-500 shadow-lg ${theme === 'dark' ? 'translate-x-7 bg-black' : 'translate-x-0 bg-white'}`}></div>
+              <div className={`w-5 h-5 rounded-full transition-all duration-500 shadow-md flex items-center justify-center ${theme === 'dark' ? 'translate-x-6 bg-white' : 'translate-x-0 bg-white'}`}>
+                {theme === 'dark' ? '🌙' : '☀️'}
+              </div>
             </button>
             <div className="text-right hidden sm:block">
-              <p className="text-xs font-black uppercase text-red-600 tracking-widest">Mehedi Redoy</p>
-              <p className="text-[10px] font-semibold text-zinc-500 uppercase tracking-tighter">Founder & Lead Editor • Verified</p>
+              <p className="text-[10px] font-black uppercase text-red-500 tracking-widest shimmer-text">Mehedi Redoy</p>
+              <p className="text-[8px] font-semibold text-zinc-500 uppercase tracking-tighter">Founder & Lead Editor</p>
             </div>
           </div>
         </div>
 
-        <div className="w-full px-[5%] pb-6 flex gap-3 overflow-x-auto no-scrollbar">
+        {/* FIXED: Category Buttons with proper min-width to prevent text truncation */}
+        <div className="w-full px-[5%] pb-4 flex gap-2 overflow-x-auto no-scrollbar">
           <button 
             onClick={() => { setViewMode('today'); setActiveCategory('All'); setSelectedArticle(null); }}
-            className={`px-8 py-2.5 text-[10px] font-black uppercase tracking-widest rounded-full transition-all ${activeCategory === 'All' && viewMode === 'today' && !selectedArticle ? (theme === 'dark' ? 'bg-white text-black' : 'bg-black text-white') : (theme === 'dark' ? 'bg-zinc-900 text-zinc-500 hover:text-white' : 'bg-zinc-200 text-zinc-500 hover:text-black')}`}
+            className={`px-5 py-2 text-[9px] font-black uppercase tracking-widest rounded-full transition-all duration-300 whitespace-nowrap min-w-[90px] ${activeCategory === 'All' && viewMode === 'today' && !selectedArticle ? 'bg-red-600 text-white shadow-lg shadow-red-600/30 scale-105' : (theme === 'dark' ? 'glass-card text-zinc-400 hover:text-white hover:scale-105' : 'glass-card text-zinc-600 hover:text-black hover:scale-105')}`}
           >
             Intelligence
           </button>
@@ -167,228 +242,318 @@ export default function Home() {
             <button 
               key={cat} 
               onClick={() => { setViewMode('today'); setActiveCategory(cat); setSelectedArticle(null); }}
-              className={`px-8 py-2.5 text-[10px] font-black uppercase tracking-widest rounded-full transition-all whitespace-nowrap ${activeCategory === cat && viewMode === 'today' && !selectedArticle ? 'bg-red-600 text-white shadow-lg shadow-red-600/20' : (theme === 'dark' ? 'bg-zinc-900 text-zinc-500 hover:text-white' : 'bg-zinc-200 text-zinc-500 hover:text-black')}`}
+              className={`px-5 py-2 text-[9px] font-black uppercase tracking-widest rounded-full transition-all duration-300 whitespace-nowrap min-w-[90px] ${activeCategory === cat && viewMode === 'today' && !selectedArticle ? 'bg-red-600 text-white shadow-lg shadow-red-600/30 scale-105' : (theme === 'dark' ? 'glass-card text-zinc-400 hover:text-white hover:scale-105' : 'glass-card text-zinc-600 hover:text-black hover:scale-105')}`}
             >
               {cat}
             </button>
           ))}
-          <button 
-            onClick={() => { 
-              setViewMode('archive'); 
-              if (archiveDates.length > 0) setSelectedArchiveDate(archiveDates[0]);
-              setSelectedArticle(null); 
-            }}
-            className={`px-8 py-2.5 text-[10px] font-black uppercase tracking-widest rounded-full transition-all whitespace-nowrap ${viewMode === 'archive' ? 'bg-red-600 text-white shadow-lg shadow-red-600/20' : (theme === 'dark' ? 'bg-zinc-900 text-zinc-500 hover:text-white' : 'bg-zinc-200 text-zinc-500 hover:text-black')}`}
+          <Link 
+            href="/archive"
+            className={`px-5 py-2 text-[9px] font-black uppercase tracking-widest rounded-full transition-all duration-300 whitespace-nowrap min-w-[90px] ${viewMode === 'archive' ? 'bg-red-600 text-white shadow-lg shadow-red-600/30 scale-105' : (theme === 'dark' ? 'glass-card text-zinc-400 hover:text-white hover:scale-105' : 'glass-card text-zinc-600 hover:text-black hover:scale-105')}`}
           >
             Archive
-          </button>
+          </Link>
         </div>
       </nav>
 
-      <main className="w-full px-[5%] py-12">
+      <main className="w-full min-h-screen">
         {selectedArticle ? (
-          <article className="w-full max-w-[1400px] mx-auto animate-in fade-in slide-in-from-bottom-8 duration-1000">
-            <button onClick={() => setSelectedArticle(null)} className="mb-12 group flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-zinc-500 hover:text-red-600 transition-all">
-              <span className="group-hover:-translate-x-2 transition-transform">←</span> Return to Briefings
+          <article className="w-full max-w-[1400px] mx-auto px-[5%] py-12 animate-in fade-in slide-in-from-bottom-8 duration-1000">
+            <button onClick={() => setSelectedArticle(null)} className="mb-8 group flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-zinc-500 hover:text-red-600 transition-all duration-300">
+              <span className="group-hover:-translate-x-2 transition-transform duration-300">←</span> Return to Briefings
             </button>
-            <div className="relative rounded-[56px] overflow-hidden shadow-2xl mb-16 aspect-video max-h-[70vh]">
-              <img src={selectedArticle.image} className="w-full h-full object-cover" alt="" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl mb-12 aspect-video max-h-[70vh] group">
+              <img src={selectedArticle.image} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
             </div>
             <div className="max-w-4xl mx-auto">
-              <span className="text-red-600 font-black uppercase text-xs tracking-[0.4em] block mb-6">{selectedArticle.category} // INTEL</span>
-              <h1 className={`text-5xl lg:text-8xl font-black uppercase tracking-tighter mb-12 leading-[0.85] ${theme === 'dark' ? 'text-white' : 'text-black'}`}>{selectedArticle.title}</h1>
-              <div className={`h-px w-full mb-12 ${theme === 'dark' ? 'bg-zinc-800' : 'bg-zinc-200'}`}></div>
-              <p className={`${theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'} text-2xl leading-relaxed font-medium mb-8 italic`}>"{selectedArticle.excerpt}"</p>
-              <p className={`${theme === 'dark' ? 'text-zinc-500' : 'text-zinc-700'} text-lg leading-relaxed mb-12`}>{selectedArticle.content}</p>
+              <span className="text-red-500 font-black uppercase text-[10px] tracking-[0.4em] block mb-4">{selectedArticle.category} // INTEL</span>
+              <h1 className={`text-5xl lg:text-8xl font-black uppercase tracking-tighter mb-8 leading-[0.85] ${theme === 'dark' ? 'text-white' : 'text-black'}`}>{selectedArticle.title}</h1>
+              <div className={`h-px w-full mb-8 ${theme === 'dark' ? 'bg-zinc-800' : 'bg-zinc-200'}`}></div>
+              <p className={`${theme === 'dark' ? 'text-zinc-400' : 'text-zinc-600'} text-xl leading-relaxed font-medium mb-6 italic border-l-4 border-red-500 pl-6`}>"{selectedArticle.excerpt}"</p>
+              <p className={`${theme === 'dark' ? 'text-zinc-500' : 'text-zinc-700'} text-base leading-relaxed mb-8`}>{selectedArticle.content}</p>
             </div>
           </article>
         ) : viewMode === 'archive' ? (
-          <section className="animate-in fade-in slide-in-from-bottom-12 duration-1000 w-full">
-            <div className="flex flex-wrap items-center justify-between gap-10 mb-24">
-              <div className="flex items-center gap-10">
-                <h2 className={`text-6xl lg:text-9xl font-black uppercase tracking-[-6px] ${theme === 'dark' ? 'text-white' : 'text-black'}`}>ARCHIVE</h2>
-              </div>
-              <button onClick={() => { setViewMode('today'); setActiveCategory('All'); }} className={`px-10 py-4 rounded-full text-xs font-black uppercase tracking-[0.3em] transition-all border shadow-2xl ${theme === 'dark' ? 'bg-zinc-900 border-white/5 hover:bg-white hover:text-black' : 'bg-white border-zinc-200 hover:bg-black hover:text-white'}`}>← Back to Today</button>
+          <div className="min-h-[80vh] flex items-center justify-center px-[5%]">
+            <div className="glass-card rounded-3xl p-16 max-w-2xl mx-auto text-center">
+              <h2 className="text-4xl font-black uppercase mb-6 shimmer-text">Archive</h2>
+              <p className="text-zinc-500 mb-8">Browse all past intelligence by date</p>
+              <Link href="/archive" className="inline-block px-8 py-3 bg-red-600 text-white rounded-full text-[10px] font-black uppercase tracking-widest hover:scale-105 transition-all duration-300 shadow-lg shadow-red-600/30">
+                Go to Archive Page →
+              </Link>
             </div>
-
-            <div className="flex gap-3 overflow-x-auto no-scrollbar mb-16 pb-4">
-              {archiveDates.map(date => (
-                <button
-                  key={date}
-                  onClick={() => setSelectedArchiveDate(date)}
-                  className={`px-8 py-3 text-sm font-black uppercase tracking-widest rounded-3xl whitespace-nowrap transition-all border ${selectedArchiveDate === date ? 'bg-red-600 text-white border-red-600' : (theme === 'dark' ? 'bg-zinc-900 border-white/10 text-zinc-400 hover:text-white' : 'bg-white border-zinc-200 text-zinc-500 hover:text-black')}`}
-                >
-                  {date}
-                </button>
-              ))}
-            </div>
-
-            <div className={`${theme === 'dark' ? 'bg-zinc-900/10 border-white/5' : 'bg-white border-zinc-200'} rounded-[80px] p-8 lg:p-20 shadow-2xl border w-full`}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-12 lg:gap-16">
-                {allNews.filter(n => n.date === selectedArchiveDate).map((news) => {
-                  const userVote = votes[news.id];
-                  const count = counters[news.id] || { up: 0, down: 0 };
-                  return (
-                    <div key={news.id} onClick={() => setSelectedArticle(news)} className="flex flex-col group cursor-pointer">
-                      <div className="block mb-10 overflow-hidden rounded-[40px] aspect-[16/10] bg-zinc-800 shadow-2xl">
-                        <img src={news.image} alt="" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1s]" />
-                      </div>
-                      <span className="text-[10px] font-black text-red-600 uppercase tracking-[0.3em] mb-4">{news.category}</span>
-                      <h3 className={`text-2xl lg:text-3xl font-black leading-[0.9] mb-6 uppercase group-hover:text-red-500 transition-colors ${theme === 'dark' ? 'text-white' : 'text-black'}`}>{news.title}</h3>
-                      <div className="flex gap-4 mt-auto" onClick={(e) => e.stopPropagation()}>
-                        <button onClick={() => handleVote(news.id, 'up')} className={`flex-1 flex items-center justify-center gap-3 py-4 rounded-[20px] text-[10px] font-black tracking-widest transition-all border ${userVote === 'up' ? 'bg-emerald-600 border-emerald-600 text-white' : (theme === 'dark' ? 'bg-transparent border-white/10 text-zinc-500 hover:text-white' : 'bg-transparent border-zinc-200 text-zinc-400 hover:text-black')}`}>LIKE <span className={`text-xs px-2 py-0.5 rounded-md ${userVote === 'up' ? 'bg-white/20' : 'bg-zinc-800'}`}>{count.up}</span></button>
-                        <button onClick={() => handleVote(news.id, 'down')} className={`flex-1 flex items-center justify-center gap-3 py-4 rounded-[20px] text-[10px] font-black tracking-widest transition-all border ${userVote === 'down' ? 'bg-red-600 border-red-600 text-white' : (theme === 'dark' ? 'bg-transparent border-white/10 text-zinc-500 hover:text-white' : 'bg-transparent border-zinc-200 text-zinc-400 hover:text-black')}`}>DISLIKE <span className={`text-xs px-2 py-0.5 rounded-md ${userVote === 'down' ? 'bg-white/20' : 'bg-zinc-800'}`}>{count.down}</span></button>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </section>
+          </div>
         ) : activeCategory === 'All' ? (
-          <div className="animate-in fade-in duration-1000">
-            <header 
+          <div className="w-full">
+            {/* Hero Section - Full Screen */}
+            <div 
+              ref={heroRef}
+              className="relative group w-full min-h-screen lg:min-h-[90vh] flex items-center justify-center overflow-hidden cursor-pointer"
               onClick={() => setSelectedArticle(todaysNews[0])}
-              className="relative group mb-40 overflow-hidden rounded-[60px] bg-zinc-900 shadow-2xl cursor-pointer w-full min-h-[600px] lg:h-[85vh]"
+              onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                e.currentTarget.style.setProperty('--x', `${x}%`);
+                e.currentTarget.style.setProperty('--y', `${y}%`);
+              }}
+              style={{ '--x': '50%', '--y': '50%' } as React.CSSProperties}
             >
-              <img src="https://picsum.photos/id/1015/1920/1080" alt="" className="absolute inset-0 w-full h-full object-cover animate-kenburns" />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/90"></div>
-              <div className="relative h-full flex items-end p-8 lg:p-20">
-                <div className="glass-panel p-8 lg:p-16 rounded-[48px] max-w-5xl shadow-2xl transition-all group-hover:translate-y-[-10px]">
-                  <span className="inline-block bg-red-600 text-white text-[10px] font-black px-5 py-2 rounded-full mb-8 uppercase tracking-[0.3em]">Breaking Intelligence • {todayDateStr}</span>
-                  <h2 className="text-4xl lg:text-8xl font-black tracking-[-5px] leading-[0.8] mb-10 uppercase text-white">Today's Signal</h2>
-                  <div className="flex flex-wrap items-center gap-10">
-                    <p className="text-lg lg:text-xl text-white/50 font-bold tracking-tight uppercase">Live • Verified • Updated automatically</p>
-                    <span className="text-[10px] font-black uppercase tracking-[0.3em] text-red-500 group-hover:text-white transition-colors">Launch Briefing +</span>
-                  </div>
+              <div className="absolute inset-0">
+                <img src="https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="" className="w-full h-full object-cover animate-kenburns" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
+              </div>
+              
+              <div className="relative z-10 w-full px-[5%] py-20 flex items-center justify-center">
+                <div className="liquid-glass-hero rounded-3xl p-10 lg:p-20 max-w-5xl text-center transition-all duration-500 group-hover:scale-105">
+                  <span className="inline-block bg-red-600/80 backdrop-blur-sm text-white text-xs lg:text-sm font-black px-6 py-2 rounded-full mb-8 uppercase tracking-[0.3em] animate-pulse">LIVE • BREAKING INTELLIGENCE</span>
+                  <h2 className="text-6xl lg:text-9xl xl:text-[8rem] font-black tracking-[-4px] leading-[0.85] mb-8 uppercase text-white drop-shadow-2xl">
+                    TODAY'S <span className="shimmer-text">SIGNAL</span>
+                  </h2>
+                  <p className="text-white/70 text-base lg:text-lg font-medium max-w-2xl mx-auto mb-10">
+                    Verified reports from the frontlines of global change. Intelligence you can trust.
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-[10px] lg:text-xs font-black uppercase tracking-[0.3em] text-red-400 group-hover:text-white group-hover:gap-4 transition-all duration-300">
+                    Launch Briefing <span className="text-lg">→</span>
+                  </span>
                 </div>
               </div>
-            </header>
+            </div>
 
+            {/* Today's Best - Full Width */}
             {todaysBest.length > 0 && (
-              <div className="mb-40 w-full">
-                <h2 className="text-xs font-black uppercase tracking-[0.5em] mb-12 text-zinc-500">Today's Best Intelligence</h2>
-                <div className="grid lg:grid-cols-3 gap-10">
-                  {todaysBest.map(news => (
-                    <div key={news.id} onClick={() => setSelectedArticle(news)} className={`${theme === 'dark' ? 'bg-zinc-900/20 border-white/5' : 'bg-white border-zinc-200'} p-8 rounded-[40px] shadow-xl flex flex-col cursor-pointer group hover:scale-[1.02] transition-all border`}>
-                      <span className="text-[9px] font-black text-red-600 uppercase mb-3 block tracking-[0.3em]">{news.category}</span>
-                      <h4 className={`text-2xl font-black leading-tight uppercase transition-colors ${theme === 'dark' ? 'group-hover:text-white' : 'group-hover:text-red-600'}`}>{news.title}</h4>
-                      <div className="mt-8 w-full h-48 rounded-3xl overflow-hidden shadow-2xl"><img src={news.image} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt="" /></div>
-                    </div>
-                  ))}
+              <div className="w-full px-[5%] py-20">
+                <div className="max-w-7xl mx-auto">
+                  <h2 className="text-[11px] font-black uppercase tracking-[0.5em] mb-8 text-zinc-500 text-center">Today's Best Intelligence</h2>
+                  <div className="grid lg:grid-cols-3 gap-8">
+                    {todaysBest.map((news, idx) => (
+                      <div key={news.id} onClick={() => setSelectedArticle(news)} className="glass-card rounded-2xl p-6 cursor-pointer group animate-float" style={{ animationDelay: `${idx * 0.2}s` }}>
+                        <span className="text-[8px] font-black text-red-500 uppercase mb-3 block tracking-[0.3em]">{news.category}</span>
+                        <h4 className={`text-xl font-black leading-tight uppercase transition-colors duration-300 mb-4 ${theme === 'dark' ? 'text-white group-hover:text-red-500' : 'text-black group-hover:text-red-600'}`}>{news.title}</h4>
+                        <div className="w-full h-52 rounded-xl overflow-hidden">
+                          <img src={news.image} className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" alt="" />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             )}
 
-            <div className="mb-40 w-full">
-              <h2 className="text-xs font-black uppercase tracking-[0.5em] mb-12 text-zinc-500">Urgent Flashpoints</h2>
-              <div className="grid lg:grid-cols-12 gap-10">
-                <div onClick={() => setSelectedArticle(todaysNews[1] || allNews[1])} className="lg:col-span-8 bg-zinc-900 rounded-[48px] overflow-hidden shadow-2xl relative group min-h-[400px] cursor-pointer">
-                   <img src="https://picsum.photos/id/1016/1200/800" className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-[1s]" alt=""/>
-                   <div className="absolute inset-0 p-12 flex flex-col justify-end bg-gradient-to-t from-black via-transparent">
-                      <span className="text-white/40 text-[9px] font-black mb-4 uppercase tracking-[0.4em]">Tech Intelligence // 02</span>
-                      <h3 className="text-4xl lg:text-6xl font-black uppercase leading-[0.9] text-white group-hover:text-red-500 transition-colors">Quantum Intelligence Transition</h3>
-                   </div>
+            {/* Explore by Sector - Full Width */}
+            <div className="w-full px-[5%] py-20 bg-black/20">
+              <div className="max-w-7xl mx-auto">
+                <div className="text-center mb-12">
+                  <span className="text-red-600 text-sm font-bold uppercase tracking-wider">Categories</span>
+                  <h2 className="text-4xl md:text-5xl font-black mt-3">Explore by Sector</h2>
+                  <p className="text-zinc-500 mt-3">Deep dive into specific areas of global intelligence</p>
                 </div>
-                <div className="lg:col-span-4 flex flex-col gap-10">
-                  {todaysNews.slice(2, 4).map(news => (
-                    <div key={news.id} onClick={() => setSelectedArticle(news)} className={`${theme === 'dark' ? 'bg-zinc-900/20 border-white/5' : 'bg-white border-zinc-200'} p-8 rounded-[40px] shadow-xl flex gap-8 items-center cursor-pointer group hover:scale-[1.02] transition-all border flex-1`}>
-                      <div className="flex-1">
-                        <span className="text-[9px] font-black text-red-600 uppercase mb-3 block tracking-[0.3em]">{news.category}</span>
-                        <h4 className={`text-xl font-black leading-tight uppercase transition-colors ${theme === 'dark' ? 'group-hover:text-white' : 'group-hover:text-red-600'}`}>{news.title}</h4>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {(showAllCategories ? categories : categories.slice(0, 4)).map((category) => {
+                    const categoryNews = todaysNews.filter(n => n.category === category);
+                    const articleCount = categoryNews.length;
+                    const categoryImage = getCategoryImage(category);
+                    
+                    return (
+                      <div 
+                        key={category} 
+                        onClick={() => { setActiveCategory(category); setViewMode('today'); setShowAllCategories(false); }}
+                        className="category-card group cursor-pointer rounded-2xl overflow-hidden glass-card"
+                      >
+                        <div className="relative h-52 overflow-hidden">
+                          <img src={categoryImage} className="category-image w-full h-full object-cover" alt={category} />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                          <div className="absolute bottom-4 left-4 right-4">
+                            <span className="text-red-400 text-xs font-bold uppercase tracking-wider">{articleCount} stories</span>
+                            <h3 className="text-2xl font-bold text-white mt-1">{category}</h3>
+                          </div>
+                        </div>
+                        <div className="p-4">
+                          <div className="flex flex-wrap gap-2">
+                            {categoryNews.slice(0, 2).map((news) => (
+                              <div 
+                                key={news.id} 
+                                onClick={(e) => { e.stopPropagation(); setSelectedArticle(news); }}
+                                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-red-600 transition line-clamp-1 cursor-pointer"
+                              >
+                                • {news.title.substring(0, 35)}...
+                              </div>
+                            ))}
+                          </div>
+                          <button 
+                            onClick={(e) => { e.stopPropagation(); setActiveCategory(category); setViewMode('today'); }}
+                            className="mt-4 text-red-600 text-sm font-bold hover:underline flex items-center gap-1 group-hover:gap-2 transition-all"
+                          >
+                            View all {category} articles →
+                          </button>
+                        </div>
                       </div>
-                      <div className="w-24 h-24 lg:w-32 lg:h-32 rounded-3xl overflow-hidden shadow-2xl"><img src={news.image} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" alt=""/></div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
+
+                {!showAllCategories && categories.length > 4 && (
+                  <div className="text-center mt-10">
+                    <button 
+                      onClick={() => setShowAllCategories(true)}
+                      className="px-8 py-3 border-2 border-red-600 text-red-600 rounded-full text-sm font-bold hover:bg-red-600 hover:text-white transition-all duration-300 hover:scale-105"
+                    >
+                      View All Categories
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
 
-            <div className="flex flex-col gap-40 w-full">
-              {categories.map((category) => {
-                const categoryNews = todaysNews.filter(n => n.category === category).slice(0, 4);
-                if (categoryNews.length === 0) return null;
-                return (
-                  <section key={category} className="w-full">
-                     <div className="flex items-center justify-between mb-12 px-4">
-                       <h2 className="text-xs font-black uppercase tracking-[0.5em] text-zinc-500">{category} Sector Analytics</h2>
-                       <button onClick={() => setActiveCategory(category)} className="text-[10px] font-black uppercase text-red-600 hover:text-red-500 transition-all underline underline-offset-[12px] decoration-zinc-800">Enter Detailed View</button>
-                     </div>
-                     <div onClick={() => setActiveCategory(category)} className={`${theme === 'dark' ? 'bg-zinc-950 border-white/5 shadow-black' : 'bg-white border-zinc-200'} rounded-[70px] p-10 lg:p-16 shadow-2xl cursor-pointer transition-all duration-700 hover:scale-[1.01] border group/object`}>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-                        {categoryNews.map((news) => (
-                          <div key={news.id} className="flex flex-col group/item">
-                            <div className="block mb-8 overflow-hidden rounded-[36px] aspect-square bg-zinc-800 shadow-2xl relative">
-                              <img src={news.image} alt="" className="w-full h-full object-cover opacity-50 group-hover/item:opacity-100 group-hover/item:scale-110 transition-all duration-1000 grayscale group-hover/item:grayscale-0" />
-                            </div>
-                            <h3 className={`text-xl lg:text-2xl font-black leading-none mb-3 uppercase transition-colors ${theme === 'dark' ? 'text-zinc-600 group-hover/item:text-white' : 'text-zinc-400 group-hover/item:text-black'}`}>{news.title}</h3>
-                            <p className="text-red-600 text-[10px] font-black uppercase tracking-[0.2em]">Read Report +</p>
-                          </div>
-                        ))}
-                      </div>
+            {/* Category Detail View */}
+            {activeCategory !== 'All' && (
+              <div className="w-full px-[5%] py-20">
+                <div className="max-w-7xl mx-auto">
+                  <div className="flex items-center justify-between mb-10 flex-wrap gap-4">
+                    <div>
+                      <span className="text-red-600 text-sm font-bold uppercase tracking-wider">{activeCategory}</span>
+                      <h2 className="text-4xl md:text-5xl font-black mt-2">All {activeCategory} News</h2>
                     </div>
-                  </section>
-                );
-              })}
-            </div>
+                    <button 
+                      onClick={() => setActiveCategory('All')}
+                      className="px-6 py-2 border border-red-600 text-red-600 rounded-full text-sm font-bold hover:bg-red-600 hover:text-white transition-all duration-300 hover:scale-105"
+                    >
+                      ← Back to All
+                    </button>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {filteredNews.map((news) => {
+                      const userVote = votes[news.id];
+                      const count = counters[news.id] || { up: 0, down: 0 };
+                      return (
+                        <div 
+                          key={news.id} 
+                          onClick={() => setSelectedArticle(news)}
+                          className="group cursor-pointer rounded-2xl overflow-hidden glass-card hover:-translate-y-2 transition-all duration-300"
+                        >
+                          <div className="h-52 overflow-hidden">
+                            <img src={news.image} className="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="" />
+                          </div>
+                          <div className="p-5">
+                            <h3 className="text-lg font-bold mb-2 line-clamp-2 group-hover:text-red-600 transition">{news.title}</h3>
+                            <p className="text-zinc-500 text-sm line-clamp-2 mb-3">{news.excerpt}</p>
+                            <div className="flex gap-3" onClick={(e) => e.stopPropagation()}>
+                              <button 
+                                onClick={() => handleVote(news.id, 'up')} 
+                                className={`flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold transition ${userVote === 'up' ? 'bg-emerald-600 text-white' : 'bg-zinc-200 dark:bg-zinc-800 hover:bg-emerald-600 hover:text-white'}`}
+                              >
+                                ↑ {count.up}
+                              </button>
+                              <button 
+                                onClick={() => handleVote(news.id, 'down')} 
+                                className={`flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold transition ${userVote === 'down' ? 'bg-red-600 text-white' : 'bg-zinc-200 dark:bg-zinc-800 hover:bg-red-600 hover:text-white'}`}
+                              >
+                                ↓ {count.down}
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         ) : (
-          <section className="animate-in fade-in slide-in-from-bottom-12 duration-1000 w-full">
-            <div className="flex flex-wrap items-center justify-between gap-10 mb-24">
-              <div className="flex items-center gap-10">
-                <h2 className={`text-6xl lg:text-9xl font-black uppercase tracking-[-6px] ${theme === 'dark' ? 'text-white' : 'text-black'}`}>{activeCategory}</h2>
-                <div className="h-px w-48 bg-gradient-to-r from-red-600 to-transparent hidden md:block"></div>
+          <div className="w-full min-h-[80vh] px-[5%] py-12">
+            <div className="max-w-7xl mx-auto">
+              <div className="flex flex-wrap items-center justify-between gap-6 mb-10">
+                <div>
+                  <h2 className={`text-6xl lg:text-8xl font-black uppercase tracking-[-4px] ${theme === 'dark' ? 'text-white' : 'text-black'}`}>{activeCategory}</h2>
+                  <div className="h-px w-32 bg-gradient-to-r from-red-500 to-transparent mt-2"></div>
+                </div>
+                <button onClick={() => { setActiveCategory('All'); }} className={`px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em] transition-all duration-300 border shadow-md hover:scale-105 ${theme === 'dark' ? 'glass-card border-white/10 hover:bg-white hover:text-black' : 'glass-card border-zinc-200 hover:bg-black hover:text-white'}`}>← Back</button>
               </div>
-              <button onClick={() => { setActiveCategory('All'); }} className={`px-10 py-4 rounded-full text-xs font-black uppercase tracking-[0.3em] transition-all border shadow-2xl ${theme === 'dark' ? 'bg-zinc-900 border-white/5 hover:bg-white hover:text-black' : 'bg-white border-zinc-200 hover:bg-black hover:text-white'}`}>← Back to Core</button>
-            </div>
-            <div className={`${theme === 'dark' ? 'bg-zinc-900/10 border-white/5' : 'bg-white border-zinc-200'} rounded-[80px] p-8 lg:p-20 shadow-2xl border w-full`}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-12 lg:gap-16">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredNews.map((news) => {
                   const userVote = votes[news.id];
                   const count = counters[news.id] || { up: 0, down: 0 };
                   return (
-                    <div key={news.id} onClick={() => setSelectedArticle(news)} className="flex flex-col group cursor-pointer">
-                      <div className="block mb-10 overflow-hidden rounded-[40px] aspect-[16/10] bg-zinc-800 shadow-2xl">
-                        <img src={news.image} alt="" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1s]" />
+                    <div key={news.id} onClick={() => setSelectedArticle(news)} className="glass-card rounded-xl overflow-hidden cursor-pointer group hover:translate-y-[-2px] transition-all duration-300">
+                      <div className="w-full h-48 overflow-hidden">
+                        <img src={news.image} alt="" className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
                       </div>
-                      <span className="text-[10px] font-black text-red-600 uppercase tracking-[0.3em] mb-4">{news.category}</span>
-                      <h3 className={`text-2xl lg:text-3xl font-black leading-[0.9] mb-6 uppercase group-hover:text-red-500 transition-colors ${theme === 'dark' ? 'text-white' : 'text-black'}`}>{news.title}</h3>
-                      
-                      <div className="flex gap-4 mt-auto" onClick={(e) => e.stopPropagation()}>
-                        <button 
-                          onClick={() => handleVote(news.id, 'up')} 
-                          className={`flex-1 flex items-center justify-center gap-3 py-4 rounded-[20px] text-[10px] font-black tracking-widest transition-all border ${userVote === 'up' ? 'bg-emerald-600 border-emerald-600 text-white' : (theme === 'dark' ? 'bg-transparent border-white/10 text-zinc-500 hover:text-white' : 'bg-transparent border-zinc-200 text-zinc-400 hover:text-black')}`}
-                        >
-                          LIKE <span className={`text-xs px-2 py-0.5 rounded-md ${userVote === 'up' ? 'bg-white/20' : 'bg-zinc-800'}`}>{count.up}</span>
-                        </button>
-                        <button 
-                          onClick={() => handleVote(news.id, 'down')} 
-                          className={`flex-1 flex items-center justify-center gap-3 py-4 rounded-[20px] text-[10px] font-black tracking-widest transition-all border ${userVote === 'down' ? 'bg-red-600 border-red-600 text-white' : (theme === 'dark' ? 'bg-transparent border-white/10 text-zinc-500 hover:text-white' : 'bg-transparent border-zinc-200 text-zinc-400 hover:text-black')}`}
-                        >
-                          DISLIKE <span className={`text-xs px-2 py-0.5 rounded-md ${userVote === 'down' ? 'bg-white/20' : 'bg-zinc-800'}`}>{count.down}</span>
-                        </button>
+                      <div className="p-4">
+                        <span className="text-[8px] font-black text-red-500 uppercase tracking-[0.3em] mb-2 block">{news.category}</span>
+                        <h3 className={`text-sm font-black leading-tight mb-3 uppercase line-clamp-2 ${theme === 'dark' ? 'text-white group-hover:text-red-500' : 'text-black group-hover:text-red-600'}`}>{news.title}</h3>
+                        <div className="flex gap-2 mt-auto" onClick={(e) => e.stopPropagation()}>
+                          <button 
+                            onClick={() => handleVote(news.id, 'up')} 
+                            className={`flex-1 flex items-center justify-center gap-1 py-1.5 rounded-lg text-[7px] font-black tracking-widest transition-all duration-300 border ${userVote === 'up' ? 'bg-emerald-600 border-emerald-600 text-white' : (theme === 'dark' ? 'bg-transparent border-white/10 text-zinc-500 hover:text-white' : 'bg-transparent border-zinc-200 text-zinc-400 hover:text-black')}`}
+                          >
+                            ↑ {count.up}
+                          </button>
+                          <button 
+                            onClick={() => handleVote(news.id, 'down')} 
+                            className={`flex-1 flex items-center justify-center gap-1 py-1.5 rounded-lg text-[7px] font-black tracking-widest transition-all duration-300 border ${userVote === 'down' ? 'bg-red-600 border-red-600 text-white' : (theme === 'dark' ? 'bg-transparent border-white/10 text-zinc-500 hover:text-white' : 'bg-transparent border-zinc-200 text-zinc-400 hover:text-black')}`}
+                          >
+                            ↓ {count.down}
+                          </button>
+                        </div>
                       </div>
                     </div>
                   );
                 })}
               </div>
             </div>
-          </section>
+          </div>
         )}
       </main>
 
-      <footer className={`${theme === 'dark' ? 'bg-black border-white/5' : 'bg-zinc-100 border-zinc-200'} py-40 px-[5%] border-t mt-60 w-full`}>
-        <div className="w-full flex flex-col lg:flex-row justify-between items-start gap-20">
-          <div className="max-w-2xl">
-            <div className="flex items-center gap-4 mb-10"><Logo /><h4 className={`text-3xl lg:text-4xl font-black tracking-[-3px] uppercase ${theme === 'dark' ? 'text-white' : 'text-black'}`}>SIGNAL NEWS HUB.</h4></div>
-            <p className="text-zinc-500 text-lg leading-relaxed font-medium">The global standard for unfiltered intelligence, providing deep-sector analysis at the frontier of human civilization.</p>
-          </div>
-          <div className="text-right">
-            <div className="mb-20 space-y-4">
-              <p className="text-red-600 font-black text-xs uppercase tracking-[0.4em]">FOUNDER & LEAD EDITOR: MEHEDI REDOY</p>
-              <p className="text-zinc-800 font-bold text-[10px] uppercase tracking-tighter mt-10">© 2026 SIGNAL NEWS HUB • ALL RIGHTS RESERVED</p>
+      {/* Footer - Full Width */}
+      <footer className={`${theme === 'dark' ? 'bg-black/80 border-white/5' : 'bg-white/80 border-zinc-200'} py-16 px-[5%] border-t backdrop-blur-xl w-full`}>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <Logo />
+                <h4 className={`text-xl font-black tracking-[-2px] uppercase ${theme === 'dark' ? 'text-white' : 'text-black'}`}>SIGNAL NEWS HUB.</h4>
+              </div>
+              <p className="text-zinc-500 text-sm leading-relaxed">The global standard for unfiltered intelligence, providing deep-sector analysis at the frontier of human civilization.</p>
+              <div className="flex gap-3 pt-2">
+                <div className="w-8 h-8 rounded-full glass-card flex items-center justify-center text-[10px] font-black hover:bg-red-600 hover:text-white transition-all duration-300 cursor-pointer">X</div>
+                <div className="w-8 h-8 rounded-full glass-card flex items-center justify-center text-[10px] font-black hover:bg-red-600 hover:text-white transition-all duration-300 cursor-pointer">in</div>
+                <div className="w-8 h-8 rounded-full glass-card flex items-center justify-center text-[10px] font-black hover:bg-red-600 hover:text-white transition-all duration-300 cursor-pointer">fb</div>
+              </div>
             </div>
+
+            <div className="space-y-4">
+              <h5 className="text-[10px] font-black uppercase tracking-[0.3em] text-red-500">About</h5>
+              <p className="text-sm text-zinc-500 leading-relaxed">Founded by Mehedi Redoy, Signal News Hub delivers verified, independent journalism.</p>
+              <p className="text-sm text-zinc-500 leading-relaxed"><span className="text-red-500 font-bold">Truth. Accuracy. Integrity.</span> Every story verified.</p>
+            </div>
+
+            <div className="space-y-4">
+              <h5 className="text-[10px] font-black uppercase tracking-[0.3em] text-red-500">Quick Links</h5>
+              <ul className="space-y-2 text-sm">
+                <li><button onClick={() => { setViewMode('today'); setActiveCategory('All'); }} className="text-zinc-500 hover:text-red-600 transition-colors">Today's Intelligence</button></li>
+                <li><Link href="/archive" className="text-zinc-500 hover:text-red-600 transition-colors">Archive</Link></li>
+                <li><Link href="/about" className="text-zinc-500 hover:text-red-600 transition-colors">About</Link></li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <h5 className="text-[10px] font-black uppercase tracking-[0.3em] text-red-500">Legal</h5>
+              <ul className="space-y-2 text-sm">
+                <li><button className="text-zinc-500 hover:text-red-600 transition-colors">Privacy Policy</button></li>
+                <li><button className="text-zinc-500 hover:text-red-600 transition-colors">Terms of Service</button></li>
+                <li><button className="text-zinc-500 hover:text-red-600 transition-colors">Contact</button></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-zinc-800/50 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-zinc-600 text-[9px] font-black uppercase tracking-tighter">© 2026 SIGNAL NEWS HUB • ALL RIGHTS RESERVED</p>
+            <p className="text-zinc-600 text-[9px] font-black uppercase tracking-tighter">FOUNDER & LEAD EDITOR: MEHEDI REDOY</p>
           </div>
         </div>
       </footer>
