@@ -120,7 +120,6 @@ export default function Home() {
   return (
     <div className={`min-h-screen w-full transition-colors duration-500 font-sans selection:bg-red-600/30 overflow-x-hidden ${theme === 'dark' ? 'bg-black text-white' : 'bg-zinc-50 text-zinc-900'}`}>
       <style jsx global>{`
-        @keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
         @keyframes glow { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.6; } }
         @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
@@ -131,7 +130,6 @@ export default function Home() {
           100% { transform: scale(1) translate(0, 0); }
         }
         
-        .animate-marquee { display: flex; width: max-content; animation: marquee 30s linear infinite; }
         .animate-float { animation: float 5s ease-in-out infinite; }
         .animate-glow { animation: glow 3s ease-in-out infinite; }
         .animate-slow-zoom { animation: slowZoom 25s ease-in-out infinite alternate; }
@@ -191,21 +189,8 @@ export default function Home() {
         <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[120px] animate-pulse delay-700"></div>
       </div>
 
-      {/* TICKER - Full Width */}
-      <div className={`${theme === 'dark' ? 'bg-black/80 border-white/10' : 'bg-white/80 border-zinc-200'} py-2 overflow-hidden border-b backdrop-blur-xl sticky top-0 z-[60] w-full`}>
-        <div className="animate-marquee whitespace-nowrap flex">
-          {stockMarket.concat(stockMarket).map((stock, i) => (
-            <div key={i} className="flex items-center gap-3 mx-8 text-[10px] font-black uppercase tracking-[0.15em] group cursor-default">
-              <span className="opacity-60 group-hover:opacity-100 transition-opacity">{stock.symbol}</span>
-              <span className="font-mono text-sm group-hover:scale-105 transition-transform">{stock.price}</span>
-              <span className={`${stock.trend === 'up' ? 'text-emerald-500' : 'text-red-500'} group-hover:scale-110 transition-transform`}>{stock.change}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* NAV - Full Width */}
-      <nav className={`backdrop-blur-xl sticky top-[37px] z-50 w-full transition-all duration-300 ${theme === 'dark' ? 'bg-black/50 border-white/5' : 'bg-white/50 border-zinc-200/50'} border-b`}>
+      {/* NAV - Full Width (Stock ticker removed) */}
+      <nav className={`backdrop-blur-xl sticky top-0 z-50 w-full transition-all duration-300 ${theme === 'dark' ? 'bg-black/50 border-white/5' : 'bg-white/50 border-zinc-200/50'} border-b`}>
         <div className="w-full px-[5%] py-4 flex items-center justify-between">
           <button onClick={() => { setViewMode('today'); setActiveCategory('All'); setSelectedArticle(null); }} className="flex items-center gap-3 group transition-all duration-300 hover:scale-105">
             <Logo />
@@ -230,7 +215,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* FIXED: Category Buttons with proper min-width to prevent text truncation */}
         <div className="w-full px-[5%] pb-4 flex gap-2 overflow-x-auto no-scrollbar">
           <button 
             onClick={() => { setViewMode('today'); setActiveCategory('All'); setSelectedArticle(null); }}
