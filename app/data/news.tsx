@@ -1825,7 +1825,7 @@ export const allNews: NewsArticle[] = [
     author: "Mehedi Redoy",
     date: "April 22, 2026",
     time: "Deep Dive",
-    image: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://media.npr.org/assets/img/2014/03/26/hellfightersjacket-78fa24980f3532cfec8633c7bfad03a323ab028e.jpg",
     content: `When the United States entered World War I in 1917, the 369th Infantry Regiment was an all-Black unit. They were assigned to the French army, which was desperate for reinforcements. "The French didn't care about the color of their skin," said historian Dr. Jeffrey Sammons. "They needed soldiers. The 369th proved they were among the best." The 369th spent 191 days on the front lines — longer than any other American unit. They never lost a foot of ground. They were called "Hellfighters" by their enemies. "They were fearless," said Sammons. "They were pioneers. They paved the way for the integration of the military."`,
     featured: true
   },
@@ -1837,7 +1837,7 @@ export const allNews: NewsArticle[] = [
     author: "Mehedi Redoy",
     date: "April 22, 2026",
     time: "Deep Dive",
-    image: "https://images.pexels.com/photos/167682/pexels-photo-167682.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://cdn.thecollector.com/wp-content/uploads/2025/03/marie-antoinette-diamond-necklace-affair.jpg",
     content: `The Affair of the Diamond Necklace was one of the most notorious scandals of the 18th century. It involved a con woman, a cardinal, a prostitute, and a 2,800-carat diamond necklace. It destroyed the reputation of Queen Marie Antoinette. "It was a perfect storm of greed, ambition, and naivety," said historian Dr. Sarah Maza. "No one comes out looking good. Everyone was deceived. Everyone was complicit." The scandal convinced the public that the queen was corrupt. It fueled the anger that led to the French Revolution. "Marie Antoinette was innocent," said Maza. "But it didn't matter. The scandal sealed her fate."`,
     featured: false
   },
@@ -1849,7 +1849,7 @@ export const allNews: NewsArticle[] = [
     author: "Mehedi Redoy",
     date: "April 22, 2026",
     time: "Deep Dive",
-    image: "https://images.pexels.com/photos/416746/pexels-photo-416746.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://i.guim.co.uk/img/media/c92d9a8dd3bb2b4a7257223cccc60c245413ab72/0_138_3160_1896/master/3160.jpg?width=465&dpr=1&s=none&crop=none",
     content: `The platypus is one of the strangest animals on Earth. It lays eggs. It has a duck bill. It has a beaver tail. It produces venom. "When Europeans first saw a platypus, they thought it was a hoax," said biologist Dr. Tim Flannery. "They thought someone had sewn a duck bill onto a beaver. They were wrong. The platypus is real." The platypus is a monotreme — a mammal that lays eggs. Only two monotremes exist: the platypus and the echidna. "It's a living fossil," said Flannery. "It reminds us that evolution can produce strange and wonderful things."`,
     featured: false
   },
@@ -1861,7 +1861,7 @@ export const allNews: NewsArticle[] = [
     author: "Mehedi Redoy",
     date: "April 22, 2026",
     time: "Deep Dive",
-    image: "https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://i0.wp.com/historyforatheists.com/wp-content/uploads/2017/04/Plague1.jpg?resize=640%2C360&ssl=1",
     content: `The Black Death killed 30 to 50 percent of Europe's population. Pope Clement VI sat between two fires to combat the plague. "He believed that the heat would purify the air," said historian Dr. John Kelly. "It didn't work. But he survived. His doctors did not." The plague had profound effects on European society. It led to labor shortages, wage increases, and the decline of feudalism. "It was a turning point in history," said Kelly. "The world after the Black Death was different from the world before."`,
     featured: false
   },
@@ -1873,7 +1873,7 @@ export const allNews: NewsArticle[] = [
     author: "Mehedi Redoy",
     date: "April 22, 2026",
     time: "Deep Dive",
-    image: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://images.immediate.co.uk/production/volatile/sites/7/2023/10/GettyImages-587492330-a1f5364.png?quality=90&resize=556,371",
     content: `In 1209, Pope Innocent III declared a crusade against the Cathars, a Christian sect in southern France. The crusade was a 20-year war that destroyed the Cathars. "It was genocide," said historian Dr. Mark Gregory Pegg. "The Cathars were a distinct group. They were targeted for their beliefs. They were exterminated." The crusade began with the massacre at Béziers. When the crusaders asked how to distinguish Cathars from Catholics, the papal legate reportedly said: "Kill them all. God will know his own." "It was one of the most infamous statements in history," said Pegg.`,
     featured: true
   },
@@ -1885,7 +1885,7 @@ export const allNews: NewsArticle[] = [
     author: "Mehedi Redoy",
     date: "April 22, 2026",
     time: "Deep Dive",
-    image: "https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://miro.medium.com/v2/resize:fit:1400/1*r0yOGzKWOsEMGSC9ln6q3A.png",
     content: `The human stomach produces hydrochloric acid with a pH between 1 and 2. That's strong enough to dissolve metal. "It's true," said gastroenterologist Dr. David Johnson. "The acid in your stomach is powerful enough to break down a razor blade. But don't try it. The lining of your stomach is designed to protect you. A razor blade would still cause damage." The stomach's acid is essential for digestion. It breaks down food. It kills bacteria. "It's a remarkable system," said Johnson. "Your stomach is like a chemical factory. It's doing amazing things every day."`,
     featured: false
   },
@@ -1897,7 +1897,7 @@ export const allNews: NewsArticle[] = [
     author: "Mehedi Redoy",
     date: "April 22, 2026",
     time: "Deep Dive",
-    image: "https://images.pexels.com/photos/416746/pexels-photo-416746.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://www.sciencealert.com/images/2023/07/ScientistTicklingRatDiagram-642x260.jpg",
     content: `Rats laugh when tickled. Their laughter is ultrasonic — too high for humans to hear. But special equipment reveals their chirps. "Rats are playful animals," said neuroscientist Dr. Jaak Panksepp. "They enjoy being tickled. They chase the tickling hand. They come back for more." The discovery of rat laughter has important implications for the study of emotion. "If rats can laugh, they can probably feel other emotions too," said Panksepp. "It changes how we think about animals."`,
     featured: false
   },
@@ -1909,7 +1909,7 @@ export const allNews: NewsArticle[] = [
     author: "Mehedi Redoy",
     date: "April 22, 2026",
     time: "Deep Dive",
-    image: "https://images.pexels.com/photos/23769/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://i0.wp.com/militaryhistorynow.com/wp-content/uploads/2012/11/melies.0.jpg?fit=1920%2C1080&ssl=1",
     content: `In the 1950s, the US Air Force had a secret plan: detonate a nuclear bomb on the Moon. Project A119 was designed to demonstrate American superiority in the space race. "It sounds insane," said historian Dr. William Burrows. "But they seriously considered it. They calculated the explosion would be visible from Earth. It would be a show of force." The plan was scrapped. The Air Force decided that the risks outweighed the benefits. "They were worried about the scientific impact," said Burrows. "They didn't want to contaminate the Moon."`,
     featured: true
   },
@@ -1921,7 +1921,7 @@ export const allNews: NewsArticle[] = [
     author: "Mehedi Redoy",
     date: "April 22, 2026",
     time: "Deep Dive",
-    image: "https://images.pexels.com/photos/416746/pexels-photo-416746.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://www.weather.gov/images/arx/folklore/woollybear.png",
     content: `The Arctic woolly bear caterpillar survives winter by producing a natural antifreeze. The caterpillar freezes solid. Its heart stops. Its cells are protected by chemicals that prevent ice crystals from forming. "It's a remarkable adaptation," said biologist Dr. Bernd Heinrich. "The caterpillar can survive temperatures as low as minus 70 degrees Fahrenheit. In the spring, it thaws and continues its life." The caterpillar can live for 14 years — most of it frozen. "It's a survivor," said Heinrich. "It has found a way to thrive where nothing else can."`,
     featured: false
   },
@@ -1933,10 +1933,131 @@ export const allNews: NewsArticle[] = [
     author: "Mehedi Redoy",
     date: "April 22, 2026",
     time: "Deep Dive",
-    image: "https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://static.scientificamerican.com/sciam/cache/file/8EE55DCC-962D-4F4A-AED2AD7CEC191CA1_source.jpg?w=12000",
     content: `The "Elephant's Toothpaste" experiment is a classic science demonstration. Hydrogen peroxide, dish soap, and potassium iodide create a massive foamy eruption. "It's spectacular," said chemist Dr. Kate Biberdorf. "It looks like toothpaste for an elephant. That's where the name comes from." The experiment is safe when done properly. But it can be dangerous if the concentration of hydrogen peroxide is too high. "Do not try this at home," said Biberdorf. "Leave it to the professionals." The experiment has become a viral sensation on social media. "It's fun," said Biberdorf. "It's educational. It's also a reminder that science can be beautiful."`,
     featured: false
   },
+  // ==================== ENTERTAINMENT - PART 6 (TOP MOVIES, SHOWS, MUSIC, GAMES 71-80) ====================
+{
+  id: "entertainment-epic-arrakis-cinema-71",
+  title: "Dune: Part Two — The Sci-Fi Epic That Redefined Modern Cinema",
+  excerpt: "A sweeping return to Arrakis with political intrigue, prophecy, and monumental scale.",
+  category: "Entertainment",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Deep Dive",
+  image: "https://deadline.com/wp-content/uploads/2024/01/MCDDUPA_WB041-e1708041579639.jpg?w=681&h=383&crop=1",
+  content: `The return to Arrakis delivers colossal visuals, intimate character arcs, and a meditation on power and destiny. Vast desert warfare blends with quiet moments of prophecy and doubt. The scale feels mythic while the emotions remain human, setting a new bar for modern science fiction cinema. Director Denis Villeneuve has crafted a masterpiece that honors Frank Herbert's complex source material while making it accessible to mainstream audiences. The sandworms are bigger, the stakes are higher, and the political machinations are more intricate than ever before. Timothée Chalamet's Paul Atreides evolves from hesitant heir to reluctant messiah, a transformation that feels earned and devastating. The supporting cast, including Zendaya's Chani and Austin Butler's menacing Feyd-Rautha, deliver career-best performances. Hans Zimmer's thunderous score shakes theater seats, blending Middle Eastern influences with industrial percussion. The film's depiction of the Fremen culture is nuanced and respectful, avoiding the pitfalls of the original novel's orientalist tendencies. Visual effects teams spent months developing new techniques to make the sandworms feel tangible and terrifying. The Harkonnen sequences, shot in infrared, create an otherworldly nightmare aesthetic. Unlike many blockbusters, "Dune: Part Two" trusts its audience to follow complex political threads without excessive exposition. The climax, a dramatic confrontation in the Emperor's flagship, delivers the action spectacle while maintaining emotional weight. Critics have hailed it as a triumph of cinematic ambition. The film has already grossed over $800 million worldwide, proving that intelligent science fiction can still draw massive audiences. Sequel plans are already underway, with Villeneuve hoping to adapt "Dune Messiah" as the trilogy's conclusion. For fans of epic storytelling, this is essential viewing.`,
+  featured: true
+},
+{
+  id: "entertainment-fungal-america-drama-72",
+  title: "The Last of Us — A Video Game Adaptation Done Right",
+  excerpt: "An emotional survival story that proves game narratives can thrive on television.",
+  category: "Entertainment",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Deep Dive",
+  image: "https://static0.thegamerimages.com/wordpress/wp-content/uploads/2022/09/The-Last-Of-Us-HBO-Joel-Ellie-Pedro-Pascal-Bella-Ramsey.jpg?w=1600&h=900&fit=crop",
+  content: `In a ruined America overtaken by infection, two strangers form a bond that redefines family. The storytelling focuses on grief, trust, and sacrifice. Performances and writing elevate the survival premise into deeply personal drama. For years, video game adaptations had a reputation for failure. "The Last of Us" shattered that curse completely. The series expands on the beloved game's narrative without feeling like a carbon copy. The cold open of Episode 1, set in 1968, foreshadows the fungal pandemic's origins with chilling scientific plausibility. Pedro Pascal's Joel is a broken man, haunted by the loss of his daughter in the outbreak's first hours. His gruff exterior masks a vulnerability that Pascal conveys through subtle glances and weighted silences. Bella Ramsey's Ellie is fierce, funny, and heartbreaking — a teenager forced to grow up too fast in a world without rules. The chemistry between the two leads anchors every episode, making their eventual bond feel inevitable yet earned. The infected are terrifying, with the "clicker" creatures realized through practical effects that enhance their menace. Episode 3, focusing on the love story of Bill and Frank, stands as one of television's finest hours — a self-contained romance that explores what it means to live fully in a dying world. The series doesn't shy away from moral ambiguity. Joel's final choice, to save Ellie at the cost of humanity's potential cure, is presented as both monstrous and understandable. Showrunner Craig Mazin, known for "Chernobyl," brings the same attention to detail and dread. The production design creates a believable post-apocalyptic America, where nature slowly reclaims abandoned cities. Unlike many survival stories, "The Last of Us" finds hope in small moments — a shared joke, a cup of coffee, a giraffe glimpsed through overgrown ruins. The series has been renewed for a second season, which will adapt the controversial sequel game. Whether it can maintain its quality remains to be seen, but this first season is a landmark achievement.`,
+  featured: true
+},
+{
+  id: "entertainment-atomic-morality-thriller-73",
+  title: "Oppenheimer — The Psychological Thriller Behind the Atomic Bomb",
+  excerpt: "A tense historical portrait of genius, ambition, and moral consequence.",
+  category: "Entertainment",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Deep Dive",
+  image: "https://thebulletin.org/wp-content/uploads/2023/08/Oppenheimer-poster-crop.jpg.optimal.jpg",
+  content: `This historical thriller dives into the mind of a scientist burdened by the weight of his creation. The narrative weaves timelines, interrogations, and scientific breakthroughs into a relentless character study about responsibility and regret. Christopher Nolan's film is not a traditional biopic — it's a psychological horror story disguised as historical drama. Cillian Murphy's J. Robert Oppenheimer is a man torn between his ambition to end World War II and his dawning realization that he has become the destroyer of worlds. The Trinity test sequence, filmed without CGI, captures the visceral terror of unleashing nuclear power. The explosion is simultaneously beautiful and horrifying, a paradox that defines the entire film. The supporting cast is staggering: Robert Downey Jr. as the scheming Lewis Strauss, Emily Blunt as the alcoholic and brilliant Kitty Oppenheimer, Matt Damon as the no-nonsense General Groves. The film's structure jumps between the McCarthy-era security hearing and Oppenheimer's memories, creating a sense of inescapable judgment. The script, drawn from the Pulitzer-winning "American Prometheus," refuses to offer easy answers. Was the bomb necessary? Could it have been avoided? The film lets the audience wrestle with these questions. The final act, focusing on Oppenheimer's postwar guilt, is devastating. His vision of nuclear apocalypse — bodies burned into stone, a future of endless proliferation — haunts the film long after the credits roll. Nolan's insistence on practical effects means the black-and-white sequences were actually shot on black-and-white film stock. Ludwig Göransson's score is a relentless pulse of anxiety, building toward dissonant climaxes that never fully resolve. The film won seven Academy Awards, including Best Picture and Best Actor for Murphy. It's a reminder that history's most consequential moments were made by flawed, contradictory human beings. Watching "Oppenheimer" is an exhausting, essential experience — a warning from the past that remains urgently relevant.`,
+  featured: false
+},
+{
+  id: "entertainment-dragon-dynasty-power-74",
+  title: "House of the Dragon — Fire, Blood, and Royal Betrayal",
+  excerpt: "A brutal royal power struggle inside a dragon-ruled dynasty.",
+  category: "Entertainment",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Deep Dive",
+  image: "https://static0.cbrimages.com/wordpress/wp-content/uploads/2022/09/House-of-the-Dragon-Caraxes-on-the-Stepstones.jpg?q=50&fit=crop&w=825&dpr=1.5",
+  content: `Succession, betrayal, and ambition drive this fantasy epic. Dragons dominate the skies while political schemes unfold in candlelit chambers. The series explores how pride and prophecy tear families apart. "House of the Dragon" faced the impossible task of following "Game of Thrones" after its disastrous final season. Remarkably, it succeeded by returning to what made the original great: complex characters, political intrigue, and consequences. Set 200 years before Daenerys Targaryen, the series depicts the Dance of the Dragons — a Targaryen civil war that tore Westeros apart. The first season's time jumps allow us to watch characters age and relationships sour over decades. Emma D'Arcy's Rhaenyra, the king's named heir, fights against a patriarchy determined to replace her with her half-brother Aegon. Olivia Cooke's Alicent, once Rhaenyra's closest friend, becomes her bitterest rival. Their rivalry is the heart of the show — two women trapped by men who use them as pawns, eventually seizing their own power at devastating cost. Paddy Considine's King Viserys is a tragic figure, a good man in a role that demands ruthlessness. His slow decay and final attempt to keep peace are heartbreaking. The dragons are spectacular, each with distinct personalities and designs. The dragon fight sequences are brutal, chaotic, and costly — both sides lose beloved characters. Episode 8, "The Lord of the Tides," is a masterclass in tension, with political maneuvering that recalls the best of early "Game of Thrones." Episode 10's climax, the death of a major character, sets up the war to come. The show has been renewed for a third and fourth season, with production aiming to complete the story. Unlike its predecessor, "House of the Dragon" has a finished source material (the novella "Fire & Blood"), which provides a clear roadmap. Critics have praised the show's willingness to be patient, letting conflict simmer for episodes before exploding. The violence is shocking but earned, never gratuitous. For fantasy fans who felt betrayed by "Game of Thrones" final season, "House of the Dragon" offers redemption.`,
+  featured: false
+},
+{
+  id: "entertainment-pink-satire-comedy-75",
+  title: "Barbie — A Colorful Satire Wrapped in Comedy",
+  excerpt: "A playful fantasy that surprises with sharp cultural commentary.",
+  category: "Entertainment",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Deep Dive",
+  image: "https://www.dispatch.com/gcdn/presto/2023/07/25/NCOD/f65fcfde-1d8e-4cc3-95a3-7a0ff01608e6-276668_1536_rgb.jpg",
+  content: `Behind bright colors and humor lies a thoughtful satire about identity and expectations. The story blends fantasy and reality, delivering laughs alongside reflective social commentary. Who expected a movie about a plastic doll to be one of the most intelligent films of the year? Greta Gerwig's "Barbie" is a miracle — a studio blockbuster that is simultaneously a toy commercial, a feminist manifesto, a existential comedy, and a musical. Margot Robbie's Stereotypical Barbie is perfect — until she isn't. Her sudden thoughts of death, her flat feet, her cellulite — these imperfections send her on a journey to the real world. Ryan Gosling's Ken is the film's secret weapon, a hilarious portrait of fragile masculinity desperate for purpose. His power ballad "I'm Just Ken" is an instant classic, a showcase of Gosling's commitment to absurdity. The film's exploration of the patriarchy is both funny and devastating. When Barbie arrives in the real world, she is catcalled, objectified, and dismissed — experiences that contrast sharply with her idealized Barbieland. America Ferrera's monologue about the impossibility of being a woman is the film's emotional core, a moment that has moved audiences to tears. The production design is a wonder — every surface in Barbieland is painted in specific shades of pink, creating an artificial paradise that feels both inviting and uncanny. Will Ferrell's Mattel CEO is a parody of corporate cluelessness, more ridiculous than villainous. The film's ending refuses easy answers. Barbie chooses to become human, to embrace messiness and mortality, rather than remain a perfect ideal. It's a profound statement about authenticity and growth. The soundtrack, featuring Dua Lipa, Billie Eilish, and Nicki Minaj, dominated charts for months. "Barbie" became a cultural phenomenon, inspiring the "Barbenheimer" double feature meme that brought audiences to theaters for both the doll comedy and the nuclear tragedy. It grossed over $1.4 billion worldwide, making Gerwig the highest-grossing female director in history. More importantly, it proved that smart, thoughtful films can also be massive commercial hits.`,
+  featured: false
+},
+{
+  id: "entertainment-feudal-japan-saga-76",
+  title: "Shōgun — Politics and War in Feudal Japan",
+  excerpt: "A beautifully shot historical saga of loyalty, strategy, and survival.",
+  category: "Entertainment",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Deep Dive",
+  image: "https://cdn.britannica.com/71/196871-050-B8665B11/Samurai-Armour-Kusakabe-Kimbei.jpg",
+  content: `Set in feudal Japan, the story follows clashing cultures, strategic alliances, and silent rivalries. Lavish production design and slow-burn storytelling immerse viewers in a world of honor and deception. FX's adaptation of James Clavell's epic novel proves that television can rival cinema in scope and quality. The year is 1600. An English shipwreck survivor, John Blackthorne (Cosmo Jarvis), washes ashore in Japan, a land closed to foreigners. He becomes a pawn in the struggle between two powerful lords: Lord Toranaga (Hiroyuki Sanada), a brilliant strategist maneuvering for ultimate power, and Lord Ishido, his rival. The series is subtitled in Japanese and English, refusing to pretend that everyone speaks the same language. The language barrier becomes a source of tension and humor, as translators mediate every interaction. Anna Sawai's Lady Mariko is the show's emotional anchor — a Catholic convert trapped in a loveless marriage, serving as Blackthorne's translator while hiding her own ambitions. Her interiority is conveyed through silence and small gestures, a performance of immense restraint and power. The production design is astonishing: every kimono, every castle, every tea ceremony is rendered with meticulous detail. The violence is sudden and brutal — sword fights end in seconds, not minutes. Death has weight. Episode 9's earthquake sequence is a technical marvel, combining practical effects with CGI to create genuine terror. The series doesn't romanticize feudal Japan. Samurai are proud but also petty and cruel. The treatment of peasants is harsh. The code of honor is frequently used as a justification for violence. Toranaga's strategy, revealed gradually, is a chess game played over years. His patience and ruthlessness make him a compelling antihero. The finale delivers a satisfying conclusion while leaving room for more stories. "Shōgun" won 18 Emmy Awards, including Outstanding Drama Series. It has been renewed for two additional seasons, continuing beyond Clavell's novel with input from his estate. For fans of historical epics, this is essential viewing — a reminder that great television can transport us to other worlds.`,
+  featured: false
+},
+{
+  id: "entertainment-midnight-pop-reflection-77",
+  title: "Midnights — Late-Night Pop Reflections",
+  excerpt: "An album filled with introspection, vulnerability, and polished pop sound.",
+  category: "Entertainment",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Deep Dive",
+  image: "https://www.shugarecords.com/cdn/shop/files/R-27193104-1685939532-1687_grande.jpg?v=1709066830",
+  content: `This album captures restless thoughts that surface after dark. Smooth production and confessional lyrics create a moody atmosphere that resonates with listeners worldwide. Taylor Swift's tenth studio album, "Midnights," is a concept record about the things that keep us awake at night — self-loathing, revenge fantasies, crushes, regrets. It's her most cohesive work since "1989," a synth-pop masterpiece that trades country roots for shimmering electronics. The album was written and produced with Jack Antonoff, her longtime collaborator, who helps her craft hooks that lodge in the brain for days. Lead single "Anti-Hero" is a self-deprecating anthem about imposter syndrome and self-sabotage, featuring the viral bridge "It's me, hi, I'm the problem, it's me." "Lavender Haze" explores the pressure of public relationships, with a beat that recalls the dream pop of the 1990s. "Snow on the Beach," featuring Lana Del Rey, is a delicate duet about falling in love while feeling surreal. "You're on Your Own, Kid" is a devastating ballad about loneliness and resilience, a fan favorite that has brought audiences to tears at concerts. The album's secret weapon is "Karma," a revenge fantasy that reworks the concept of cosmic justice into a pop banger. The 3am Edition, released hours after the standard album, added seven extra tracks that many fans consider superior to the main tracklist. "Would've, Could've, Should've" is a brutal takedown of a past relationship that ranks among her most powerful songs. The album broke streaming records, becoming Spotify's most-streamed album in a single day. It won Album of the Year at the Grammys, Swift's fourth win in that category — the most of any artist in history. The accompanying Eras Tour became the highest-grossing tour ever, proving that Swift's cultural dominance shows no signs of waning. "Midnights" is not her most experimental album, but it may be her most consistent — a late-night journey through the mind of a pop genius.`,
+  featured: false
+},
+{
+  id: "entertainment-synthwave-global-hit-78",
+  title: "Blinding Lights — The Song That Dominated Streaming",
+  excerpt: "A retro-inspired pop anthem that became one of the most streamed songs ever.",
+  category: "Entertainment",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Deep Dive",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD3jIVnP2gdHJJNEeaiqJ0EpfD8_QvRta2ng&s",
+  content: `Driven by synthwave energy and infectious rhythm, the track revived 80s aesthetics for a new generation. Its replay value and global appeal made it a streaming phenomenon. The Weeknd's "Blinding Lights" is a pop anomaly — a song that refuses to leave the cultural consciousness. Released in 2019 as part of the "After Hours" album, it became a slow-burn hit, climbing charts months after its debut. The song's synth-heavy production, inspired by the soundtracks of "Drive" and "Miami Vice," evokes nostalgia without feeling dated. Max Martin's production is pristine, layering a simple melody over driving beats. The Weeknd's falsetto conveys desperation and longing, lyrics about racing through the night to reach a lover. The music video, directed by Anton Tammi, is a fever dream of violence and neon, following a bloodied Weeknd through Los Angeles at night. The song's chorus is deceptively simple — just a few notes that become impossible to forget. It became the soundtrack of the COVID-19 pandemic, a song that offered escape during lockdowns. In 2021, it was named the greatest Hot 100 hit of all time by Billboard, based on chart performance. The song spent a record 87 weeks on the Billboard Hot 100, the longest run in history. It has been streamed over 4 billion times on Spotify, making it one of the most-streamed songs ever. The Weeknd performed it at the Super Bowl LV halftime show, a spectacle that included a marching band and mirror maze. The song's influence is everywhere — in commercials, TikTok videos, and covers by artists across genres. It has inspired a new wave of 80s-inspired pop, from Dua Lipa's "Future Nostalgia" to Doja Cat's "Say So." The song's longevity proves that great pop music transcends trends. "Blinding Lights" is not just a song; it's a cultural touchstone, a piece of music that will be played for decades.`,
+  featured: false
+},
+{
+  id: "entertainment-openworld-fantasy-challenge-79",
+  title: "Elden Ring — The Open-World Fantasy Challenge",
+  excerpt: "A vast, punishing world that rewards curiosity and persistence.",
+  category: "Entertainment",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Deep Dive",
+  image: "https://cdn.mmogah.com/cdn-cgi/image/width=700,quality=90,metadata=none,format=auto/Public/news/elden%20ring%20open%20world-1.jpg",
+  content: `Players explore a mysterious land filled with cryptic lore and brutal enemies. Freedom of exploration and demanding combat define this landmark role-playing experience. "Elden Ring" is the culmination of everything FromSoftware has learned from "Dark Souls," "Bloodborne," and "Sekiro." It takes the punishing combat and cryptic storytelling of those games and places them in a vast open world. The result is one of the best-reviewed games of all time. The Lands Between is a ruined kingdom, shattered by war and cursed by a broken Elden Ring. Players, as Tarnished exiles, seek to become the Elden Lord by gathering the shards of the Ring held by demigod bosses. The story is told through item descriptions, environmental details, and cryptic dialogue — players must piece together the lore themselves. George R.R. Martin, author of "A Song of Ice and Fire," provided the world's mythology, creating a fractured history of betrayal and ambition. The open world is filled with secrets: hidden caves, optional bosses, mysterious towers, and underground rivers. There is no quest log or map markers — players must explore and discover on their own. The difficulty is notorious but fair. Every death is a learning experience. Every victory feels earned. Bosses like Malenia, Blade of Miquella, are legendary for their difficulty, requiring hours of attempts to master. The game's build variety is staggering — magic, melee, archery, incantations — each offering different playstyles. Multiplayer allows players to summon allies for co-op or invade others for PvP. The community has thrived, sharing discoveries and strategies online. The game sold over 20 million copies, proving that challenging games can have mainstream appeal. It won Game of the Year at the 2022 Game Awards, as well as Best Art Direction, Best RPG, and Best Game Direction. An expansion, "Shadow of the Erdtree," adds a new area, bosses, and weapons, extending the game's lifespan. "Elden Ring" is not for everyone. It demands patience and persistence. But for those who embrace its challenge, it offers an unforgettable journey through a hauntingly beautiful world.`,
+  featured: true
+},
+{
+  id: "entertainment-80s-supernatural-mystery-80",
+  title: "Stranger Things — Nostalgia Meets Supernatural Mystery",
+  excerpt: "An 80s-inspired adventure filled with friendship and otherworldly danger.",
+  category: "Entertainment",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Deep Dive",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzv0bvX0KZhqIWalYP2tInN3srGrmWwsl3YA&s",
+  content: `Small-town friendships collide with shadowy dimensions and secret labs. The blend of nostalgia, suspense, and heartfelt character arcs made it a cultural hit. "Stranger Things" is a love letter to 1980s cinema — to Spielberg, to Stephen King, to John Carpenter. But it's more than just references. It's a show about the power of friendship, the terror of growing up, and the monsters that lurk in the dark. The first season was a phenomenon. The disappearance of Will Byers in Hawkins, Indiana, leads his friends — Mike, Dustin, Lucas, and a mysterious girl named Eleven — to uncover a government conspiracy and a parallel dimension called the Upside Down. The child actors were revelations, especially Millie Bobby Brown's Eleven, who communicated more through silence than most actors do with dialogue. The Duffer Brothers, the show's creators, crafted a mystery that unraveled at a perfect pace. The second and third seasons expanded the mythology, introducing new monsters and deeper threats. The show's budget grew with its popularity — by Season 4, episodes cost $30 million each, rivaling major blockbusters. The cast grew too, adding iconic performers like Sean Astin, Paul Reiser, and David Harbour's Hopper, a sheriff whose gruff exterior hides a broken heart. Season 4 was a creative renaissance, with the terrifying Vecna joining the pantheon of great horror villains. The episode "Dear Billy," featuring a climax set to Kate Bush's "Running Up That Hill," became a cultural moment, sending the song to number one decades after its release. The show's fifth and final season is currently in production, promising to conclude the story of Hawkins and the Upside Down. "Stranger Things" has won numerous Emmys and has been nominated for Outstanding Drama Series. It's one of Netflix's most-watched shows, with billions of hours viewed. More importantly, it's a show that has brought families together — parents nostalgic for the 80s watching with kids discovering it for the first time. "Stranger Things" reminds us that the best stories are about the people we love and the lengths we'll go to protect them.`,
+  featured: false
+},
   // ==================== PRESERVED ARCHIVE - APRIL 19, 2026 AND EARLIER ====================
   {
     id: "world-strait-hormuz-2026",
