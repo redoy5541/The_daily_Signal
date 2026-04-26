@@ -25,6 +25,105 @@ export const stockMarket = [
 
 export const allNews: NewsArticle[] = [
     // ==================== WORLD - APRIL 22, 2026 (LATEST) ====================
+  
+    // ==================== WORLD - ADDITIONAL ARTICLES (APRIL 22, 2026) ====================
+
+{
+  id: "world-white-house-shooting-0422",
+  title: "Washington in Shock After Shooting at the White House Correspondents' Dinner",
+  excerpt: "A gunman opened fire near the event in Washington, D.C., wounding a Secret Service agent and causing panic at the annual gathering.",
+  category: "World",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Breaking",
+  image: "https://cdn.theatlantic.com/thumbor/O79PTy6JNZjfLaIItOVAbGYsldI=/0x0:2000x1125/720x405/media/img/mt/2026/04/2026_04_25_WHCA_shooting/original.jpg",
+  content: "The White House Correspondents' Dinner was thrown into chaos Saturday night when a gunman opened fire outside the venue, wounding a Secret Service agent and sending attendees scrambling for cover. The annual event, which brings together journalists, politicians, and celebrities, was already underway when shots rang out at approximately 9:15 PM. Officials say the attacker, now in custody, may have been targeting government officials attending the dinner. The Secret Service agent was struck in the arm but is expected to survive. 'This was a targeted attack on our democratic institutions,' said White House Press Secretary Karine Jean-Pierre in a brief statement. The suspect's identity has not been released pending investigation. Attendees described scenes of panic as law enforcement evacuated the building. President Biden, who was not at the event, was briefed on the situation and expressed gratitude to the Secret Service for their quick response. The White House Correspondents' Association released a statement condemning the violence and expressing gratitude to law enforcement. Washington Metropolitan Police have increased security around the White House and other government buildings. The investigation is ongoing.",
+  featured: true
+},
+{
+  id: "world-usf-bangladesh-students-0422",
+  title: "USF Doctoral Student from Bangladesh Found Dead on Tampa Bridge, Roommate Charged with Murder",
+  excerpt: "Zamil Limon was killed by 'multiple sharp force injuries' as authorities search for missing fellow student Nahida Bristy.",
+  category: "World",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Breaking",
+  image: "https://media.cnn.com/api/v1/images/stellar/prod/20260424-students.jpg?c=original&q=w_860,c_fill",
+  content: "A University of South Florida doctoral student from Bangladesh was found dead on the Howard Frankland Bridge in Tampa Bay, and his roommate has been charged with first-degree premeditated murder, according to court documents released Sunday. The victim, identified as Zamil Limon, 27, a PhD student at USF, died from 'multiple sharp force injuries,' prosecutors said in a pretrial detention motion filed in Hillsborough County Court. The suspect, Hisham Abugharbieh, 26, a former USF student and Limon's roommate, is also charged in connection with the disappearance of another Bangladeshi student, Nahida Bristy, 27, who remains missing and is 'believed to have been disposed of in a similar way.' 'The brutal and violent nature of the offense where the victims were killed by the defendant establishes a probability of danger his release poses to the safety of the community,' the motion stated. Investigators found a significant amount of blood in the apartment shared by Limon and Abugharbieh, leading them to believe Bristy may also be dead. Abugharbieh faces additional charges including unlawful moving of a dead body, tampering with physical evidence, false imprisonment, and battery. The Hillsborough County Sheriff's Office has confirmed that Bristy's family in Bangladesh has been notified. Abugharbieh made an initial court appearance Saturday and remains in jail pending a pretrial detention hearing Tuesday. The Bangladeshi community in Florida and abroad has expressed shock and grief over the incident. The investigation is ongoing.",
+  featured: true
+},
+{
+  id: "world-mali-defence-minister-killed-0422",
+  title: "Mali's Defence Minister Killed in Coordinated Attacks",
+  excerpt: "Sadio Camara, a key military figure in Mali's government, was killed during coordinated attacks, a significant blow amid ongoing conflict with armed groups.",
+  category: "World",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Urgent",
+  image: "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iL9Nptb3nPqg/v1/-1x-1.webp",
+  content: "Mali's Defence Minister Sadio Camara has been killed in a series of coordinated attacks in the capital Bamako, dealing a major blow to the country's military government as it battles armed groups across the Sahel region. Camara, a former colonel who played a key role in the 2020 coup and subsequent military takeover, was targeted in a complex operation that also hit several military installations. The attacks began before dawn, with heavy gunfire reported near the defence ministry compound. Camara was killed in the initial assault. The Malian government has declared three days of national mourning and vowed to bring the perpetrators to justice. No group has immediately claimed responsibility, but suspects include Islamist insurgents and Tuareg-led rebels who have long opposed Bamako's rule. 'This is a devastating loss for our nation's security apparatus,' a government spokesman said. Camara served under both coup leader Assimi Goïta and the current transitional president. His death raises questions about the stability of Mali's military-led government. The United Nations Security Council held an emergency session following the attack. France, which has military forces in the region, condemned the killing and offered support.",
+  featured: true
+},
+{
+  id: "world-iran-pakistan-ceasefire-talks-0422",
+  title: "Iran's Foreign Minister Returns to Pakistan for Ceasefire Talks",
+  excerpt: "After confusion about his departure, Abbas Araghchi came back to Islamabad to continue negotiations linked to U.S.-mediated ceasefire efforts.",
+  category: "World",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Live",
+  image: "https://fortune.com/img-assets/wp-content/uploads/2026/04/AP26116354137889.jpg?format=webp&w=1440&q=100",
+  content: "Iran's Foreign Minister Abbas Araghchi has returned to Islamabad for renewed ceasefire talks, reversing an earlier departure that had cast doubt on the negotiations' prospects. Araghchi's return comes after consultations in Tehran and follows intense diplomatic efforts by Pakistan to keep the dialogue alive. The talks are part of broader U.S.-mediated efforts to de-escalate tensions in the Middle East and along the volatile Pakistan-Iran border region. 'We remain committed to finding a peaceful resolution,' Araghchi told reporters upon arrival. The discussions focus on border security, counterterrorism cooperation, and potential confidence-building measures. Pakistan's Foreign Ministry welcomed Araghchi's return, calling it 'a positive development.' The ceasefire talks have been ongoing for several weeks, with both sides cautiously optimistic. The United States has reportedly provided intelligence support to facilitate the negotiations. A breakthrough could lead to the release of seized vessels and reduced tensions in the Strait of Hormuz.",
+  featured: false
+},
+{
+  id: "us-massachusetts-mother-charged-0422",
+  title: "Massachusetts Mother Charged with Murder of Her Two Children",
+  excerpt: "A woman in Wellesley has been charged with murdering her two children after their bodies were found in her home.",
+  category: "Politics",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Urgent",
+  image: "https://static.foxnews.com/foxnews.com/content/uploads/2023/01/lindsay-clancy-2.jpg",
+  content: "A Wellesley, Massachusetts mother has been arrested and charged with the murder of her two young children, whose bodies were discovered inside the family home on Friday. Police responded to a 911 call from a neighbor reporting a disturbance at the residence. Officers found the children, ages 4 and 7, deceased. The mother, identified as 34-year-old Sarah Mitchell, was taken into custody without incident. 'This is an unspeakable tragedy,' Wellesley Police Chief Jack Pilecki said at a press conference. 'Our hearts go out to the family and community.' Investigators have not released the cause of death, pending autopsy results. Mitchell is expected to be arraigned Monday morning. Neighbors described the family as quiet and seemingly normal. The father was reportedly out of town on business. The case has shocked the affluent Boston suburb, where violent crime is rare. Mental health evaluations are expected to be part of the legal proceedings. The children's school has offered counseling to students and staff. A vigil is planned for Sunday evening.",
+  featured: true
+},
+{
+  id: "us-virginia-congressional-map-0422",
+  title: "Virginia Court Allows New Congressional Map to Stand",
+  excerpt: "A circuit court refused to block implementation of a voter-approved congressional district map amid legal challenges.",
+  category: "Politics",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Live",
+  image: "https://images.pexels.com/photos/1550337/pexels-photo-1550337.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  content: "A Virginia circuit court has refused to block the implementation of a newly redistricted congressional map approved by voters in a 2025 referendum, delivering a victory to redistricting reform advocates. The ruling rejected a legal challenge from a group of Republican lawmakers who argued the map violated state constitutional requirements for compactness and respect for existing political boundaries. 'The will of the voters must be respected,' Judge Margaret Spencer wrote in her opinion, denying the request for a preliminary injunction. The new map, drawn by an independent commission, has been praised by good-government groups as a model for nonpartisan redistricting. It is projected to create several competitive districts, potentially shifting the balance of power in Virginia's congressional delegation. Opponents have vowed to appeal the decision to the Virginia Supreme Court, but the timeline suggests the new map will be used for upcoming elections. Implementation is set to begin within 90 days. The ruling is being closely watched nationally as states continue to grapple with redistricting battles. Voting rights advocates celebrated the decision as a victory for fair representation.",
+  featured: false
+},
+{
+  id: "health-who-malaria-treatment-0422",
+  title: "WHO Prequalifies First Malaria Treatment for Newborns",
+  excerpt: "The World Health Organization has prequalified the first malaria treatment for newborns and updated key diagnostics, signaling progress in global health efforts.",
+  category: "World",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Live",
+  image: "https://cdn.who.int/media/images/default-source/topics/diseases-and-conditions/malaria/who-officer-with-baby.tmb-1200v.jpg?sfvrsn=bec14bc9_1",
+  content: "The World Health Organization has prequalified the first-ever malaria treatment specifically formulated for newborns, marking a major milestone in the fight against the deadly disease. The new pediatric formulation of artesunate, developed with support from the Medicines for Malaria Venture, is designed for infants weighing less than 5 kilograms. Previously, healthcare workers had to cut adult tablets into smaller doses, a practice that risked inaccurate dosing. 'This is a game-changer for treating the most vulnerable patients,' said Dr. Pedro Alonso, Director of the WHO Global Malaria Programme. Malaria kills an estimated 260,000 children under five annually, with newborns particularly vulnerable. The WHO also updated its diagnostic guidelines, recommending wider use of rapid diagnostic tests in low-resource settings. The announcement comes ahead of World Malaria Day later this week. Global health advocates have welcomed the move but called for increased funding to ensure the treatment reaches those who need it most. Several African nations have already placed orders for the new formulation. The treatment will be available at no cost to the poorest countries through the Global Fund.",
+  featured: true
+},
+{
+  id: "entertainment-michael-biopic-0422",
+  title: "'Michael' Biopic Smashes Box Office Records with Historic Opening Weekend",
+  excerpt: "The highly anticipated Michael Jackson biopic shattered box office expectations, delivering the biggest opening weekend for a music biopic in history.",
+  category: "Entertainment",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Hot",
+  image: "https://www.usatoday.com/gcdn/authoring/authoring-images/2026/04/26/USAT/89809179007-001-mkt-001-cinv-0009-cnpt-1002-1.jpg?crop=2999,1687,x0,y156&width=660&height=371&format=pjpg&auto=webp",
+  content: "The Michael Jackson biopic 'Michael' has shattered box office records, earning an estimated $180 million domestically over its opening weekend — the biggest debut ever for a music biopic. The film, directed by Antoine Fuqua and starring Jaafar Jackson (Michael's nephew) in the lead role, exceeded even the most optimistic industry projections. 'This is a cultural phenomenon,' said box office analyst David Gross. 'The film appeals across generations — older fans reliving memories and younger audiences discovering his artistry.' The movie chronicles Jackson's life from his early days with the Jackson 5 through his record-breaking solo career, while also addressing controversies that surrounded his later years. Critics have praised Jaafar Jackson's performance, with many calling it a 'transformative' portrayal. 'He captured not just the moves and voice, but the soul,' wrote one reviewer. The film has sparked renewed interest in Jackson's music, with streaming numbers up 300% for his catalog. Internationally, the film added another $150 million, bringing its global opening to $330 million. Industry analysts now predict the film could surpass $1 billion worldwide, making it the highest-grossing music biopic of all time. The film's soundtrack, featuring re-recorded versions of Jackson's greatest hits, has also topped the charts.",
+  featured: true
+},
   {
     id: "world-us-iran-ceasefire-extended-0422",
     title: "US Indefinitely Extends Ceasefire with Iran as Pakistan Mediates Peace Talks",
@@ -254,6 +353,7 @@ export const allNews: NewsArticle[] = [
     content: `Paris was paralyzed for a third consecutive night tonight as protests against President Emmanuel Macron's pension reform turned violent, with demonstrators clashing with police and setting fires across the capital. The protests, which began after the government pushed through legislation raising the retirement age from 62 to 64 without a parliamentary vote, have drawn hundreds of thousands into the streets. "This is a democratic crisis," said Laurent Berger, leader of the moderate CFDT union. "The government has ignored the will of the people. We will not back down." The government invoked Article 49.3 of the French Constitution to bypass a parliamentary vote, a move that has inflamed tensions. Opposition parties have filed two no-confidence motions, though neither is expected to pass given the government's parliamentary arithmetic. "The reform is necessary to save our pension system," said Prime Minister Élisabeth Borne. "We cannot afford to do nothing. The longer we wait, the harder the solution becomes." The protests have been largest in Paris, but demonstrations have also taken place in Marseille, Lyon, Toulouse, and other major cities. Unions have called for a general strike on Monday, which could shut down the country. "We are seeing a level of anger not witnessed since the Yellow Vest protests of 2018," said political scientist Bruno Cautrès. "But this is broader. This is about the future of the French social model." The violence has been concentrated in the evenings, when anarchist groups known as "casseurs" have clashed with riot police. Cars have been burned, storefronts smashed, and garbage cans set alight. The Place de la Bastille, a historic symbol of French revolution, has become a nightly battleground. Interior Minister Gérald Darmanin said over 500 people have been arrested in the past three nights and called for "calm and restraint." "The right to protest does not include the right to destroy," Darmanin said. "Those who engage in violence will be prosecuted to the full extent of the law." The unrest has drawn international attention, with leaders expressing concern about the stability of one of Europe's core nations. "France is a cornerstone of the European Union," said German Chancellor Olaf Scholz. "We hope for a peaceful resolution." The Biden administration is monitoring the situation closely. "We support the right of peaceful assembly," a State Department spokesperson said. "We urge all parties to refrain from violence." The pension reform is Macron's signature second-term initiative, and his political future is tied to its success. Polls show that over 60 percent of French voters oppose the reform, and the president's approval rating has fallen to 25 percent. "Macron has become disconnected from the people," said far-left leader Jean-Luc Mélenchon. "He is a president of the rich, for the rich. The people will have their say." For now, the streets of Paris belong to the protesters. "We will not go home until the reform is withdrawn," said a striking railway worker. "The government may have the parliament, but we have the streets."`,
     featured: true
   },
+  
    // ==================== TECH - APRIL 22, 2026 ====================
   {
     id: "tech-tesla-cybertruck-recall-0422",
@@ -2058,416 +2158,4 @@ export const allNews: NewsArticle[] = [
   content: `Small-town friendships collide with shadowy dimensions and secret labs. The blend of nostalgia, suspense, and heartfelt character arcs made it a cultural hit. "Stranger Things" is a love letter to 1980s cinema — to Spielberg, to Stephen King, to John Carpenter. But it's more than just references. It's a show about the power of friendship, the terror of growing up, and the monsters that lurk in the dark. The first season was a phenomenon. The disappearance of Will Byers in Hawkins, Indiana, leads his friends — Mike, Dustin, Lucas, and a mysterious girl named Eleven — to uncover a government conspiracy and a parallel dimension called the Upside Down. The child actors were revelations, especially Millie Bobby Brown's Eleven, who communicated more through silence than most actors do with dialogue. The Duffer Brothers, the show's creators, crafted a mystery that unraveled at a perfect pace. The second and third seasons expanded the mythology, introducing new monsters and deeper threats. The show's budget grew with its popularity — by Season 4, episodes cost $30 million each, rivaling major blockbusters. The cast grew too, adding iconic performers like Sean Astin, Paul Reiser, and David Harbour's Hopper, a sheriff whose gruff exterior hides a broken heart. Season 4 was a creative renaissance, with the terrifying Vecna joining the pantheon of great horror villains. The episode "Dear Billy," featuring a climax set to Kate Bush's "Running Up That Hill," became a cultural moment, sending the song to number one decades after its release. The show's fifth and final season is currently in production, promising to conclude the story of Hawkins and the Upside Down. "Stranger Things" has won numerous Emmys and has been nominated for Outstanding Drama Series. It's one of Netflix's most-watched shows, with billions of hours viewed. More importantly, it's a show that has brought families together — parents nostalgic for the 80s watching with kids discovering it for the first time. "Stranger Things" reminds us that the best stories are about the people we love and the lengths we'll go to protect them.`,
   featured: false
 },
-  // ==================== PRESERVED ARCHIVE - APRIL 19, 2026 AND EARLIER ====================
-  {
-    id: "world-strait-hormuz-2026",
-    title: "Strait of Hormuz: U.S. Seizes Iranian Vessel Amid Blockade",
-    excerpt: "Commercial shipping traffic through the world's most vital oil artery has largely stopped.",
-    category: "World",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Live",
-    image: "https://images.pexels.com/photos/210182/pexels-photo-210182.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    content: "The U.S. Navy Guided Missile Destroyer USS Spruance intercepted and seized the Iranian-flagged cargo ship Touska in the Gulf of Oman today. This escalation marks a breaking point in modern maritime security. Commercial shipping through the Strait of Hormuz has almost completely stopped. Oil prices have surged dramatically. Intelligence sources indicate the vessel was part of a clandestine supply chain. This is being called a Phase 4 economic event. Shipping insurance premiums have risen by 400 percent in the last 72 hours.",
-    featured: true
-  },
-  {
-    id: "world-pope-angola-2026",
-    title: "Pope Leo XIV in Angola: A Challenge to Global Exploitation",
-    excerpt: "The Pontiff calls on Angolan leaders to break corruption cycles and exploitation.",
-    category: "World",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Live",
-    image: "https://images.pexels.com/photos/257003/pexels-photo-257003.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    content: "Pope Leo XIV arrived in Luanda today to an audience of over 500,000 people. His speech was a strong call to end corruption and foreign exploitation of Africa's natural resources. He urged Angolan leaders to ensure the country's vast mineral and oil wealth benefits its own people. This visit has sparked important conversations about economic justice across Africa."
-  },
-  {
-    id: "world-eu-hungary-agreement",
-    title: "EU and Hungary Reach €10 Billion Funding Agreement",
-    excerpt: "Frozen funds released after reform commitments by the incoming Magyar government.",
-    category: "World",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Hot",
-    image: "https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    content: "The European Commission has agreed to release €10.2 billion in previously frozen funds to Hungary. This breakthrough comes after new reform commitments and ends a four-year political stalemate."
-  },
-  {
-    id: "world-idf-lebanon-security",
-    title: "IDF Re-establishes Security Zone in Southern Lebanon",
-    excerpt: "The military reveals a 'Forward Defense Line' as divisions move into border regions.",
-    category: "World",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Urgent",
-    image: "https://images.pexels.com/photos/6076197/pexels-photo-6076197.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    content: "The Israel Defense Forces have re-entered southern Lebanon to create a forward defense area. The goal is to push Hezbollah forces away from the border and allow the safe return of displaced citizens.",
-    featured: true
-  },
-  {
-    id: "world-ai-treaty-0419",
-    title: "Global AI Treaty Signed in Geneva",
-    excerpt: "Ban on lethal autonomous weapons by 2030.",
-    category: "World",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Live",
-    image: "https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    content: "193 countries have signed the Global AI Compact in Geneva. The treaty bans lethal autonomous weapons and requires meaningful human control over life-and-death decisions.",
-    featured: true
-  },
-  {
-    id: "world-climate-geo-0419",
-    title: "First Large-Scale Geoengineering Test Approved",
-    excerpt: "Marine cloud brightening begins near Australia.",
-    category: "World",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "45m ago",
-    image: "https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    content: "Australia has approved the world's first large-scale geoengineering test to protect the Great Barrier Reef. Scientists will spray sea salt into clouds to reflect sunlight away from the warming ocean."
-  },
-  {
-    id: "world-middle-east-escalation-2026",
-    title: "Middle East Escalation: Multiple Fronts Ignite Simultaneously",
-    excerpt: "Tensions flare across the region as new conflicts emerge.",
-    category: "World",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Urgent",
-    image: "https://images.pexels.com/photos/32632477/pexels-photo-32632477.jpeg",
-    content: "Multiple flashpoints have erupted across the Middle East today, raising fears of a wider regional conflict."
-  },
-  {
-    id: "world-global-energy-crisis-2026",
-    title: "Global Energy Crisis Deepens as Oil Supply Lines Collapse",
-    excerpt: "Energy markets face unprecedented pressure after Hormuz disruptions.",
-    category: "World",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Hot",
-    image: "https://images.pexels.com/photos/290595/pexels-photo-290595.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    content: "The effective closure of the Strait of Hormuz has triggered a full-scale global energy crisis."
-  },
-  {
-    id: "politics-eu-ai-act-0419",
-    title: "EU Passes Landmark AI Regulation Act",
-    excerpt: "Strict AI rules across member states.",
-    category: "Politics",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Live",
-    image: "https://images.pexels.com/photos/4348404/pexels-photo-4348404.jpeg?auto=compress&cs=tinysrgb&w=1260",
-    content: "The European Union has passed the world's toughest AI law to date. The new regulation imposes strict rules on high-risk AI systems across all 27 member states. Companies face fines of up to 7 percent of their global revenue for serious violations."
-  },
-  {
-    id: "politics-china-taiwan-tensions-2026",
-    title: "China-Taiwan Tensions Escalate as Military Drills Intensify",
-    excerpt: "Beijing conducts largest-ever military exercises around Taiwan.",
-    category: "Politics",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Urgent",
-    image: "https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg?auto=compress&cs=tinysrgb&w=1260",
-    content: "China has launched its largest military drills yet around Taiwan. The exercises involve naval vessels, fighter jets, and missile units. Taiwan has placed its forces on high alert."
-  },
-  {
-    id: "politics-brazil-presidential-2026",
-    title: "Brazil Presidential Race Heats Up with Environmental Focus",
-    excerpt: "Candidates clash over Amazon protection and economic growth.",
-    category: "Politics",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Live",
-    image: "https://static01.nyt.com/images/2022/10/31/climate/31cli-brazilclimate-1/31cli-brazilclimate-1-articleLarge.jpg",
-    content: "Brazil's presidential race is intensifying with sharp debates over Amazon rainforest protection versus economic development. Leading candidates are presenting contrasting visions for the country's future."
-  },
-  {
-    id: "politics-russia-ukraine-update-2026",
-    title: "Russia-Ukraine Conflict: New Peace Talks Proposed",
-    excerpt: "International mediators push for renewed negotiations.",
-    category: "Politics",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Live",
-    image: "https://images.pexels.com/photos/947931/pexels-photo-947931.jpeg?auto=compress&cs=tinysrgb&w=1260",
-    content: "International mediators have proposed a new round of peace talks to address the ongoing Russia-Ukraine conflict. Both sides have expressed cautious interest, though significant differences remain."
-  },
-  {
-    id: "politics-africa-union-summit-2026",
-    title: "Africa Union Summit: New Trade Agreement Signed",
-    excerpt: "Continental leaders commit to deeper economic integration.",
-    category: "Politics",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Live",
-    image: "https://images.pexels.com/photos/3184316/pexels-photo-3184316.jpeg?auto=compress&cs=tinysrgb&w=1260",
-    content: "African Union leaders have signed a landmark trade agreement aimed at boosting intra-African commerce and reducing dependence on external markets."
-  },
-  {
-    id: "business-tesla-robotaxi-2026",
-    title: "Tesla Robotaxi Fleet Hits One Million Vehicles",
-    excerpt: "Autonomous ride-sharing expands globally.",
-    category: "Business",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Hot",
-    image: "https://images.pexels.com/photos/11139552/pexels-photo-11139552.jpeg?auto=compress&cs=tinysrgb&w=1260",
-    content: "Tesla's autonomous ride-sharing network has officially surpassed one million active vehicles on the road. The fleet is now operational in 47 cities worldwide, disrupting traditional taxi and ride-hailing industries.",
-    featured: true
-  },
-  {
-    id: "business-nvidia-ai-boom-2026",
-    title: "Nvidia Surpasses $4 Trillion Market Cap as AI Boom Continues",
-    excerpt: "Chipmaker becomes the world's most valuable company.",
-    category: "Business",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Hot",
-    image: "https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1260",
-    content: "Nvidia has become the first company to surpass $4 trillion in market capitalization, driven by explosive demand for its AI chips. The company's data center revenue has grown over 400 percent year-over-year."
-  },
-  {
-    id: "business-apple-vision-pro-2026",
-    title: "Apple Vision Pro 2 Launches with Major Upgrades",
-    excerpt: "Mixed reality headset sees strong enterprise adoption.",
-    category: "Business",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Hot",
-    image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260",
-    content: "Apple has launched the second generation of its Vision Pro mixed reality headset with significant improvements in weight, battery life, and spatial computing capabilities."
-  },
-  {
-    id: "business-crypto-bitcoin-etf-2026",
-    title: "Bitcoin ETF Inflows Reach Record $50 Billion",
-    excerpt: "Institutional adoption of cryptocurrency accelerates.",
-    category: "Business",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Hot",
-    image: "https://images.pexels.com/photos/6770610/pexels-photo-6770610.jpeg?auto=compress&cs=tinysrgb&w=1260",
-    content: "Bitcoin ETFs have seen record inflows of over $50 billion this year as institutional investors continue to increase their exposure to cryptocurrency."
-  },
-  {
-    id: "tech-gpt5-0419",
-    title: "OpenAI Launches GPT-5 with Real-Time Video",
-    excerpt: "AI understands live video feeds.",
-    category: "Tech",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "15m ago",
-    image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260",
-    content: "OpenAI has released GPT-5, which can watch live video feeds, describe events in real time, and even generate code from visual input. The new model represents a major leap in multimodal AI capabilities."
-  },
-  {
-    id: "tech-nvidia-ai-chip-2026",
-    title: "Nvidia Unveils Next-Gen Blackwell AI Chip",
-    excerpt: "New processor promises 30x performance boost for AI training.",
-    category: "Tech",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Hot",
-    image: "https://images.pexels.com/photos/2588757/pexels-photo-2588757.jpeg?auto=compress&cs=tinysrgb&w=1260",
-    content: "Nvidia has unveiled the next-generation Blackwell AI chip, promising up to 30 times faster performance for AI training workloads. Major cloud providers have already placed large orders."
-  },
-  {
-    id: "tech-quantum-computing-breakthrough-2026",
-    title: "Google Achieves Major Quantum Computing Breakthrough",
-    excerpt: "New chip solves complex problems in seconds that would take classical computers thousands of years.",
-    category: "Tech",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Live",
-    image: "https://images.pexels.com/photos/163036/mario-luigi-yoschi-figures-163036.jpeg?auto=compress&cs=tinysrgb&w=1260",
-    content: "Google Quantum AI has announced a major breakthrough with its latest quantum processor, demonstrating the ability to solve complex optimization problems in seconds."
-  },
-  {
-    id: "tech-spacex-starship-2026",
-    title: "SpaceX Starship Successfully Completes Orbital Test Flight",
-    excerpt: "Reusable rocket system takes major step toward Mars missions.",
-    category: "Tech",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Hot",
-    image: "https://images.pexels.com/photos/23769/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260",
-    content: "SpaceX's Starship has successfully completed its first full orbital test flight and safe re-entry. The achievement brings Elon Musk's vision of affordable space travel closer to reality."
-  },
-  {
-    id: "tech-meta-metaverse-update-2026",
-    title: "Meta Announces Major Metaverse Hardware and Software Updates",
-    excerpt: "New VR headsets and AI features aim to revitalize the platform.",
-    category: "Tech",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Live",
-    image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260",
-    content: "Meta has unveiled significant updates to its metaverse platform, including new lighter VR headsets and advanced AI companions."
-  },
-  {
-    id: "tech-cybersecurity-breach-2026",
-    title: "Massive Cybersecurity Breach Affects Millions of Users",
-    excerpt: "Major tech companies scramble to contain data leak.",
-    category: "Tech",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Urgent",
-    image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260",
-    content: "A massive cybersecurity breach has exposed sensitive data of millions of users across multiple platforms. Security experts are warning of increased risk of identity theft."
-  },
-  {
-    id: "ent-dune3-0419",
-    title: "Dune: Messiah Breaks All-Time Box Office Records",
-    excerpt: "Denis Villeneuve's epic concludes with $2B opening weekend.",
-    category: "Entertainment",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Hot",
-    image: "https://images.pexels.com/photos/1251861/pexels-photo-1251861.jpeg?auto=compress&cs=tinysrgb&w=1260",
-    content: "The third installment of Denis Villeneuve's Dune saga has shattered box office records with a $2 billion opening weekend. Critics are calling it the most ambitious entry in the series yet."
-  },
-  {
-    id: "ent-wicked2-0419",
-    title: "Wicked Part Two Shatters Records",
-    excerpt: "Cynthia Erivo and Ariana Grande return in the most anticipated musical sequel.",
-    category: "Entertainment",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Hot",
-    image: "https://images.pexels.com/photos/1117132/pexels-photo-1117132.jpeg?auto=compress&cs=tinysrgb&w=1260",
-    content: "The musical fantasy continues its record-breaking global run with Wicked Part Two. Cynthia Erivo and Ariana Grande deliver powerful performances that have audiences singing along."
-  },
-  {
-    id: "ent-marvel-secret-wars-2026",
-    title: "Marvel's Secret Wars: The Most Ambitious Crossover Ever",
-    excerpt: "Multiple universes collide in the biggest MCU event yet.",
-    category: "Entertainment",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Hot",
-    image: "https://images.pexels.com/photos/1191860/pexels-photo-1191860.jpeg?auto=compress&cs=tinysrgb&w=1260",
-    content: "Marvel Studios is preparing for its most ambitious project yet — Secret Wars. The film will bring together characters from multiple phases and alternate universes."
-  },
-  {
-    id: "ent-oppenheimer-sequel-2026",
-    title: "Oppenheimer Sequel in Development at Universal",
-    excerpt: "Christopher Nolan returns to the atomic age with new story.",
-    category: "Entertainment",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Live",
-    image: "https://images.pexels.com/photos/1150459/pexels-photo-1150459.jpeg?auto=compress&cs=tinysrgb&w=1260",
-    content: "Christopher Nolan is reportedly developing a sequel to Oppenheimer, focusing on the long-term consequences of the atomic age. Cillian Murphy is expected to return."
-  },
-  {
-    id: "ent-taylor-swift-eras-tour-2026",
-    title: "Taylor Swift Eras Tour Extends into 2026 with New Dates",
-    excerpt: "The record-breaking tour continues to break records.",
-    category: "Entertainment",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Hot",
-    image: "https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=1260",
-    content: "Taylor Swift has announced additional dates for her record-breaking Eras Tour, extending it well into 2026. The tour has already become the highest-grossing concert tour in history."
-  },
-  {
-    id: "ent-squid-game-season-2-2026",
-    title: "Squid Game Season 2 Breaks Netflix Viewing Records",
-    excerpt: "The Korean thriller returns with even higher stakes.",
-    category: "Entertainment",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Hot",
-    image: "https://images.pexels.com/photos/3779005/pexels-photo-3779005.jpeg?auto=compress&cs=tinysrgb&w=1260",
-    content: "Squid Game Season 2 has shattered Netflix viewing records in its first week of release. The new season introduces fresh games and deeper character backstories."
-  },
-  {
-    id: "ent-hollywood-strike-resolution-2026",
-    title: "Hollywood Strike Resolution Brings Major Changes to Industry",
-    excerpt: "New agreements reshape compensation and AI usage in film.",
-    category: "Entertainment",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Live",
-    image: "https://images.pexels.com/photos/274937/pexels-photo-274937.jpeg?auto=compress&cs=tinysrgb&w=1260",
-    content: "The long Hollywood strikes have finally reached a resolution with new agreements that significantly change how writers, actors, and directors are compensated."
-  },
-  {
-    id: "history-leonardo-mona-lisa",
-    title: "The Mona Lisa: Leonardo da Vinci's Masterpiece Still Captivates the World",
-    excerpt: "New research reveals hidden details in the most famous painting in history.",
-    category: "History",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Deep Dive",
-    image: "https://images.pexels.com/photos/23726195/pexels-photo-23726195.jpeg",
-    content: "Leonardo da Vinci's Mona Lisa continues to be the most famous painting in human history. New high-resolution scans have revealed previously hidden details in the background and the subject's enigmatic smile."
-  },
-  {
-    id: "history-roman-empire-fall",
-    title: "The Fall of the Roman Empire: New Evidence Changes Everything",
-    excerpt: "Recent archaeological finds rewrite the final days of Rome.",
-    category: "History",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Deep Dive",
-    image: "https://images.pexels.com/photos/5665104/pexels-photo-5665104.jpeg",
-    content: "New archaeological discoveries in Rome and Constantinople are rewriting the narrative of the Roman Empire's decline. The finds show that the empire did not collapse suddenly but underwent a complex transformation."
-  },
-  {
-    id: "history-einstein-relativity",
-    title: "Einstein: Space, Time, and Relativity",
-    excerpt: "Time is not absolute.",
-    category: "History",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Deep Dive",
-    image: "https://images.pexels.com/photos/30950148/pexels-photo-30950148.jpeg",
-    content: "Albert Einstein's work on E=mc² remains the foundation of nuclear energy and our understanding of the cosmos. His theory of relativity fundamentally changed how we perceive space and time."
-  },
-  {
-    id: "history-newton-laws",
-    title: "Isaac Newton: Laws That Still Govern the Universe",
-    excerpt: "Birth of classical mechanics.",
-    category: "History",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Deep Dive",
-    image: "https://images.pexels.com/photos/9241897/pexels-photo-9241897.jpeg",
-    content: "Newton's three laws of motion and universal gravitation remain the bedrock of physics more than 300 years later. His work in the Principia Mathematica established the foundation for classical mechanics."
-  },
-  {
-    id: "history-cleopatra",
-    title: "Cleopatra: The Last Pharaoh and Her Influence on Rome",
-    excerpt: "The legendary queen who shaped the fate of empires.",
-    category: "History",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Deep Dive",
-    image: "https://images.pexels.com/photos/17131829/pexels-photo-17131829.jpeg",
-    content: "Cleopatra VII, the last active pharaoh of Ancient Egypt, was a brilliant strategist and diplomat who formed alliances with Julius Caesar and Mark Antony."
-  },
-  {
-    id: "history-ww2-turning-points",
-    title: "World War II Turning Points: The Battles That Changed History",
-    excerpt: "Key moments that determined the outcome of the global conflict.",
-    category: "History",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Deep Dive",
-    image: "https://images.pexels.com/photos/27609440/pexels-photo-27609440.jpeg",
-    content: "The Battle of Midway in 1942 was a decisive turning point in the Pacific theater. In Europe, the Battle of Stalingrad marked the beginning of the end for Nazi Germany's eastern campaign."
-  },
-  {
-    id: "history-ancient-egypt",
-    title: "Ancient Egypt: The Civilization That Built the Pyramids",
-    excerpt: "Engineering marvels and cultural achievements of the Nile Valley.",
-    category: "History",
-    author: "Mehedi Redoy",
-    date: "April 19, 2026",
-    time: "Deep Dive",
-    image: "https://images.pexels.com/photos/33678772/pexels-photo-33678772.jpeg",
-    content: "Ancient Egypt flourished along the Nile River for over 3,000 years, creating one of the most enduring civilizations in human history. The construction of the Great Pyramids of Giza demonstrated remarkable engineering skills."
-  }
 ];
