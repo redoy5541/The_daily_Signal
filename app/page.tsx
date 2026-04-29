@@ -288,7 +288,7 @@ export default function Home() {
             >
               {/* NEW Hero Background Image - Different from before */}
               <div className="absolute inset-0">
-                <img src="https://wallpaperaccess.com/full/449814.jpg" className="w-full h-full object-cover animate-kenburns" />
+                <img src="https://wallpapercave.com/wp/wp6384180.jpg" className="w-full h-full object-cover animate-kenburns" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
               </div>
               

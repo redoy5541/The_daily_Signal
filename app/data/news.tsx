@@ -27,7 +27,126 @@ export const allNews: NewsArticle[] = [
     // ==================== WORLD - APRIL 22, 2026 (LATEST) ====================
   
     // ==================== WORLD - ADDITIONAL ARTICLES (APRIL 22, 2026) ====================
-
+{
+  id: "world-bangladesh-remittance-record-0422",
+  title: "Bangladesh Hits Record $25 Billion Remittance in Fiscal Year, Exceeds Government Target",
+  excerpt: "Expatriate Bangladeshis send record remittances, boosting foreign reserves and strengthening taka.",
+  category: "World",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Hot",
+  image: "https://imagedelivery.net/HRs_9pnDDn9uipVGixpHsg/1431742e-5f58-4b03-e1db-58ea5c33b600/public",
+  content: "Bangladesh has achieved a historic milestone in remittances, receiving over $25 billion in the fiscal year 2025-2026, surpassing the government's target of $24 billion. According to Bangladesh Bank data released today, the record inflow is attributed to increased digital banking adoption, government incentives, and a stronger global economic recovery. 'This is a testament to the resilience and dedication of our expatriate workers,' said Bangladesh Bank Governor Abdur Rouf Talukder. 'Remittances are a crucial pillar of our economy, providing stability to foreign reserves and supporting millions of families.' The Middle East remains the largest source, accounting for 60 percent of total remittances, followed by Europe and North America. The government has set an ambitious target of $30 billion for the next fiscal year. Economists say the record remittances will help stabilize the taka and boost consumer spending ahead of Eid-ul-Fitr. The Bangladesh government has introduced special incentives to encourage formal banking channels and reduce hundi (illegal money transfer). 'We are seeing the results of these policies,' said Finance Minister Abul Hassan Mahmood Ali. 'More families are receiving their hard-earned money through legal channels, which strengthens our economy.'",
+  featured: true
+},
+{
+  id: "world-bangladesh-padma-bridge-rail-0422",
+  title: "Padma Bridge Rail Link Partially Opens, Connecting Dhaka to Faridpur",
+  excerpt: "First phase of ambitious rail project inaugurated, reducing travel time and boosting trade.",
+  category: "World",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Live",
+  image: "https://www.railway-technology.com/wp-content/uploads/sites/13/2022/05/Featured-Image-Padma-Bridge-Rail-Link-Project.jpg",
+  content: "Prime Minister Sheikh Hasina today inaugurated the first phase of the Padma Bridge Rail Link project, connecting Dhaka to Faridpur and significantly reducing travel time between the capital and the southwestern region. The 82-kilometer rail line, built at a cost of Tk 39,000 crore ($3.5 billion), is expected to boost trade, tourism, and economic activity in 21 districts. 'This is a historic day for Bangladesh's transportation infrastructure,' Hasina said at the inauguration ceremony. 'The Padma Bridge Rail Link will change the lives of millions, providing faster and safer connectivity.' The full project, which will extend to Jashore, is expected to be completed by December 2026. Once fully operational, the rail line will cut travel time from Dhaka to the southwestern region from 12 hours to just 4 hours. The project is part of the government's broader efforts to modernize the country's railway network. International partners, including the World Bank and Asian Development Bank, have praised the project's progress. 'Bangladesh is setting an example for infrastructure development in the region,' said World Bank Country Director for Bangladesh, Abdoulaye Seck.",
+  featured: true
+},
+{
+  id: "world-bangladesh-garment-exports-up-0422",
+  title: "Bangladesh Garment Exports Surge 15% in Q3, Driven by Winter Clothing Demand",
+  excerpt: "RMG sector rebounds as global brands increase orders from Bangladesh amid competitive pricing.",
+  category: "World",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Live",
+  image: "https://www.reuters.com/resizer/v2/NUCSDFBYCBK4REHQTCYBBD5QRE.jpg?auth=d73fc31a48bc3fdf5e50897c5fb1b8481d587b4554b3dc8f78d8bfa7af8e60b9&width=1080&quality=80",
+  content: "Bangladesh's readymade garment (RMG) exports surged 15 percent in the third quarter of the fiscal year, driven by increased demand for winter clothing from Europe and North America, according to data released by the Export Promotion Bureau. The sector earned $12.5 billion in the quarter, up from $10.8 billion in the same period last year. 'Global brands are increasingly turning to Bangladesh for its competitive pricing, improved labor standards, and reliable supply chains,' said Bangladesh Garment Manufacturers and Exporters Association (BGMEA) President SM Mannan Kochi. Major retailers including H&M, Zara, Walmart, and Target have increased their sourcing from Bangladesh, which is now the world's third-largest apparel exporter after China and Vietnam. The sector, which employs over 4 million workers (mostly women), accounts for more than 80 percent of the country's total exports. The government has set a target of reaching $80 billion in garment exports by 2030. Industry leaders are optimistic about future growth, citing new free trade agreements and increased foreign investment in green factories. 'We are moving up the value chain,' Kochi added. 'Bangladesh is no longer just a source of basic garments. We are producing high-value items that compete with the best in the world.'",
+  featured: false
+},
+{
+  id: "world-bangladesh-mega-shipyard-0422",
+  title: "Bangladesh Inaugurates Largest Shipbuilding Yard in South Asia",
+  excerpt: "New facility aims to capture global market for ocean-going vessels and create thousands of jobs.",
+  category: "World",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Live",
+  image: "https://www.arabnews.com/sites/default/files/styles/n_670_395/public/2019/10/14/1796901-371850346.jpg?itok=kyXxtJis",
+  content: "Bangladesh today inaugurated the largest shipbuilding yard in South Asia at Mongla Port, signaling the country's ambition to become a major player in the global shipbuilding industry. The facility, built at a cost of Tk 5,000 crore ($450 million), can build ocean-going vessels up to 100,000 deadweight tons. 'This is a historic moment for Bangladesh's industrial development,' said Prime Minister Sheikh Hasina at the inauguration ceremony. 'We have the potential to become a leading shipbuilding nation, creating thousands of jobs and earning valuable foreign currency.' The new yard, operated by Western Marine Shipyard Limited, has already secured orders from European buyers for cargo vessels and tankers. The company plans to export ships worth $500 million annually within five years. 'Bangladesh offers competitive advantages in shipbuilding, including lower labor costs and strategic location,' said Managing Director Sakhawat Hossain. The government has identified shipbuilding as a priority sector for export diversification. Industry leaders hope to capture a share of the $150 billion global shipbuilding market currently dominated by China, South Korea, and Japan.",
+  featured: false
+},
+{
+  id: "world-bangladesh-sundarbans-eco-tourism-0422",
+  title: "Bangladesh Launches Eco-Tourism Initiative in Sundarbans Mangrove Forest",
+  excerpt: "New project aims to protect world's largest mangrove forest while creating sustainable livelihoods.",
+  category: "World",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Live",
+  image: "https://bangladesh.un.org/sites/default/files/styles/hero_header_2xl_1x/public/2023-11/undp_bd_17a6108.jpg?itok=AXxI2Bja",
+  content: "Bangladesh today launched a major eco-tourism initiative in the Sundarbans, the world's largest mangrove forest and a UNESCO World Heritage Site. The project, supported by the World Bank and the Global Environment Facility, aims to promote sustainable tourism while protecting the fragile ecosystem and supporting local communities. 'The Sundarbans is a national treasure,' said Environment Minister Md. Shahab Uddin at the launch event. 'This initiative will ensure that future generations can experience its beauty while providing alternative livelihoods for communities that depend on the forest's resources.' The project includes the construction of eco-friendly visitor centers, boardwalks, and watchtowers, as well as training for local guides and boat operators. The Sundarbans is home to the endangered Royal Bengal Tiger and numerous other species. It also serves as a natural barrier against cyclones and storm surges. 'Eco-tourism can be a win-win solution,' said World Bank Country Director Abdoulaye Seck. 'It generates revenue for conservation while providing economic opportunities for local people.' The government aims to increase visitor numbers while minimizing environmental impact through strict regulations and monitoring.",
+  featured: false
+},
+{
+  id: "world-bangladesh-gdp-growth-outlook-0422",
+  title: "World Bank Projects 7.2% GDP Growth for Bangladesh in 2026",
+  excerpt: "Strong domestic demand, export growth, and infrastructure investment drive optimistic forecast.",
+  category: "World",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Live",
+  image: "https://ecdn.dhakatribune.net/contents/cache/images/900x0x1/uploads/dten/2021/06/gdp-info-1-1623246281611.jpg",
+  content: "The World Bank has projected Bangladesh's GDP growth to reach 7.2 percent in 2026, driven by strong domestic demand, robust export growth, and large-scale infrastructure investment. The forecast, released in the bank's South Asia Economic Focus report, positions Bangladesh as one of the fastest-growing economies in the region. 'Bangladesh has demonstrated remarkable economic resilience,' said the World Bank's Chief Economist for South Asia. 'Despite global headwinds, the country continues to post impressive growth numbers.' The report cites the government's focus on infrastructure development, including the Padma Bridge and other mega-projects, as key drivers of growth. Strong remittance inflows and a rebound in garment exports have also contributed to the positive outlook. Inflation is projected to ease to 6 percent in 2026, down from 7.5 percent last year, as global commodity prices moderate and the government's monetary policy takes effect. 'We are cautiously optimistic,' said Planning Minister MA Mannan. 'We must remain vigilant against external shocks, but the fundamentals are strong.' The Asian Development Bank has also raised its growth forecast for Bangladesh, citing improved policy environment and increased foreign investment.",
+  featured: true
+},
+    {
+  id: "world-hezbollah-drone-strike-0422",
+  title: "Hezbollah Drone Strikes Target Israeli Soldiers in Southern Lebanon",
+  excerpt: "Ceasefire tensions rise as Hezbollah drones hit Israeli forces; Israel responds with airstrikes and displacement orders.",
+  category: "World",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Breaking",
+  image: "https://ogden_images.s3.amazonaws.com/www.newsandsentinel.com/images/2024/08/09233109/APDrones2-1100x733.jpg",
+  content: "Ceasefire tensions between Israel and Hezbollah escalated dramatically today as Iranian-backed Hezbollah fighters launched drone strikes targeting Israeli military positions in southern Lebanon. The attacks, which involved explosive-laden drones, struck several Israeli outposts near the border, causing casualties and damaging military infrastructure. The Israeli Defense Forces confirmed that multiple soldiers were wounded in the attacks, with at least two in critical condition. Israel responded swiftly with airstrikes on Hezbollah positions and issued evacuation orders for several villages in southern Lebanon. 'We will not tolerate any violation of Israeli sovereignty,' said IDF spokesperson Rear Admiral Daniel Hagari. 'Hezbollah's aggression will be met with overwhelming force.' The strikes mark the most significant violation of the fragile ceasefire brokered by the United States and France just weeks ago. Lebanese officials have called for restraint, warning that further escalation could plunge the region into full-scale war. The United Nations Interim Force in Lebanon has urged both sides to respect the ceasefire and return to dialogue. The incident has drawn international concern, with the Biden administration calling for an immediate de-escalation.",
+  featured: true
+},
+{
+  id: "world-iran-hormuz-update-0422",
+  title: "Iran War Live: Tehran Offers to Reopen Strait of Hormuz if U.S. Ends Blockade",
+  excerpt: "Oil and gas prices climb as UAE announces it will leave OPEC after May 1 amid ongoing tensions.",
+  category: "World",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Urgent",
+  image: "https://dims.apnews.com/dims4/default/1e89fc2/2147483647/strip/true/crop/6976x4651+0+0/resize/599x399!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F08%2Fec%2F13e002572a763386a5eddfc2163b%2Ffb7942c04fef4354aa15f417373fb63d",
+  content: "The ongoing Iran war remains unresolved as Tehran made a conditional offer today to reopen the strategic Strait of Hormuz if the United States ends its naval blockade of Iranian ports. Iranian Foreign Minister Abbas Araghchi announced the proposal during a press conference in Tehran, stating that Iran is ready to restore normal commercial shipping through the strait, but the illegal American blockade must end first. The White House has not yet responded formally to the offer, but officials indicate that the administration is divided on the issue. Meanwhile, global oil and gas prices continue to climb amid fears of a prolonged disruption. Brent crude surged past $105 per barrel today, a 6 percent increase from last week. In a dramatic development, the United Arab Emirates announced that it will leave the Organization of Petroleum Exporting Countries (OPEC) effective May 1, citing frustration with the cartel's production policies and what it called 'the politicization of energy markets.' The UAE's departure is expected to weaken OPEC's influence over global oil prices and may prompt other members to consider exiting. 'The UAE has decided to pursue its own energy strategy,' said Energy Minister Suhail Al Mazrouei. 'We will no longer be bound by quotas that do not serve our national interests.' The announcement sent shockwaves through energy markets, with analysts predicting increased volatility in the coming weeks.",
+  featured: true
+},
+{
+  id: "world-mali-attacks-update-0422",
+  title: "Mali Military Leader Speaks Publicly After Deadly Insurgent Attacks",
+  excerpt: "Assimi Goïta asserts control following coordinated attacks that killed dozens, signaling ongoing security challenges in West Africa.",
+  category: "World",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Live",
+  image: "https://s.france24.com/media/display/0b49c9cc-f529-11ea-ad4c-005056bf87d6/w:1280/p:16x9/000_8PU7ZP.jpg",
+  content: "Mali's military leader, Colonel Assimi Goïta, addressed the nation today for the first time since the coordinated insurgent attacks that killed dozens across the country last week. In a televised speech, Goïta vowed to 'hunt down the terrorists and their sponsors' and reassured the public that the government remains in firm control. 'We will not rest until every attacker is brought to justice,' Goïta said. 'Mali is strong. Mali will prevail.' The attacks, which targeted military installations and government buildings in Bamako and other cities, highlighted the ongoing security challenges in West Africa's Sahel region. Islamist insurgents and Tuareg rebels have capitalized on the political instability following the 2020 coup. France, which maintains a military presence in the region, condemned the attacks and pledged continued support. The United Nations has called for an independent investigation into potential human rights violations during the government's counter-offensive.",
+  featured: false
+},
+{
+  id: "world-who-health-update-0422",
+  title: "WHO Updates Global Health Status: Maternal Mortality, Meningitis Response, Hepatitis Report Released",
+  excerpt: "New reports highlight ongoing public health challenges as WHO issues new tools for bacterial meningitis response.",
+  category: "World",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Live",
+  image: "https://oncodaily.com/pub/uploads/2026/01/GLOBAL_OncoDaily-38.webp",
+  content: "The World Health Organization released its annual global health status update today, highlighting ongoing efforts to reduce maternal mortality, respond to meningitis outbreaks, and combat hepatitis. The 2026 Global Hepatitis Report, released alongside the update, reveals that while new infections have declined, millions remain undiagnosed and untreated. 'We are making progress, but not fast enough,' said WHO Director-General Dr. Tedros Adhanom Ghebreyesus. 'Every day, thousands of women die from preventable pregnancy-related complications. Every day, children die from meningitis. Every day, people die from hepatitis because they lack access to testing and treatment.' The WHO also issued new tools for bacterial meningitis response, including updated guidelines for diagnosis, treatment, and outbreak management. The agency called on member states to invest in immunization programs and strengthen health systems.",
+  featured: true
+},    
 {
   id: "world-white-house-shooting-0422",
   title: "Washington in Shock After Shooting at the White House Correspondents' Dinner",
@@ -717,6 +836,117 @@ export const allNews: NewsArticle[] = [
     content: `Thousands of supporters of former Brazilian President Jair Bolsonaro stormed the National Congress in Brasília today, demanding military intervention to restore the far-right leader to power. The rioters breached security barriers and entered the chamber of deputies, smashing furniture and clashing with police. "This is an attack on democracy," said President Luiz Inácio Lula da Silva in a televised address. "Those responsible will be identified and prosecuted to the full extent of the law. Brazil will not tolerate insurrection." The riot echoes the January 6, 2021 attack on the US Capitol by supporters of former President Donald Trump. Bolsonaro, like Trump, has refused to accept his 2022 election loss and has repeatedly claimed without evidence that the vote was stolen. "The election was fraud," Bolsonaro said in a video message to his supporters. "The people's will has been subverted. The armed forces must intervene to restore democracy." The riot began after Bolsonaro called for a "final offensive" against the Lula government. Thousands of his supporters gathered on the Esplanade of Ministries before marching on Congress. "We are here to take back our country," said a protester wearing a Brazilian flag as a cape. "Lula is a criminal. He must go." Security forces initially struggled to contain the riot, with police outnumbered and overwhelmed. By late afternoon, however, reinforcements had arrived and cleared the building. At least 500 people have been arrested. "Order has been restored," said Justice Minister Flávio Dino. "The National Congress is secure. Those who invaded will face the consequences." Lula called an emergency meeting of his cabinet and announced that he would deploy the National Guard to Brasília to maintain order. "We will not allow democracy to be subverted," Lula said. "The will of the people, expressed at the ballot box, will be respected." The international community condemned the attack. The Biden administration called for "calm and restraint" and expressed support for Lula's government. "The United States stands with Brazil's democratic institutions," a State Department spokesperson said. The European Union also condemned the violence. "This is an unacceptable attack on democracy," said EU foreign policy chief Josep Borrell. "The European Union calls for an immediate end to the violence and respect for the rule of law." The attack is likely to deepen Brazil's political crisis. Lula, who took office in 2023, has faced intense opposition from Bolsonaro's supporters, who control a significant minority of seats in Congress. "Brazil is a deeply divided country," said political scientist Maurício Santoro. "This attack is a symptom of that division. Healing will take years." Bolsonaro, who has been under investigation for his role in inciting the riot, could face charges of insurrection. "Bolsonaro has crossed a line," said Supreme Court Justice Alexandre de Moraes. "He incited this violence. He must be held accountable." The attack has also raised concerns about the stability of Latin America's largest democracy. "Brazil has a long history of democratic backsliding," said human rights analyst Maria Laura Canineu. "This is a wake-up call. Democracies are fragile. They must be defended."`,
     featured: false
   },
+
+  // ==================== POLITICS - BANGLADESH & GLOBAL (APRIL 22, 2026) ====================
+
+{
+  id: "politics-bangladesh-election-commission-0422",
+  title: "Bangladesh Election Commission Announces Schedule for Upcoming Parliamentary Elections",
+  excerpt: "Chief Election Commissioner unveils roadmap for national polls as political parties begin preparations.",
+  category: "Politics",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Breaking",
+  image: "https://bowergroupasia.com/wp-content/uploads/2025/12/Screenshot-2025-12-15-at-1.13.21-PM.png",
+  content: "Bangladesh's Election Commission today announced the schedule for the upcoming parliamentary elections, setting the stage for a high-stakes political contest. Chief Election Commissioner Kazi Habibul Awal revealed that the elections will be held in two phases on December 18 and December 28, 2026. 'We are committed to ensuring free, fair, and credible elections,' Awal said at a press conference in Dhaka. 'All necessary preparations have been made to facilitate peaceful voting across the country.' The announcement comes amid heightened political tensions between the ruling Awami League and opposition parties. The Bangladesh Nationalist Party (BNP) has called for a caretaker government to oversee the polls, a demand rejected by the ruling party. 'We do not accept this schedule,' said BNP Secretary General Mirza Fakhrul Islam Alamgir. 'Elections cannot be free and fair without a neutral caretaker government.' International observers, including the European Union and the United Nations, have been invited to monitor the polls. The United States has urged all parties to respect the democratic process. 'We call on all political parties to refrain from violence and engage in constructive dialogue,' a State Department spokesperson said. The ruling Awami League, led by Prime Minister Sheikh Hasina, has expressed confidence in victory. 'The people of Bangladesh will vote for development and progress,' said Awami League General Secretary Obaidul Quader. 'The opposition has nothing to offer but empty promises.' The elections will determine the next government for the next five years. Over 100 million voters are registered to cast their ballots. Security has been tightened across the country ahead of the polls. The government has announced the deployment of paramilitary forces to sensitive areas.",
+  featured: true
+},
+{
+  id: "politics-bangladesh-bnp-leadership-0422",
+  title: "BNP Holds National Council to Elect New Leadership Amid Internal Factionalism",
+  excerpt: "Opposition party seeks to revive organizational strength as key leaders compete for top positions.",
+  category: "Politics",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Live",
+  image: "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/8256x5504+0+0/resize/8256x5504!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F4e%2Fd3%2Fb9fc763449809b1a642b501829b4%2Fap26043148980377.jpg",
+  content: "The Bangladesh Nationalist Party (BNP) began its national council today to elect new leadership, as the opposition party seeks to revitalize its organizational strength ahead of the upcoming parliamentary elections. The council, held at the Institution of Engineers, Bangladesh in Dhaka, was attended by thousands of party delegates from across the country. 'This council is crucial for the future of our party,' said BNP Standing Committee Member Khaleda Zia, who was released from house arrest last month. 'We must unite and prepare for the elections.' The leadership contest has exposed internal divisions within the party, with multiple candidates vying for the position of secretary-general. Acting Secretary General Mirza Fakhrul Islam Alamgir is considered the frontrunner, but faces challenges from younger leaders demanding change. 'We need fresh leadership,' said a party activist. 'The old guard has failed to lead us to victory. It's time for new faces.' The council also approved a political resolution criticizing the government's economic policies and human rights record. 'The Awami League has failed the people,' the resolution read. 'Inflation is rising, corruption is rampant, and democracy is under threat.' The government has dismissed the BNP's criticism as politically motivated. 'The opposition has no vision for the country,' said Awami League Presidium Member Jahangir Kabir Nanak. 'All they know how to do is criticize.' International observers have expressed concern about the political climate in Bangladesh. 'We urge all parties to exercise restraint and resolve their differences through dialogue,' said a UN spokesperson. The BNP hopes to project unity after the council concludes. 'We will emerge stronger and more united,' said a party spokesperson. 'The people are with us.'",
+  featured: true
+},
+{
+  id: "politics-bangladesh-chittagong-hill-tracts-0422",
+  title: "Bangladesh Government Signs Peace Accord with Indigenous Groups in Chittagong Hill Tracts",
+  excerpt: "Historic agreement aims to resolve decades-long conflict over land rights and autonomous governance.",
+  category: "Politics",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Breaking",
+  image: "https://www.hrw.org/sites/default/files/styles/embed_xxl/public/media_2022/03/202203asia_bangladesh_CHT.jpg?itok=wVCPzPVQ",
+  content: "The Bangladesh government today signed a landmark peace accord with indigenous groups in the Chittagong Hill Tracts, aiming to resolve a decades-long conflict over land rights and cultural autonomy. The agreement, signed at the Prime Minister's Office in Dhaka, was hailed as a historic step toward reconciliation. 'This is a new chapter for the Chittagong Hill Tracts,' said Prime Minister Sheikh Hasina at the signing ceremony. 'We are committed to protecting the rights of all indigenous communities and ensuring their development.' The accord grants greater autonomy to the region's three hill districts and establishes a commission to address disputed land claims. It also provides for the rehabilitation of internally displaced persons and the preservation of indigenous languages and cultures. 'We have waited decades for this day,' said Jyotirindra Bodhipriya Larma, leader of the Parbatya Chattagram Jana Samhati Samiti (PCJSS). 'This agreement recognizes our rights and our identity as indigenous peoples.' The Chittagong Hill Tracts have been the site of an insurgency since the 1970s, when indigenous groups demanded greater autonomy and protested the influx of Bengali settlers. A previous peace accord was signed in 1997 but was never fully implemented. 'We have learned from past mistakes,' said Hill Tracts Affairs Minister Bir Bahadur Ushwe Sing. 'This time, we are committed to implementation.' The agreement has been welcomed by the United Nations and international partners. 'This is an important step toward lasting peace in the region,' said a UN Development Programme representative. Indigenous leaders have called for the swift implementation of the accord. 'The people of the Hill Tracts cannot wait any longer,' said a community representative. 'We need action, not just words.'",
+  featured: true
+},
+{
+  id: "politics-bangladesh-local-elections-0422",
+  title: "Bangladesh Holds First Phase of Upazila Parishad Elections Amid Tight Security",
+  excerpt: "Voters cast ballots in local government elections as ruling party and opposition compete for grassroots support.",
+  category: "Politics",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Live",
+  image: "https://www.aljazeera.com/wp-content/uploads/2026/01/AP25198412166683-1769476813.jpg?resize=770%2C513&quality=80",
+  content: "The first phase of Bangladesh's Upazila Parishad (sub-district council) elections was held today amid tight security, as the ruling Awami League and opposition Bangladesh Nationalist Party (BNP) competed for grassroots support. Voting took place in 87 upazilas across the country, with over 20 million registered voters eligible to cast ballots. 'The elections are being conducted peacefully,' said Chief Election Commissioner Kazi Habibul Awal. 'We have deployed sufficient security forces to ensure a safe environment.' The ruling Awami League fielded candidates in most upazilas, while the BNP participated after boycotting previous local elections. 'We are participating to protect the people's democratic rights,' said BNP Secretary General Mirza Fakhrul Islam Alamgir. The elections are seen as a test of popular support ahead of the national parliamentary elections later this year. 'Local elections are a bellwether,' said political analyst Dr. Shamsul Alam. 'They indicate which way the political wind is blowing.' Despite government assurances, opposition parties have alleged irregularities and vote-rigging. 'There are reports of ballot-stuffing and intimidation,' said a BNP spokesperson. 'We will file complaints with the Election Commission.' International observers from the Commonwealth and European Union monitored selected polling stations. 'The voting process was generally orderly,' said an EU observer. 'We will release a full report after the final phase.' The second and final phase of the Upazila Parishad elections is scheduled for next week. Results from the first phase are expected within 48 hours.",
+  featured: false
+},
+{
+  id: "politics-bangladesh-india-border-talks-0422",
+  title: "Bangladesh and India Hold Home Secretary-Level Talks on Border Management",
+  excerpt: "Both nations discuss fencing, smuggling prevention, and coordinated border patrols.",
+  category: "Politics",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Live",
+  image: "https://i0.wp.com/www.socialnews.xyz/wp-content/uploads/2024/12/09/202412093277057-scaled.jpg?w=777&quality=80&zoom=1&ssl=1",
+  content: "Bangladesh and India held home secretary-level talks in New Delhi today, focusing on border management, smuggling prevention, and coordinated patrols along the 4,096-kilometer border. The Bangladeshi delegation was led by Senior Secretary of the Public Security Division Md. Akhter Hossain, while the Indian side was headed by Home Secretary Govind Mohan. 'The talks were productive and cordial,' said Hossain. 'We agreed on several measures to reduce border incidents and improve cooperation.' The two sides discussed the installation of additional fencing along vulnerable stretches, with both countries agreeing to share construction plans to avoid disputes. 'Transparency is key,' said Mohan. 'We must ensure that border infrastructure does not create misunderstandings.' The issue of cross-border smuggling of drugs, arms, and cattle was also addressed. Both sides agreed to enhance intelligence sharing and joint operations against smuggling networks. 'We are committed to combating transnational crime,' said a joint statement issued after the talks. The issue of border killings — where Indian border guards allegedly shoot Bangladeshi nationals attempting to cross illegally — was raised by the Bangladeshi side. 'We emphasized the need for zero tolerance for such incidents,' said Hossain. The Indian side reiterated its commitment to using non-lethal measures. 'Our forces have been instructed to exercise restraint,' said Mohan. 'We will investigate any allegations of excessive force.' The talks also covered the exchange of enclaves and the implementation of the 2015 Land Boundary Agreement. 'Both countries have made significant progress in resolving long-standing border issues,' said a diplomatic source. The next round of home secretary-level talks is scheduled to be held in Dhaka next year.",
+  featured: false
+},
+{
+  id: "politics-bangladesh-anti-corruption-0422",
+  title: "Anti-Corruption Commission Launches Probe into 15 Former Lawmakers for Asset Mismatch",
+  excerpt: "ACC investigates allegations of illicit wealth accumulation by politicians from both ruling and opposition parties.",
+  category: "Politics",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Hot",
+  image: "https://storage.united24media.com/thumbs/1920x/e/09/fc9f2eaaf967c89589af497333fd609e.png",
+  content: "Bangladesh's Anti-Corruption Commission (ACC) today launched formal investigations into 15 former lawmakers from both the ruling Awami League and opposition parties for alleged asset mismatches and illicit wealth accumulation. 'The ACC has received credible information about significant discrepancies between their known sources of income and their assets,' said ACC Chairman Mohammad Moinuddin Abdullah. 'We are proceeding according to the law.' The investigation targets five former Awami League lawmakers, seven from the BNP, and three from the Jatiya Party. The ACC has asked the individuals to submit asset statements within 15 days. 'This is politically motivated,' said a BNP spokesperson. 'The ACC is being used as a tool to harass opposition leaders.' The Awami League has maintained that the investigations are evidence-based. 'The ACC is an independent body,' said Awami League General Secretary Obaidul Quader. 'No one is above the law, regardless of their party affiliation.' The investigations come amid heightened political tensions ahead of the parliamentary elections. Civil society groups have welcomed the ACC's action. 'Corruption is a cancer that affects every aspect of our society,' said Transparency International Bangladesh Executive Director Dr. Iftekharuzzaman. 'Investigating politicians is a positive step.' The ACC has faced criticism in the past for perceived political bias. 'The commission must demonstrate that its actions are impartial,' said a legal expert. 'Otherwise, these investigations will be seen as selective justice.' The accused lawmakers have denied any wrongdoing. 'I have acquired nothing beyond my means,' said one former lawmaker. 'This is harassment.' The ACC has requested financial records from banks and land registry offices. The investigation is expected to take several months.",
+  featured: true
+},
+{
+  id: "politics-bangladesh-usa-partnership-0422",
+  title: "Bangladesh and United States Sign New Partnership Agreement on Climate and Energy",
+  excerpt: "Deal aims to support Bangladesh's transition to renewable energy and strengthen climate resilience.",
+  category: "Politics",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Live",
+  image: "https://d2u0ktu8omkpf6.cloudfront.net/84482234cc2af7daaf81336029d20ed443248765664f7b24.jpg",
+  content: "Bangladesh and the United States today signed a new partnership agreement focused on climate action and energy cooperation, strengthening bilateral ties between the two nations. The agreement was signed in Dhaka by Bangladesh Foreign Minister Dr. A.K. Abdul Momen and U.S. Ambassador to Bangladesh Peter Haas. 'This partnership reflects our shared commitment to addressing the climate crisis,' said Momen. 'Bangladesh is on the front lines of climate change, and we need international support to build resilience.' The agreement includes $200 million in U.S. funding for renewable energy projects, including solar and wind power installations, and technical assistance for climate adaptation programs. 'The United States stands with Bangladesh in its efforts to combat climate change,' said Haas. 'We are proud to partner with a nation that has shown such leadership on this issue.' The deal also includes provisions for technology transfer and capacity building in disaster preparedness. Bangladesh is particularly vulnerable to cyclones, flooding, and sea-level rise. 'Every dollar invested in climate resilience saves multiple dollars in disaster response,' said a World Bank climate expert. 'This agreement is a smart investment.' The partnership has been welcomed by environmental groups. 'Climate change is the defining challenge of our time,' said an activist. 'International cooperation is essential.' The agreement does not include military or security cooperation, which Bangladesh has been seeking. 'We have a separate dialogue on security matters,' said a foreign ministry spokesperson. The United States is one of Bangladesh's largest trading partners and sources of foreign investment. 'This agreement will further strengthen the economic relationship,' said a business leader. The agreement is valid for five years and is renewable.",
+  featured: false
+},
+{
+  id: "politics-bangladesh-rohingya-repatriation-0422",
+  title: "Bangladesh, China, Myanmar Hold Tripartite Meeting on Rohingya Repatriation",
+  excerpt: "Talks focus on creating conditions for safe, voluntary return of displaced Rohingya to Rakhine State.",
+  category: "Politics",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Live",
+  image: "https://www.rfa.org/resizer/v2/EI2MNHJARRCSD3AGS3GWJWBI7M.jpg?auth=69ceba2a26894a39bf0183241f439d70f0c2888f37a95ae6d41fe3a91e7f3a79",
+  content: "Bangladesh, China, and Myanmar held a tripartite meeting in Beijing today to discuss the repatriation of Rohingya refugees from Bangladesh to Myanmar's Rakhine State. The meeting was the first high-level discussion on the issue since the military coup in Myanmar in 2021. 'We discussed concrete steps to create conditions conducive to safe, voluntary, and dignified repatriation,' said Bangladeshi Foreign Secretary Masud Bin Momen. 'The Rohingya people cannot stay in Bangladesh indefinitely.' Bangladesh currently hosts over 1.1 million Rohingya refugees in sprawling camps in Cox's Bazar. The government has repeatedly called for their repatriation, but Myanmar has been unwilling to take them back. 'Myanmar is committed to the repatriation process,' said a Myanmar representative. 'But conditions in Rakhine State are not yet ready.' China, which has close ties with both countries, has offered to mediate and provide financial support for the repatriation process. 'China supports a peaceful resolution to this issue,' said Chinese Foreign Ministry spokesperson Wang Wenbin. 'We will do what we can to help.' Rohingya leaders have expressed skepticism about the talks. 'We cannot return to Myanmar until our safety is guaranteed and our citizenship is restored,' said a Rohingya community leader. 'We have been burned before.' The international community has urged Myanmar to address the root causes of the Rohingya crisis, including the 2017 military crackdown that the UN has called a 'textbook example of ethnic cleansing.' 'Without justice and accountability, there can be no lasting solution,' said a UNHCR spokesperson. The tripartite meeting is expected to be followed by technical-level talks in the coming months.",
+  featured: true
+},
+{
+  id: "politics-bangladesh-dhaka-mayor-election-0422",
+  title: "Dhaka Mayoral Election Campaign Heats Up as Candidates Present Vision for Capital",
+  excerpt: "Ruling party and opposition nominees trade promises on traffic, pollution, and infrastructure.",
+  category: "Politics",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Live",
+  image: "https://thehill.com/wp-content/uploads/sites/2/2024/11/672e25842f16b5.57409366.jpeg?strip=1",
+  content: "The campaign for the Dhaka mayoral election intensified today as candidates from the ruling Awami League and opposition parties presented their visions for the capital city. The election, scheduled for May 15, is seen as a key test of political popularity ahead of national polls. 'Dhaka is choking,' said Awami League candidate Atiqul Islam, the incumbent mayor seeking re-election. 'We need urgent action on traffic congestion, air pollution, and waterlogging. My plan addresses all these issues.' Islam's platform includes expanding the metro rail network, building new flyovers, and creating green spaces. He also promised to crack down on illegal encroachment and improve waste management. 'We have made progress, but there is much more to do,' he said. Opposition BNP candidate Tabith Awal, a former mayor, has focused his campaign on corruption and mismanagement. 'The current administration has failed the people of Dhaka,' Awal said. 'Our air is unbreathable, our roads are clogged, and our rivers are dying. We need a change.' Awal's platform includes zero tolerance for corruption, decentralization of city services, and increased investment in public transport. 'We will make Dhaka livable again,' he promised. The campaign has been marked by heated exchanges and allegations of vote-buying. 'The ruling party is using state resources to influence the election,' said an opposition spokesperson. The Awami League has denied the allegations. 'The BNP is spreading lies because they cannot win on their own merits,' said a party representative. International observers have expressed concern about the electoral environment. 'We hope that all parties will respect the democratic process,' said a UN official. The election will be closely watched by political analysts. 'Dhaka is a microcosm of Bangladesh,' said a political scientist. 'The results will signal which way the political winds are blowing.'",
+  featured: false
+},
     // ==================== BUSINESS - APRIL 22, 2026 ====================
   {
     id: "business-federal-reserve-rates-0422",
@@ -840,6 +1070,69 @@ export const allNews: NewsArticle[] = [
   },
   // ==================== HISTORY & CONTEXT - APRIL 20, 2026 ====================
     // ==================== HISTORY - PART 1 (TOPICS 1-10) ====================
+  
+  // ==================== HISTORY - INTERESTING ARTICLES (Mona Lisa, Da Vinci, Aristotle, etc.) ====================
+
+{
+  id: "history-mona-lisa-hidden-secrets-0422",
+  title: "Mona Lisa's Hidden Secrets: New X-Ray Technology Reveals Leonardo's Lost Portrait Beneath",
+  excerpt: "Scientists discover a completely different portrait hidden beneath the world's most famous painting using advanced multi-spectral imaging.",
+  category: "History",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Deep Dive",
+  image: "https://cdn.dnaindia.com/sites/default/files/2015/12/08/402790-mona-lisa.jpg?im=FitAndFill=(1200,900)",
+  content: "The Mona Lisa, Leonardo da Vinci's 16th-century masterpiece, has revealed yet another secret to modern science. Using advanced X-ray fluorescence and multi-spectral imaging technology, French researchers have discovered a completely different portrait hidden beneath the surface of the iconic painting. 'There is a woman beneath the Mona Lisa that is not the same woman we see on top,' said art historian and lead researcher Dr. Pascal Cotte. 'She is looking slightly to the side, and she has a different expression.' The hidden portrait, which has been dubbed the 'Earlier Mona Lisa,' shows a woman wearing a headdress that was fashionable in Florence around 1503. Da Vinci is believed to have painted over the original portrait years later, creating the enigmatic figure that now hangs in the Louvre Museum. 'This discovery changes everything we thought we knew about the Mona Lisa,' said art historian Dr. Martin Kemp. 'It suggests that Leonardo worked on the painting for much longer than previously believed, constantly revising and perfecting his vision.' The Mona Lisa has been studied more than any other painting in history. Previous scans have revealed that da Vinci used a technique called 'sfumato' — Italian for 'vanished like smoke' — to create the soft transitions between colors and the mysterious smile. 'Leonardo was a perfectionist,' said Kemp. 'He carried the Mona Lisa with him for years, adding layers and making changes. He never considered it finished.' The hidden portrait discovery has reignited debates about the identity of the woman in the painting. Most scholars believe she is Lisa Gherardini, the wife of a Florentine silk merchant. But some have proposed alternative theories, including that the painting is a self-portrait of da Vinci in drag. 'The hidden portrait does not resemble Lisa Gherardini,' said Cotte. 'It may be a different woman entirely.' The Louvre has not yet commented on whether it will allow further invasive testing of the priceless painting. 'The Mona Lisa is fragile,' said a museum spokesperson. 'We must balance scientific curiosity with preservation.' The discovery was made as part of a project to digitize the Mona Lisa in ultra-high resolution. 'We are still analyzing the data,' said Cotte. 'There may be more secrets yet to be revealed.'",
+  featured: true
+},
+{
+  id: "history-leonardo-da-vinci-inventions-0422",
+  title: "Leonardo da Vinci's Lost Inventions: The Renaissance Genius Who Was 500 Years Ahead of His Time",
+  excerpt: "From flying machines to armored tanks, da Vinci's notebooks reveal designs that foreshadowed modern technology by centuries.",
+  category: "History",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Deep Dive",
+  image: "https://cdn-italiani-media.italiani.it/site-italiani/2019/05/leonardo-da-vinci-uomo-vitruviano.jpg",
+  content: "Leonardo da Vinci (1452-1519) was more than the painter of the Mona Lisa and The Last Supper. He was an inventor, engineer, and scientist whose notebooks contain designs for technologies that would not be realized for centuries. 'Leonardo's mind was unlike any other in history,' said historian Dr. Walter Isaacson, author of 'Leonardo da Vinci.' 'He saw the world differently. He was constantly asking questions and imagining possibilities.' Among his most famous designs is the 'ornithopter,' a flying machine with wings that flapped like a bird. Da Vinci spent years studying the flight of birds and bats before sketching his designs. 'He understood the principles of aerodynamics long before they were formally discovered,' said Isaacson. 'His flying machine design was remarkably sophisticated.' Da Vinci also designed a primitive helicopter, a parachute, a diving suit, a armored tank, and a machine gun. Many of these designs were never built during his lifetime. 'He was limited by the materials and technology of his time,' said Isaacson. 'But his concepts were sound. When modern engineers built his designs using contemporary materials, they worked.' One of his most innovative designs was for a 'robot knight' — a mechanical suit of armor that could sit, stand, and move its arms. The design, discovered in the 1950s, was based on his detailed studies of human anatomy. 'Leonardo dissected dozens of human corpses to understand how the body worked,' said Isaacson. 'He applied that knowledge to his mechanical designs.' Da Vinci also designed a system of canals and locks to make rivers navigable, a precursor to modern water management systems. He envisioned an ideal city with two levels — one for pedestrians and one for vehicles — anticipating modern urban planning. 'He saw problems that others didn't even recognize,' said Isaacson. 'And he imagined solutions that were centuries ahead of their time.' Da Vinci's notebooks, written in mirror script from right to left, contain over 7,000 pages of drawings and observations. They are now among the most valuable documents in history. 'He was not just an artist or an inventor,' said Isaacson. 'He was a genius who refused to accept boundaries between disciplines. That is his greatest legacy.'",
+  featured: true
+},
+{
+  id: "history-aristotle-philosophy-0422",
+  title: "Aristotle: The Greek Philosopher Who Shaped Western Thought for 2,000 Years",
+  excerpt: "The student of Plato and tutor of Alexander the Great founded logic, biology, ethics, and political science.",
+  category: "History",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Deep Dive",
+  image: "https://d1k1989q2ysl57.cloudfront.net/media/historysnob/2025/7/28/1753729617bb8c14df7214261f7f06b21c4c019ecb63204dff.jpg",
+  content: "Aristotle (384-322 BC) is one of the most influential philosophers in history. A student of Plato and tutor to Alexander the Great, he founded the Lyceum in Athens and wrote on virtually every subject: logic, metaphysics, ethics, politics, biology, physics, poetry, and rhetoric. 'Aristotle's influence on Western thought is second to none,' said philosopher Dr. Martha Nussbaum. 'For nearly 2,000 years, he was simply known as 'The Philosopher.' His ideas dominated European intellectual life until the Renaissance.' Unlike his teacher Plato, who believed in a world of perfect Forms beyond our senses, Aristotle was an empiricist. He believed that knowledge comes from observing the natural world. 'Aristotle would go to the beach and collect sea creatures,' said Nussbaum. 'He dissected them, classified them, and tried to understand how they lived. He was the first true biologist.' His classification of living things into a 'ladder of nature' (scala naturae) remained the basis of biology for 2,000 years. He correctly identified that dolphins are mammals, not fish, and that some marine animals, like whales, give birth to live young. 'He got many things wrong,' said Nussbaum. 'But his method — observation, classification, and reasoning — was revolutionary.' Aristotle's ethics, based on the concept of 'virtue' and the 'Golden Mean,' remains influential today. He argued that the goal of human life is 'eudaimonia' — often translated as 'happiness' or 'flourishing' — achieved through living a life of virtue. 'He believed that virtue is a habit, not an innate quality,' said Nussbaum. 'We become just by doing just acts, courageous by doing courageous acts.' His political philosophy, particularly his analysis of different forms of government (monarchy, aristocracy, democracy, and their corruptions), continues to be studied. He famously described man as a 'political animal' — a creature who can only thrive in a community. 'Aristotle saw that humans are social beings,' said Nussbaum. 'We cannot flourish alone. We need each other.' His works were lost to the West for centuries but preserved in the Islamic world, where scholars like Avicenna and Averroes built upon his ideas. 'The rediscovery of Aristotle in the 12th century sparked the Renaissance,' said Nussbaum. 'His ideas transformed philosophy, science, and theology.'",
+  featured: true
+},
+{
+  id: "history-da-vinci-horse-sculpture-0422",
+  title: "The Lost Horse: Leonardo da Vinci's Greatest Sculpture That Was Never Built",
+  excerpt: "A 24-foot bronze horse destined for Milan was destroyed by French archers — 500 years later, it was finally completed.",
+  category: "History",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Deep Dive",
+  image: "https://cdn.mos.cms.futurecdn.net/cCzg4LgcEXtFBkp43Er5mV.jpg",
+  content: "In 1482, Leonardo da Vinci was commissioned to create the largest equestrian statue in the world — a 24-foot bronze horse to honor Ludovico Sforza, the Duke of Milan. The project would become one of his greatest obsessions — and greatest disappointments. 'Leonardo called it 'the Horse,'' said art historian Dr. Sara Taglialagamba. 'He spent 16 years working on it. He drew thousands of sketches. He invented new casting techniques. He was determined to create something no one had ever seen.' Da Vinci's design was revolutionary. The horse would be depicted rearing on its hind legs, a pose never before attempted in a bronze statue of that size. 'It was an engineering challenge as much as an artistic one,' said Taglialagamba. 'Leonardo had to figure out how to cast the bronze, how to support the weight, how to balance the figure. He was solving problems that had never been solved.' In 1499, before the horse was completed, French forces invaded Milan. The bronze intended for the statue was melted down to make cannons. The clay model was used for target practice by French archers. 'It was destroyed,' said Taglialagamba. 'Leonardo was devastated. He had poured years of his life into that project, and it was gone.' For centuries, the horse was considered lost forever. But in 1977, an American pilot named Charles Dent saw a drawing of the horse and decided to complete Leonardo's vision. 'Dent was obsessed,' said Taglialagamba. 'He spent 17 years raising money and building the statue.' After Dent's death in 1994, the project was taken over by a foundation. The 24-foot bronze horse was finally completed in 1999 — exactly 500 years after it was destroyed. 'It was a moment of closure,' said Taglialagamba. 'Leonardo's vision was finally realized.' The statue now stands in Milan, near the iconic San Siro stadium. A second casting stands in Grand Rapids, Michigan. 'It is exactly as Leonardo designed it,' said Taglialagamba. 'Rearing on its hind legs, powerful and majestic. It is a testament to his genius.' Leonardo would never know. 'But somewhere,' said Taglialagamba, 'he must be smiling.'",
+  featured: false
+},
+{
+  id: "history-ancient-greek-inventions-0422",
+  title: "Ancient Greek Inventions That Changed the World: From Democracy to the Alarm Clock",
+  excerpt: "The Greeks invented democracy, geometry, the alarm clock, central heating, and the vending machine — thousands of years ago.",
+  category: "History",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Deep Dive",
+  image: "https://greekreporter.com/wp-content/uploads/2014/03/Ctesibius-water-clock-alarm-clock-17-century-credit-public-domain-wikimedia-710x1024.jpg",
+  content: "The ancient Greeks, who lived from roughly 800 BC to 146 BC, invented or perfected many of the technologies and ideas that shape our world today. 'We tend to think of the Greeks as philosophers and artists,' said historian Dr. John H. Oakley. 'But they were also brilliant engineers, inventors, and scientists. Many of their inventions were centuries ahead of their time.' Democracy, the most famous Greek 'invention,' was developed in Athens around 508 BC. All male citizens could vote on laws and serve on juries. 'It was a radical idea,' said Oakley. 'The idea that ordinary people should govern themselves — not kings, not priests, not dictators — was revolutionary.' The Greeks also invented the alarm clock. The philosopher Plato (428-348 BC) had a water clock that would sound a horn at a preset time, signaling the start of his lectures. 'He was known for his early morning classes,' said Oakley. 'The alarm clock helped him wake up.' Central heating was another Greek innovation. The Temple of Artemis at Ephesus, one of the Seven Wonders of the Ancient World, had underfloor heating. 'They pumped hot air through flues beneath the floors,' said Oakley. 'It kept the temple warm in winter.' The first vending machine was invented by Hero of Alexandria (10-70 AD). When a coin was inserted, a measured amount of holy water would flow out. 'It was used in Egyptian temples,' said Oakley. 'Worshippers could buy holy water without a priest.' The Greeks also invented the odometer, used to measure the distance traveled by a vehicle. 'It was a simple device with gears and wheels,' said Oakley. 'When the wheels turned, a mechanism dropped pebbles into a box. Count the pebbles, count the distance.' The Antikythera mechanism, discovered in a shipwreck in 1901, is considered the world's first computer. Dating to 100 BC, it used bronze gears to predict astronomical positions. 'It took us 2,000 years to build something as sophisticated,' said Oakley. 'The Greeks were extraordinary.'",
+  featured: true
+},
   {
     id: "history-great-emu-war-0422",
     title: "The Great Emu War: When Australia's Army Lost to Flightless Birds in 1932",
