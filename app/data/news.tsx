@@ -715,6 +715,94 @@ export const allNews: NewsArticle[] = [
     content: `Coco Gauff won the US Open today, defeating Iga Swiatek 4-6, 6-3, 6-2 in a thrilling final at Arthur Ashe Stadium. The American star, who won her first major at the 2023 US Open, captured her second title in front of an ecstatic home crowd. "This is unbelievable," Gauff said after falling to her knees in celebration. "New York, you are amazing. I couldn't have done this without you." Gauff, 22, entered the tournament as the No. 2 seed behind Swiatek, who has won five majors including three French Opens. The Polish star had beaten Gauff in their previous two meetings. "I knew I had to play my best," Gauff said. "Iga is a champion. She's beaten me before. I had to stay focused and trust my game." The match was a rollercoaster. Swiatek dominated the first set, breaking Gauff's serve twice. Gauff looked frustrated, making unforced errors and shaking her head. "I was too passive," Gauff admitted. "I was letting her dictate. My coach told me to be more aggressive. That changed everything." Gauff broke Swiatek's serve to open the second set and never looked back. She won six of the next eight games to force a decisive third set. "When Coco gets confident, she's dangerous," said ESPN analyst Chris Evert. "She has all the shots. She just has to believe in herself." In the third set, Gauff was unstoppable. She broke Swiatek's serve twice and won the final four games of the match. The crowd erupted when Swiatek's final forehand sailed long. "I'm so proud of Coco," said her father and coach, Corey Gauff. "She's worked so hard for this. She deserves it." Swiatek was gracious in defeat. "Coco played incredible," Swiatek said. "She was the better player today. I'll learn from this and come back stronger." Gauff's victory was the first by an American woman at the US Open since Sloane Stephens in 2017. "It's about time," said tennis legend Billie Jean King. "Coco is a superstar. This is just the beginning." Gauff, who is also a doubles specialist, has now won five major titles in her career: two in singles and three in doubles. "I'm not done," Gauff said. "I want more. I want to be the best."`,
     featured: false
   },
+// ==================== WORLD - APRIL 22, 2026 (ADDITIONAL) ====================
+
+{
+  id: "world-oil-crisis-0422",
+  title: "Oil Nears $100 as Strait of Hormuz Standoff Persists, Airlines Cancel Flights",
+  excerpt: "Brent crude prices continue climbing amid ongoing blockade as major airlines announce flight cancellations due to jet fuel shortages.",
+  category: "World",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Breaking",
+  image: "https://a57.foxnews.com/assets.foxnews.com/liveblog/fn/prod/images/2026/03/624/351/f9c009f1c5440835908d54650010dbf6.jpg?tl=1&ve=1",
+  content: "Brent crude prices continued climbing toward $100 per barrel today as the ongoing closure of the Strait of Hormuz enters its second month. The U.S. and Iran remain at an impasse, with Tehran offering to reopen the strategic waterway only if the United States ends its naval blockade of Iranian ports. 'We are facing a global energy crisis unlike anything since the 1970s,' said energy analyst Daniel Yergin. 'Every day the strait remains closed, the global economy suffers.' The crisis has forced airlines to cancel flights due to jet fuel shortages. Lufthansa announced it is canceling over 20,000 flights this summer, while major Indian airlines including Air India, IndiGo, and SpiceJet warned the government they are on the verge of 'stopping operations' due to skyrocketing fuel costs. 'This is a catastrophe for the aviation industry,' said an industry spokesperson. 'If the crisis continues, many airlines will not survive.' The Pentagon has maintained that the blockade is necessary to prevent Iran from weaponizing the strait. 'We are protecting international shipping lanes,' said a Defense Department spokesperson. 'Iran has shown it cannot be trusted.' Oil analysts predict that if the standoff continues, prices could reach $120 per barrel by summer, triggering a global recession.",
+  featured: true
+},
+{
+  id: "world-uae-leaves-opec-0422",
+  title: "UAE Announces Departure from OPEC Effective May 1, Citing 'Politicization of Energy Markets'",
+  excerpt: "Oil exporter group faces major shakeup as UAE leaves, potentially triggering other departures.",
+  category: "World",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Hot",
+  image: "https://media.licdn.com/dms/image/sync/v2/D5627AQHYyzq06ulhBQ/articleshare-shrink_800/B56Z3on5B0GUAI-/0/1777724265065?e=2147483647&v=beta&t=SDHHgL2ZDyhVWtmKMnp1KaFh-6DkvHXpx5GEfqusi9M",
+  content: "The United Arab Emirates announced today that it will leave the Organization of Petroleum Exporting Countries (OPEC) effective May 1, citing frustration with the cartel's production policies and what it called 'the politicization of energy markets.' 'The UAE has decided to pursue its own energy strategy,' said Energy Minister Suhail Al Mazrouei. 'We will no longer be bound by quotas that do not serve our national interests.' The announcement sent shockwaves through energy markets, with analysts predicting increased volatility in the coming weeks. 'This is a major blow to OPEC's influence,' said oil analyst Helima Croft. 'The UAE is one of the largest producers in the cartel. Its departure weakens OPEC's ability to control prices.' Other members are reportedly considering similar exits. 'If the UAE can leave, why can't we?' said a representative from another Gulf state. 'The organization has lost its way.' OPEC has not yet commented on the UAE's announcement. The group's next meeting is scheduled for June. The UAE's departure could trigger a price war if it decides to increase production beyond previous quotas. 'That would be disastrous for oil prices,' said Croft. 'We could see a collapse.'",
+  featured: true
+},
+{
+  id: "world-israel-strikes-lebanon-0422",
+  title: "Israel Strikes Southern Lebanon, Killing Seven Including Three Civil Defense Rescuers",
+  excerpt: "Lebanese rescuers trapped under rubble during rescue mission as cross-border tensions escalate.",
+  category: "World",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Urgent",
+  image: "https://www.arabnews.com/sites/default/files/styles/n_670_395/public/2026/04/29/4707397-601442737.jpg?itok=QQ3FhG2K",
+  content: "At least seven people were killed in Israeli airstrikes on southern Lebanon today, including three Lebanese Civil Defense rescuers who were trapped under rubble while carrying out a rescue mission. The airstrikes targeted what the Israeli Defense Forces described as 'Hezbollah military infrastructure' near the border. 'We were responding to an imminent threat,' said IDF spokesperson Rear Admiral Daniel Hagari. 'Hezbollah has been positioning rockets in civilian areas, endangering innocent lives.' Lebanese officials condemned the strikes as a violation of the fragile ceasefire brokered by the United States and France. 'Israel is escalating tensions deliberately,' said a Lebanese government spokesperson. 'They are targeting rescuers trying to save lives.' The three civil defense workers were killed when a second airstrike hit the area while they were extracting survivors from the initial strike. 'They died doing their duty,' said a Lebanese Red Cross official. 'This is a war crime.' The United Nations Interim Force in Lebanon has called for an immediate investigation. 'Attacking rescue workers is unacceptable,' said a UNIFIL spokesperson. 'Those responsible must be held accountable.' Lebanon has filed a formal complaint with the United Nations Security Council. Hezbollah has threatened retaliation, raising fears of a wider conflict.",
+  featured: true
+},
+{
+  id: "world-bahrain-iran-sentences-0422",
+  title: "Bahrain Sentences Five to Life in Prison for Plotting 'Terrorist Acts' with Iran",
+  excerpt: "Court also sentences 25 others to up to ten years for supporting terrorist activities linked to Iranian networks.",
+  category: "World",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Live",
+  image: "https://thisisbeirut.com.lb/images/bibli/1920/1280/2/afp20110218nic543100v2003highresbahrainpoliticsunrest.jpg",
+  content: "A Bahraini high court today sentenced five people, including two Afghan nationals, to life in prison for plotting 'terrorist and hostile acts' with Iran. Another 25 people received sentences of up to ten years for supporting 'terrorist acts' linked to Iranian networks. 'The defendants were part of a sophisticated network receiving funding and training from the Islamic Revolutionary Guard Corps,' said Bahrain's Public Prosecutor. 'Their goal was to destabilize the kingdom and overthrow the government.' The convictions are the latest in a series of crackdowns on suspected Iran-linked cells in the Gulf nation. Bahrain has repeatedly accused Iran of interfering in its internal affairs. 'Iran's meddling will not be tolerated,' said a Bahraini government spokesperson. 'We will protect our sovereignty.' The defendants have the right to appeal the verdicts. Iran has denied any involvement in the alleged plot. 'These are fabricated charges designed to justify repression,' said an Iranian Foreign Ministry spokesperson. 'Bahrain's government is using Iran as a scapegoat.' Human rights groups have expressed concern about the fairness of the trials. 'We have serious questions about due process,' said an Amnesty International representative. 'These convictions may have been based on coerced confessions.'",
+  featured: false
+},
+{
+  id: "world-peru-bus-crash-0422",
+  title: "Ten Killed in Peru Head-On Collision Between Minivan and Fuel Tanker",
+  excerpt: "Deadly crash on Juliaca-Arequipa highway highlights ongoing road safety concerns in South America.",
+  category: "World",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Urgent",
+  image: "https://static01.nyt.com/images/2015/03/24/world/24peru-web/24peru-web-facebookJumbo.jpg",
+  content: "At least 10 people were killed today in a head-on collision between a minivan and a fuel tanker on the Juliaca-Arequipa highway in southern Peru. The crash caused the tanker to explode, engulfing both vehicles in flames. 'The scene was horrific,' said a local firefighter. 'There was almost nothing left of the vehicles. Identifying the victims will be difficult.' Five survivors were rushed to nearby hospitals with severe burns and injuries. 'They are in critical condition,' said a hospital spokesperson. 'We are doing everything we can.' The cause of the crash is under investigation, but initial reports suggest the minivan may have crossed into oncoming traffic while attempting to pass another vehicle. 'Speeding and reckless driving are common on this road,' said a transportation safety expert. 'We need stricter enforcement.' Peruvian President Dina Boluarte expressed condolences to the families of the victims. 'We will support the injured and the families of those who lost their lives,' she said in a statement. The government has announced it will review safety regulations on the country's most dangerous highways.",
+  featured: false
+},
+{
+  id: "world-greece-shooting-0422",
+  title: "Elderly Gunman Injures Five in Athens Shooting Spree Before Arrest",
+  excerpt: "89-year-old suspect opened fire at social security building and near Magistrates' Court before being captured.",
+  category: "World",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Urgent",
+  image: "https://images.mid-day.com/images/images/2026/apr/Gunman-a-1777428557197_d.png",
+  content: "An 89-year-old man shot and injured five people in Athens today during a shooting spree that began at a social security building and continued near the Magistrates' Court. The suspect, identified as a former pensioner, opened fire at the social security office, wounding three employees. He then drove to the Magistrates' Court, where he shot two more people before being arrested in Patras. 'The suspect has been taken into custody,' said a Greek police spokesperson. 'We are investigating his motives. There is no indication of terrorism at this time.' All five victims are in stable condition. 'They are receiving treatment for gunshot wounds,' said a hospital official. 'None of the injuries are life-threatening.' Authorities have not released the suspect's name pending notification of family. 'This appears to be an isolated incident,' said a government spokesperson. 'There is no ongoing threat to the public.' The shooting has raised questions about gun control in Greece. 'How did an 89-year-old man obtain firearms?' asked a opposition politician. 'We need stronger background checks.' The suspect is expected to face multiple charges including attempted murder and illegal possession of firearms.",
+  featured: false
+},
+{
+  id: "world-russia-mine-avalanche-0422",
+  title: "Six Workers Killed in Russian Mine Avalanche Trapped at Irokinda Mine",
+  excerpt: "Tragic incident in Republic of Buryatia highlights ongoing safety concerns in Russia's mining industry.",
+  category: "World",
+  author: "Mehedi Redoy",
+  date: "April 22, 2026",
+  time: "Live",
+  image: "https://news.az/photos/2026/04/1777367939.webp",
+  content: "Six workers were killed today after being trapped in a snow avalanche at the Irokinda mine in Russia's Republic of Buryatia. The avalanche struck the remote mining facility early this morning, burying workers in a processing area. 'Rescue teams have recovered all six bodies,' said a Russian Ministry of Emergency Situations spokesperson. 'There were no survivors.' The mine is located in a mountainous region known for harsh winter conditions. 'Avalanches are a known risk in this area,' said a mining safety expert. 'Questions will be asked about why workers were exposed to this danger.' The mine operator has launched an internal investigation. 'We are cooperating fully with authorities,' said a company spokesperson. 'Our deepest condolences go to the families of the victims.' Russian President Vladimir Putin expressed condolences. 'This is a tragic loss,' said a Kremlin spokesperson. 'The government will provide support to the families.' Labor unions have called for a review of safety protocols at all mines in the region. 'This tragedy could have been prevented,' said a union leader. 'Workers deserve better protection.'",
+  featured: false
+},
+  
+  
     // ==================== POLITICS - APRIL 22, 2026 ====================
   {
     id: "politics-biden-impeachment-0422",
